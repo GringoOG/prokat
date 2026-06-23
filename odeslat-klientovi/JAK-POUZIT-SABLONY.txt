@@ -1,0 +1,22 @@
+PROKAT invest — firemní šablony
+================================
+
+Ve složkách word / excel / powerpoint najdete dva typy souborů:
+
+1) Soubory .docx / .xlsx / .pptx
+   Otevřou se přímo v Microsoft Office (nebo LibreOffice).
+   Vhodné pro okamžitou úpravu a odeslání klientovi.
+
+2) Soubory .dotx / .xltx / .potx  (oficiální šablony Office)
+   Po dvojkliku se vytvoří NOVÝ dokument podle vzoru.
+   Vhodné pro opakované použití ve firmě — vzor zůstane nedotčený.
+
+Doporučení:
+- Word šablony: Soubor → Uložit jako → Word šablona (.dotx)
+  nebo použijte dodané soubory .dotx
+- Excel: použijte .xltx pro nové nabídky, .xlsx pro jednorázovou práci
+- PowerPoint: použijte .potx pro nové prezentace
+
+Obsah složek:
+- PROKAT-vzor-dokument.*       → univerzální firemní dokument
+- PROKAT-vzor-cenova-nabidka.* → cenová nabídka s tabulkou položek

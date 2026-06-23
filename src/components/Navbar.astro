@@ -1,0 +1,115 @@
+---
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'Domů' },
+  { href: '/o-nas', label: 'O nás' },
+  { href: '/sluzby', label: 'Služby' },
+  { href: '/projekty', label: 'Projekty' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
+---
+
+<header class="w-full">
+  <div class="mx-auto max-w-site px-6 lg:px-10">
+    <nav class="flex items-center justify-between py-5" aria-label="Hlavní navigace">
+      <a href="/" class="shrink-0">
+        <img
+          src="/images/logo.png"
+          alt="PROKAT invest"
+          class="h-10 w-auto md:h-12"
+          width="322"
+          height="80"
+        />
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-navy">
+        {
+          navItems.map((item) => (
+            <li>
+              {isActive(item.href) ? (
+                <a href={item.href} class="inline-flex items-center gap-2 text-navy" aria-current="page">
+                  <span class="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />
+                  {item.label}
+                </a>
+              ) : (
+                <a href={item.href} class="text-navy/80 hover:text-navy transition-colors">
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+
+      <a
+        href="/kontakt"
+        class="btn-gradient hidden sm:inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity"
+      >
+        <span>Získejte CN</span>
+        <span
+          class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+        >
+          <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
+        </span>
+      </a>
+
+      <button
+        type="button"
+        id="menu-toggle"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Otevřít menu"
+        aria-expanded="false"
+      >
+        <span class="block h-0.5 w-6 bg-navy"></span>
+        <span class="block h-0.5 w-6 bg-navy"></span>
+        <span class="block h-0.5 w-6 bg-navy"></span>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden lg:hidden pb-6 border-t border-gray-200">
+      <ul class="flex flex-col gap-4 pt-4 text-[15px] font-medium text-navy">
+        {
+          navItems.map((item) => (
+            <li>
+              {isActive(item.href) ? (
+                <a href={item.href} class="inline-flex items-center gap-2" aria-current="page">
+                  <span class="h-1.5 w-1.5 rounded-full bg-navy" />
+                  {item.label}
+                </a>
+              ) : (
+                <a href={item.href}>{item.label}</a>
+              )}
+            </li>
+          ))
+        }
+        <li class="pt-2">
+          <a
+            href="/kontakt"
+            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium"
+          >
+            Získejte CN
+            <span
+              class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+            >
+              <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    const isHidden = menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isHidden));
+  });
+</script>

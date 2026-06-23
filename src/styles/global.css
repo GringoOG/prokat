@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-black antialiased bg-white;
+  }
+}
+
+.btn-gradient {
+  background: linear-gradient(45deg, #101029 25%, #ffb412 100%);
+}
+
+.btn-gradient-icon {
+  background: linear-gradient(135deg, #d49d39 0%, #8e6b33 100%);
+}
+
+.section-watermark {
+  background-color: #f6f6f6;
+  background-image: url('/images/blueprint-watermark.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.services-watermark {
+  background-color: #f6f6f6;
+  background-image: url('/images/blueprint-watermark.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}

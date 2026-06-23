@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+---
+
+<Layout
+  title="Projekty | Prokat Invest"
+  description="Reference a realizované projekty PROKAT invest — spolehlivý partner pro technologické celky v oblasti TZB."
+>
+  <Navbar />
+
+  <main>
+    <section class="section-watermark bg-surface py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10 text-center">
+        <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy mb-4">
+          <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+          Reference
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.1] font-semibold text-navy tracking-tight max-w-4xl mx-auto mb-6">
+          Důvěřují nám přední <span class="text-gold">průmyslové</span> společnosti
+        </h1>
+        <p class="text-lg md:text-[23px] font-medium text-navy/80 max-w-3xl mx-auto">
+          Za více než 25 let jsme realizovali přes 1500 technologických celků pro klienty z automotive, potravinářství,
+          retailu i průmyslové výroby.
+        </p>
+      </div>
+    </section>
+
+    <ClientLogos />
+
+    <section class="bg-surface py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <p class="text-5xl font-semibold text-stat mb-2">1500<span class="text-navy">+</span></p>
+            <p class="text-lg font-medium text-navy/80">Realizovaných technologických celků</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <p class="text-5xl font-semibold text-gold mb-2">25+</p>
+            <p class="text-lg font-medium text-navy/80">Let zkušeností na trhu</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <p class="text-5xl font-semibold text-navy mb-2">4.9<span class="text-2xl text-navy/60">/5.0</span></p>
+            <p class="text-lg font-medium text-navy/80">Průměrné hodnocení kvality</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CtaBanner />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="O nás | Prokat Invest"
+  description="PROKAT invest — spolehlivý partner pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI od roku 1999."
+>
+  <Navbar />
+
+  <main>
+    <!-- TECHNOLOGIE -->
+    <section class="relative overflow-hidden">
+      <img
+        src="/images/tech-solar-bg.png"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover"
+        aria-hidden="true"
+      />
+      <div class="absolute inset-0 bg-navy/60"></div>
+      <div class="relative mx-auto max-w-site px-6 lg:px-10 py-24 lg:py-32 text-center">
+        <h1
+          class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.15] font-semibold text-white tracking-tight max-w-4xl mx-auto"
+        >
+          Nejnovější technologie.<br />
+          Prověřeno v <span class="text-gold">praxi.</span><br />
+          Provozně hospodárné systémy řízeny AI.
+        </h1>
+      </div>
+    </section>
+
+    <!-- O NÁS / STATISTIKY -->
+    <section class="relative bg-gradient-to-b from-[#0d0d1a] via-[#1a1520] to-[#8c6c3c] py-20 lg:py-28 overflow-hidden">
+      <div class="mx-auto max-w-site px-6 lg:px-10 text-center">
+        <p class="text-lg md:text-[23px] font-medium text-white/90 max-w-3xl mx-auto mb-8">
+          Realizujeme technologické celky včetně studie energetické hospodárnosti, projektu, realizace, záručního a
+          pozáručních servisu
+        </p>
+
+        <a
+          href="/sluzby"
+          class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity mb-16"
+        >
+          <span>Prozkoumejte naše služby</span>
+          <span
+            class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+          >
+            <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
+          </span>
+        </a>
+
+        <div class="relative mx-auto max-w-4xl min-h-[520px] lg:min-h-[620px]">
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:gap-0 items-center justify-items-center">
+            <div
+              class="lg:col-start-1 lg:row-start-1 lg:justify-self-end lg:translate-x-8 z-10 bg-white rounded-full w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[380px] lg:h-[380px] flex flex-col items-center justify-center shadow-2xl"
+            >
+              <img src="/images/logo.png" alt="" class="h-8 mb-4 opacity-80" aria-hidden="true" />
+              <p class="text-5xl lg:text-[72px] font-semibold text-stat leading-none">
+                1500<span class="text-navy">+</span>
+              </p>
+              <p class="text-base lg:text-[26px] font-medium text-navy mt-2 px-6 text-center">
+                Realizovaných technologických celků.
+              </p>
+              <div class="flex items-center gap-1 mt-3">
+                <span class="text-xl lg:text-[28px] font-semibold text-navy">4.9</span>
+                <span class="text-base lg:text-[26px] font-medium text-navy">/5.0</span>
+                <img src="/icons/stars.svg" alt="Hodnocení 4.9 z 5" class="h-3.5 ml-2" />
+              </div>
+            </div>
+
+            <div
+              class="lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:justify-self-start lg:-translate-x-12 lg:translate-y-4 z-20 rounded-full overflow-hidden w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[300px] lg:h-[300px] border-4 border-white/20 shadow-xl"
+            >
+              <img
+                src="/images/about-industrial.jpg"
+                alt="Průmyslové technologie"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="lg:col-start-1 lg:row-start-2 lg:justify-self-center lg:translate-x-4 lg:-translate-y-8 z-10 bg-navy rounded-full w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] flex flex-col items-center justify-center border border-white/10 shadow-2xl"
+            >
+              <p class="text-sm lg:text-[23px] font-medium text-white/80">// 1999-2026 //</p>
+              <p class="text-5xl lg:text-[72px] font-semibold text-gold leading-none mt-2">25+</p>
+              <p class="text-sm lg:text-lg text-white/80 mt-4 px-8 text-center leading-relaxed">
+                Garantujeme špičkovou kvalitu realizací již od samého začátku.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden lg:block absolute bottom-4 right-8 z-0 w-[160px] h-[160px] rounded-full overflow-hidden opacity-90">
+            <img src="/images/about-circle.png" alt="" class="w-full h-full object-cover" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIREMNÍ ÚDAJE -->
+    <section class="section-watermark bg-surface py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-semibold text-navy mb-8">Sídlo společnosti</h2>
+          <address class="not-italic text-[21px] font-medium leading-relaxed text-navy/90 space-y-1">
+            <p class="font-semibold text-navy">PROKAT invest s.r.o.</p>
+            <p>Plzeňská 1348/95</p>
+            <p>
+              Praha 5<br />
+              IČ: 25238876<br />
+              DIČ: CZ25238876<br />
+              Datová schránka: ns3u7ke<br />
+              Společnost je zapsaná v obchodním rejstříku:
+            </p>
+            <p>Městský soud v Praze, oddíl C, vložka 350481.</p>
+          </address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
