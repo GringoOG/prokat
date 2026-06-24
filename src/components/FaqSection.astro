@@ -45,8 +45,8 @@ const faqs = [
       {
         faqs.map((faq) => (
           <details class="faq-item group bg-white rounded-2xl border border-gray-100 overflow-hidden" open={faq.open}>
-            <summary class="flex items-center justify-between gap-4 p-6 lg:p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <span class="text-base lg:text-xl font-semibold text-navy text-left">{faq.question}</span>
+            <summary class="flex items-center justify-between gap-3 sm:gap-4 p-4 sm:p-6 lg:p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <span class="text-sm sm:text-base lg:text-xl font-semibold text-navy text-left">{faq.question}</span>
               <span
                 class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold text-xl font-light leading-none"
                 aria-hidden="true"
@@ -54,7 +54,7 @@ const faqs = [
                 +
               </span>
             </summary>
-            <div class="px-6 lg:px-8 pb-6 lg:pb-8 -mt-2">
+            <div class="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 -mt-2">
               <p class="text-base lg:text-lg font-medium text-navy/70 leading-relaxed">{faq.answer}</p>
             </div>
           </details>

@@ -17,7 +17,7 @@ import ServiceList from '../components/ServiceList.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           <div class="space-y-5 lg:space-y-6 lg:pt-2">
             <p
-              class="inline-flex items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
+              class="inline-flex max-w-full flex-wrap items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-xs font-medium text-navy sm:text-sm md:text-base"
             >
               <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold-bright" aria-hidden="true"></span>
               Váš spolehlivý partner pro technologické celky
@@ -51,7 +51,7 @@ import ServiceList from '../components/ServiceList.astro';
 
             <a
               href="/sluzby"
-              class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity w-full sm:w-auto justify-between sm:justify-start"
+              class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-3 text-white text-sm font-medium min-h-[52px] h-auto hover:opacity-95 transition-opacity w-full sm:w-auto justify-between sm:justify-start"
             >
               <span>Prozkoumejte naše služby</span>
               <span
@@ -87,10 +87,10 @@ import ServiceList from '../components/ServiceList.astro';
       >
         <source src="/videos/vzt.webm" type="video/webm" />
       </video>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-transparent"></div>
-      <div class="relative mx-auto max-w-site px-6 lg:px-10 py-16 sm:py-20 lg:py-28 text-left">
+      <div class="absolute inset-0 bg-black/25"></div>
+      <div class="absolute inset-0 z-10 flex items-center justify-center px-6 lg:px-10">
         <h2
-          class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.15] font-semibold text-white tracking-tight max-w-3xl drop-shadow-sm"
+          class="text-center text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.15] font-semibold text-white tracking-tight max-w-4xl drop-shadow-sm"
         >
           Nejnovější technologie.<br />
           Prověřeno v <span class="text-gold-bright">praxi.</span><br />
@@ -109,7 +109,7 @@ import ServiceList from '../components/ServiceList.astro';
 
         <a
           href="/o-nas"
-          class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity mb-16"
+          class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-3 text-white text-sm font-medium min-h-[52px] h-auto hover:opacity-95 transition-opacity mb-16 w-full sm:w-auto justify-center sm:justify-start"
         >
           <span>Více o naší společnosti</span>
           <span
@@ -216,7 +216,7 @@ import ServiceList from '../components/ServiceList.astro';
           </div>
           <a
             href="/sluzby"
-            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity shrink-0 self-start lg:self-auto"
+            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-3 text-white text-sm font-medium min-h-[52px] h-auto hover:opacity-95 transition-opacity shrink-0 self-stretch sm:self-start lg:self-auto w-full sm:w-auto justify-between sm:justify-start"
           >
             <span>Prozkoumejte naše služby</span>
             <span

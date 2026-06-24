@@ -1,8 +1,22 @@
+---
+const pathname = Astro.url.pathname;
+
+const isActive = (href: string) =>
+  href === '/'
+    ? pathname === '/'
+    : href !== '#' && (pathname === href || pathname.startsWith(`${href}/`));
+
+const footerLinkClass = (href: string) =>
+  isActive(href)
+    ? 'footer-link footer-link--active'
+    : 'footer-link';
+---
+
 <footer class="footer-panel relative text-white overflow-hidden">
   <img
     src="/images/footer-watermark.png"
     alt=""
-    class="pointer-events-none absolute left-1/2 top-[42%] z-0 w-[min(110%,1200px)] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.12] object-contain select-none"
+    class="pointer-events-none absolute left-1/2 top-[42%] z-0 w-full max-w-[1200px] -translate-x-1/2 -translate-y-1/2 opacity-[0.12] object-contain select-none"
     aria-hidden="true"
   />
 
@@ -11,17 +25,17 @@
       <div class="lg:pr-8 xl:pr-12 lg:border-r lg:border-dashed lg:border-white/20">
         <h2 class="text-xl lg:text-[28px] font-semibold mb-6">Odkazy</h2>
         <ul class="space-y-3 text-base lg:text-[23px] font-medium">
-          <li><a href="/" class="text-gold-bright hover:text-gold transition-colors">Domů</a></li>
-          <li><a href="/o-nas" class="text-white/90 hover:text-white transition-colors">O nás</a></li>
-          <li><a href="/sluzby" class="text-white/90 hover:text-white transition-colors">Služby</a></li>
+          <li><a href="/" class={footerLinkClass('/')}>Domů</a></li>
+          <li><a href="/o-nas" class={footerLinkClass('/o-nas')}>O nás</a></li>
+          <li><a href="/sluzby" class={footerLinkClass('/sluzby')}>Služby</a></li>
         </ul>
       </div>
 
       <div class="lg:px-8 xl:px-12 lg:border-r lg:border-dashed lg:border-white/20 lg:pt-[3.25rem] xl:pt-[3.75rem]">
         <ul class="space-y-3 text-base lg:text-[23px] font-medium">
-          <li><a href="/projekty" class="text-white/90 hover:text-white transition-colors">Projekty</a></li>
-          <li><a href="/kontakt" class="text-white/90 hover:text-white transition-colors">Kontakt</a></li>
-          <li><a href="#" class="text-white/90 hover:text-white transition-colors">GDPR</a></li>
+          <li><a href="/projekty" class={footerLinkClass('/projekty')}>Projekty</a></li>
+          <li><a href="/kontakt" class={footerLinkClass('/kontakt')}>Kontakt</a></li>
+          <li><a href="#" class={footerLinkClass('#')}>GDPR</a></li>
         </ul>
       </div>
 
@@ -53,7 +67,7 @@
   </div>
 
   <div class="relative z-10 border-t border-white/10 bg-[#050a14]/80">
-    <p class="mx-auto max-w-site px-6 lg:px-10 py-5 text-center text-sm lg:text-[23px] font-medium text-white/50">
+    <p class="mx-auto max-w-site px-6 lg:px-10 py-5 text-center text-xs sm:text-sm lg:text-base font-medium text-white/50">
       Copyright © 2026 | PROKAT invest s.r.o. | Všechna práva vyhrazena.
     </p>
   </div>
@@ -65,5 +79,15 @@
       radial-gradient(ellipse 85% 90% at 50% 35%, rgba(180, 130, 55, 0.65) 0%, rgba(100, 72, 38, 0.4) 32%, transparent 68%),
       radial-gradient(ellipse 120% 80% at 50% 100%, rgba(40, 30, 20, 0.9) 0%, transparent 55%),
       linear-gradient(180deg, #0a0812 0%, #15101c 35%, #3d2e1a 55%, #15101c 80%, #080810 100%);
+  }
+
+  .footer-link {
+    color: rgb(167 163 162);
+    transition: color 0.45s cubic-bezier(0.44, 0, 0.56, 1);
+  }
+
+  .footer-link:hover,
+  .footer-link--active {
+    color: #f66234;
   }
 </style>
