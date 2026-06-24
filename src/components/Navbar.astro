@@ -15,7 +15,7 @@ const isActive = (href: string) =>
 
 <header class="w-full">
   <div class="mx-auto max-w-site px-6 lg:px-10">
-    <nav class="flex items-center justify-between py-5" aria-label="Hlavní navigace">
+    <nav class="flex min-w-0 items-center justify-between gap-3 py-5 sm:gap-4" aria-label="Hlavní navigace">
       <a href="/" class="shrink-0">
         <img
           src="/images/logo.png"
@@ -51,7 +51,7 @@ const isActive = (href: string) =>
 
       <a
         href="/kontakt"
-        class="btn-gradient hidden sm:inline-flex items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-1 text-white text-base font-medium h-[56px] hover:opacity-95 transition-opacity"
+        class="btn-gradient hidden lg:inline-flex items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-2 text-white text-base font-medium min-h-[56px] h-auto hover:opacity-95 transition-opacity shrink-0"
       >
         <span>Získejte CN</span>
         <span
@@ -99,7 +99,7 @@ const isActive = (href: string) =>
         <li class="pt-2">
           <a
             href="/kontakt"
-            class="btn-gradient inline-flex items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-1 text-white text-base font-medium h-[56px]"
+            class="btn-gradient inline-flex w-full items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-2 text-white text-base font-medium min-h-[56px] h-auto"
           >
             Získejte CN
             <span

@@ -16,7 +16,9 @@
   background: linear-gradient(135deg, #d49d39 0%, #8e6b33 100%);
 }
 
-.section-watermark {
+.section-watermark,
+.services-watermark,
+.contact-page {
   background-color: #f6f6f6;
   background-image: url('/images/pozadi-prokat.png');
   background-size: cover;
@@ -24,12 +26,12 @@
   background-repeat: no-repeat;
 }
 
-.services-watermark {
-  background-color: #f6f6f6;
-  background-image: url('/images/pozadi-prokat.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+@media (min-width: 768px) {
+  .section-watermark,
+  .services-watermark,
+  .contact-page {
+    background-position: center center;
+  }
 }
 
 @keyframes marquee {
@@ -47,4 +49,10 @@
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }
