@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Stránka nenalezena | Prokat Invest"
+  description="Stránka, kterou hledáte, bohužel neexistuje nebo byla přesunuta."
+>
+  <div class="flex min-h-screen flex-col">
+    <Navbar />
+
+    <main class="flex flex-1 items-center justify-center bg-surface px-6 py-16 lg:py-24">
+      <div
+        class="w-full max-w-[640px] rounded-2xl bg-white px-8 py-14 text-center shadow-[0_4px_40px_rgba(16,16,41,0.08)] sm:px-12 sm:py-16"
+      >
+        <p
+          class="mb-6 text-[96px] font-bold leading-none tracking-tight sm:text-[120px] lg:text-[140px]"
+          aria-hidden="true"
+        >
+          <span class="text-navy">4</span><span
+            class="bg-gradient-to-b from-gold-bright to-gold bg-clip-text text-transparent"
+            >0</span
+          ><span class="text-navy">4</span>
+        </p>
+
+        <h1 class="mb-4 text-2xl font-semibold text-navy sm:text-3xl">Stránka nenalezena</h1>
+
+        <p class="mx-auto mb-10 max-w-md text-base leading-relaxed text-black/60 sm:text-lg">
+          Stránka, kterou hledáte, bohužel neexistuje nebo byla přesunuta.
+        </p>
+
+        <a
+          href="/"
+          class="inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl bg-navy pl-1.5 pr-[18px] py-1.5 text-sm font-medium text-white h-[52px] hover:opacity-95 transition-opacity"
+        >
+          <span
+            class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+          >
+            <img
+              src="/icons/arrow.svg"
+              alt=""
+              class="h-3 w-4 rotate-180"
+              width="16"
+              height="12"
+            />
+          </span>
+          Zpátky domů
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>

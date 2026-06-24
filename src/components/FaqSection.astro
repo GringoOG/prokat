@@ -1,0 +1,74 @@
+---
+const faqs = [
+  {
+    question: 'Jaké realizační služby zajišťujete?',
+    answer:
+      'Specializujeme se na stavbu tepelných zdrojů, kotelen, FVE, vzduchotechniku a chlazení – od projektu až po samotnou realizaci.',
+    open: true,
+  },
+  {
+    question: 'Zajišťujete projekt i samotnou montáž, nebo musím mít vlastní plány?',
+    answer:
+      'Zajišťujeme kompletní servis včetně projektové dokumentace, realizace i montáže. Pokud máte vlastní plány, dokážeme je také zpracovat a realizovat.',
+  },
+  {
+    question: 'Na jaké typy technologií se specializujete?',
+    answer:
+      'Vzduchotechniku, topné zdroje všech typů, průmyslové chlazení včetně přírodních chladiv a fotovoltaické systémy s AI monitoringem.',
+  },
+  {
+    question: 'Jaká je životnost a servis vámi instalovaných systémů?',
+    answer:
+      'Poskytujeme záruční i pozáruční servis a vzdálený dohled nad zařízeními. Životnost závisí na typu technologie — u každého projektu garantujeme servisní podporu po celou dobu provozu.',
+  },
+  {
+    question: 'Pomůžete nám i s úsporou energií a dotacemi?',
+    answer:
+      'Ano. Připravíme studii energetické hospodárnosti, navrhneme úsporná řešení s AI managementem a poradíme s dotačními tituly pro FVE i další technologie.',
+  },
+];
+---
+
+<section class="bg-surface py-16 lg:py-24">
+  <div class="mx-auto max-w-site px-6 lg:px-10">
+    <div class="text-center mb-12">
+      <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy mb-4">
+        <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+        FAQ
+      </p>
+      <h2 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight">
+        Často kladené dotazy
+      </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-3">
+      {
+        faqs.map((faq) => (
+          <details class="faq-item group bg-white rounded-2xl border border-gray-100 overflow-hidden" open={faq.open}>
+            <summary class="flex items-center justify-between gap-4 p-6 lg:p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <span class="text-base lg:text-xl font-semibold text-navy text-left">{faq.question}</span>
+              <span
+                class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold text-xl font-light leading-none"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </summary>
+            <div class="px-6 lg:px-8 pb-6 lg:pb-8 -mt-2">
+              <p class="text-base lg:text-lg font-medium text-navy/70 leading-relaxed">{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-icon {
+    transition: transform 0.2s ease;
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+const projects = [
+  {
+    client: 'Škoda Auto',
+    subtitle: 'Datové centrum',
+    savings: '16%',
+    image: '/images/projects/project-skoda.jpg',
+    alt: 'Škoda Auto — datové centrum',
+  },
+  {
+    client: 'Pilsner Urquel',
+    subtitle: 'Odvětrávání CO2',
+    savings: '18%',
+    image: '/images/projects/project-pilsner.jpg',
+    alt: 'Pilsner Urquel — odvětrávání CO2',
+  },
+  {
+    client: 'Letiště Václava Havla',
+    subtitle: 'Strojovna chlazení',
+    savings: '17%',
+    image: '/images/projects/project-airport.jpg',
+    alt: 'Letiště Václava Havla — strojovna chlazení',
+  },
+  {
+    client: 'Hotel Marriott',
+    subtitle: 'Chlazení, topení, VZT, TZB, rekonstrukce kotelny i pokojů',
+    savings: '12%',
+    image: '/images/projects/project-marriott.jpg',
+    alt: 'Hotel Marriott',
+  },
+  {
+    client: "King's Casino",
+    subtitle: 'Chlazení, topení, VZT, TZB',
+    savings: '15%',
+    image: '/images/projects/project-casino.jpg',
+    alt: "King's Casino",
+  },
+  {
+    client: 'Hotel Epiq',
+    subtitle: 'Výstavba kotelny',
+    savings: '19%',
+    image: '/images/projects/project-epiq.jpg',
+    alt: 'Hotel Epiq — výstavba kotelny',
+  },
+];
+---
+
+<div class="rounded-2xl border border-gold/60 bg-navy p-4 sm:p-6 lg:p-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+    {
+      projects.map((project) => (
+        <article class="grid grid-cols-1 sm:grid-cols-2 bg-white rounded-xl overflow-hidden min-h-[200px]">
+          <div class="flex flex-col justify-center p-6 lg:p-8">
+            <h2 class="text-xl lg:text-2xl font-semibold text-gold leading-tight">{project.client}</h2>
+            <p class="mt-2 text-sm lg:text-base font-medium text-navy/70 leading-snug">{project.subtitle}</p>
+            <div class="mt-4 lg:mt-6">
+              <p class="text-3xl lg:text-4xl font-semibold text-navy leading-none">{project.savings}</p>
+              <p class="mt-1 text-sm lg:text-base font-medium text-navy/60">Úspora provozních nákladů</p>
+            </div>
+          </div>
+          <div class="relative min-h-[180px] sm:min-h-full">
+            <img
+              src={project.image}
+              alt={project.alt}
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <div class="mt-8 flex justify-center">
+    <button
+      type="button"
+      class="rounded-full bg-gold-bright px-8 py-3 text-sm font-semibold text-navy hover:bg-gold transition-colors"
+    >
+      Zobrazit více
+    </button>
+  </div>
+</div>

@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ClientLogos from '../components/ClientLogos.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import ServiceList from '../components/ServiceList.astro';
 ---
 
 <Layout>
@@ -10,33 +12,50 @@ import ClientLogos from '../components/ClientLogos.astro';
 
   <main>
     <!-- HERO -->
-    <section class="section-watermark bg-surface">
-      <div class="mx-auto max-w-site px-6 lg:px-10 pt-8 pb-0">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <div class="space-y-6">
+    <section class="section-watermark bg-surface relative overflow-hidden">
+      <img
+        src="/images/hero-logo-watermark.png"
+        alt=""
+        class="pointer-events-none absolute right-0 top-[42%] lg:top-1/2 z-0 w-[115%] max-w-none -translate-y-1/2 translate-x-[8%] opacity-[0.12] object-contain object-right-top select-none sm:w-[95%] sm:translate-x-[5%] lg:w-[72%] lg:translate-x-[12%]"
+        aria-hidden="true"
+      />
+
+      <div class="relative z-10 mx-auto max-w-site px-6 lg:px-10 pt-6 lg:pt-8 pb-0">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+          <div class="space-y-5 lg:space-y-6 lg:pt-2">
             <p
-              class="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
+              class="inline-flex items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
             >
-              <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+              <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold-bright" aria-hidden="true"></span>
               Váš spolehlivý partner pro technologické celky
             </p>
 
             <h1 class="text-4xl sm:text-5xl lg:text-[72px] lg:leading-[1.05] font-semibold text-navy tracking-tight">
-              Od <span class="text-gold">návrhu</span> až po spuštění zdroje.
+              Od <span class="text-gold-bright">návrhu</span> až po spuštění zdroje.
             </h1>
 
-            <p class="text-lg md:text-[23px] font-medium leading-snug">
+            <p class="text-lg md:text-[23px] font-medium leading-snug text-navy">
               Provozní úspory 10-20% nákladů pomocí AI managmentu.
             </p>
 
-            <p class="text-lg md:text-[23px] font-medium leading-relaxed text-black/90 max-w-xl">
+            <p class="text-lg md:text-[23px] font-medium leading-relaxed text-navy max-w-xl">
               // Od roku 1999 //<br />
               Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
               měření a regulace.
             </p>
           </div>
 
-          <div class="flex flex-col items-start lg:items-end gap-8">
+          <div class="flex flex-col items-start lg:items-end gap-8 lg:pt-2">
+            <address class="not-italic text-base sm:text-[21px] font-medium leading-relaxed text-navy lg:text-right space-y-0.5">
+              <p>Sídlo společnosti:</p>
+              <p class="font-semibold">PROKAT invest s.r.o.</p>
+              <p>Plzeňská 1348/95, Praha 5</p>
+              <p>IČ: 25238876, DIČ: CZ25238876</p>
+              <p>Datová schránka: ns3u7ke</p>
+              <p>Společnost je zapsaná v obchodním rejstříku:</p>
+              <p>Městský soud v Praze, oddíl C, vložka 350481.</p>
+            </address>
+
             <a
               href="/sluzby"
               class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity w-full sm:w-auto justify-between sm:justify-start"
@@ -52,109 +71,139 @@ import ClientLogos from '../components/ClientLogos.astro';
         </div>
       </div>
 
-      <div class="mt-10 lg:mt-16 w-full">
-        <img
-          src="/images/hero-photo.png"
-          alt="Průmyslové vzduchotechnické zařízení"
-          class="w-full h-auto object-cover max-h-[420px] lg:max-h-none"
-          width="1920"
-          height="800"
-          loading="eager"
-        />
-      </div>
-
-      <div class="text-center py-6">
+      <div class="relative z-10 text-center py-8 lg:py-12">
         <a
-          href="/o-nas"
-          class="text-xs font-semibold tracking-[0.25em] text-navy/60 uppercase hover:text-navy transition-colors"
+          href="#technologie"
+          class="text-[11px] font-semibold tracking-[0.3em] text-navy/50 uppercase hover:text-navy transition-colors"
         >
           Zjistit více
         </a>
       </div>
     </section>
 
-    <!-- RYCHLÝ PŘEHLED -->
-    <section class="bg-surface py-16 lg:py-24">
+    <!-- TECHNOLOGIE + VZT video -->
+    <section id="technologie" class="relative overflow-hidden min-h-[380px] sm:min-h-[460px] lg:min-h-[560px]">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        class="absolute inset-0 h-full w-full object-cover object-center"
+        aria-label="Průmyslové vzduchotechnické zařízení"
+      >
+        <source src="/videos/vzt.webm" type="video/webm" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-transparent"></div>
+      <div class="relative mx-auto max-w-site px-6 lg:px-10 py-16 sm:py-20 lg:py-28 text-left">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.15] font-semibold text-white tracking-tight max-w-3xl drop-shadow-sm"
+        >
+          Nejnovější technologie.<br />
+          Prověřeno v <span class="text-gold-bright">praxi.</span><br />
+          Provozně hospodárné systémy řízeny AI.
+        </h2>
+      </div>
+    </section>
+
+    <!-- STATISTIKY -->
+    <section class="relative bg-gradient-to-b from-[#0d0d1a] via-[#1a1520] to-[#8c6c3c] py-20 lg:py-28 overflow-hidden">
+      <div class="mx-auto max-w-site px-6 lg:px-10 text-center">
+        <p class="text-lg md:text-[23px] font-medium text-white/90 max-w-3xl mx-auto mb-8">
+          Realizujeme technologické celky včetně studie energetické hospodárnosti, projektu, realizace, záručního a
+          pozáručních servisu
+        </p>
+
+        <a
+          href="/o-nas"
+          class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity mb-16"
+        >
+          <span>Více o naší společnosti</span>
+          <span
+            class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+          >
+            <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
+          </span>
+        </a>
+
+        <div class="relative mx-auto max-w-4xl min-h-[520px] lg:min-h-[620px]">
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:gap-0 items-center justify-items-center">
+            <div
+              class="lg:col-start-1 lg:row-start-1 lg:justify-self-end lg:translate-x-8 z-10 bg-white rounded-full w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[380px] lg:h-[380px] flex flex-col items-center justify-center shadow-2xl"
+            >
+              <img src="/images/logo.png" alt="" class="h-8 mb-4 opacity-80" aria-hidden="true" />
+              <p class="text-5xl lg:text-[72px] font-semibold text-stat leading-none">
+                1500<span class="text-navy">+</span>
+              </p>
+              <p class="text-base lg:text-[26px] font-medium text-navy mt-2 px-6 text-center">
+                Realizovaných technologických celků.
+              </p>
+              <div class="flex items-center gap-1 mt-3">
+                <span class="text-xl lg:text-[28px] font-semibold text-navy">4.9</span>
+                <span class="text-base lg:text-[26px] font-medium text-navy">/5.0</span>
+                <img src="/icons/stars.svg" alt="Hodnocení 4.9 z 5" class="h-3.5 ml-2" />
+              </div>
+            </div>
+
+            <div
+              class="lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:justify-self-start lg:-translate-x-12 lg:translate-y-4 z-20 rounded-full overflow-hidden w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[300px] lg:h-[300px] border-4 border-white/20 shadow-xl"
+            >
+              <img
+                src="/images/about-industrial.jpg"
+                alt="Průmyslové technologie"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="lg:col-start-1 lg:row-start-2 lg:justify-self-center lg:translate-x-4 lg:-translate-y-8 z-10 bg-navy rounded-full w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] flex flex-col items-center justify-center border border-white/10 shadow-2xl"
+            >
+              <p class="text-sm lg:text-[23px] font-medium text-white/80">// 1999-2026 //</p>
+              <p class="text-5xl lg:text-[72px] font-semibold text-gold leading-none mt-2">25+</p>
+              <p class="text-sm lg:text-lg text-white/80 mt-4 px-8 text-center leading-relaxed">
+                Garantujeme špičkovou kvalitu realizací již od samého začátku.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden lg:block absolute bottom-4 right-8 z-0 w-[160px] h-[160px] rounded-full overflow-hidden opacity-90">
+            <img src="/images/about-circle.png" alt="" class="w-full h-full object-cover" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLUŽBY -->
+    <section class="services-watermark bg-surface py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="text-center mb-12">
-          <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy mb-4">
-            <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
-            Rychlý přehled
-          </p>
-          <h2 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.1] font-semibold text-navy tracking-tight max-w-4xl mx-auto">
-            Technologické celky s důrazem na <span class="text-gold">provozní úspory</span>
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
-            <p class="text-4xl lg:text-5xl font-semibold text-stat">1500<span class="text-navy">+</span></p>
-            <p class="text-base lg:text-lg font-medium text-navy/80 mt-2">Realizovaných technologických celků</p>
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div class="space-y-4 max-w-3xl">
+            <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy">
+              <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+              Co děláme
+            </p>
+            <h2 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.1] font-semibold text-navy tracking-tight">
+              Flexibilní řešení pro <span class="text-gold">široký</span> rozsah použití TZB systémů
+            </h2>
           </div>
-          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
-            <p class="text-4xl lg:text-5xl font-semibold text-navy">4.9<span class="text-lg text-navy/60">/5.0</span></p>
-            <p class="text-base lg:text-lg font-medium text-navy/80 mt-2">Hodnocení kvality realizací</p>
-          </div>
-          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
-            <p class="text-4xl lg:text-5xl font-semibold text-gold">25+</p>
-            <p class="text-base lg:text-lg font-medium text-navy/80 mt-2">Let zkušeností na trhu</p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <a
             href="/sluzby"
-            class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-gold/40 hover:shadow-md transition-all"
+            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity shrink-0 self-start lg:self-auto"
           >
-            <img src="/images/service-hvac.jpg" alt="" class="rounded-lg w-full h-24 object-cover mb-4" />
-            <h3 class="text-lg font-semibold text-navy group-hover:text-gold transition-colors">Vzduchotechnika</h3>
-          </a>
-          <a
-            href="/sluzby"
-            class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-gold/40 hover:shadow-md transition-all"
-          >
-            <img src="/images/service-heating.jpg" alt="" class="rounded-lg w-full h-24 object-cover mb-4" />
-            <h3 class="text-lg font-semibold text-navy group-hover:text-gold transition-colors">Topné zdroje</h3>
-          </a>
-          <a
-            href="/sluzby"
-            class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-gold/40 hover:shadow-md transition-all"
-          >
-            <img src="/images/service-cooling.png" alt="" class="rounded-lg w-full h-24 object-cover mb-4" />
-            <h3 class="text-lg font-semibold text-navy group-hover:text-gold transition-colors">Chlazení</h3>
-          </a>
-          <a
-            href="/sluzby"
-            class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-gold/40 hover:shadow-md transition-all"
-          >
-            <img src="/images/service-solar.png" alt="" class="rounded-lg w-full h-24 object-cover mb-4" />
-            <h3 class="text-lg font-semibold text-navy group-hover:text-gold transition-colors">Fotovoltaika</h3>
-          </a>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-4 mt-10">
-          <a
-            href="/o-nas"
-            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity"
-          >
-            <span>Více o společnosti</span>
+            <span>Prozkoumejte naše služby</span>
             <span
               class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
             >
               <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
             </span>
           </a>
-          <a
-            href="/kontakt"
-            class="inline-flex items-center gap-3 rounded-full border border-navy/20 bg-white pl-6 pr-6 py-3 text-navy text-sm font-semibold hover:bg-gray-50 transition-colors"
-          >
-            Kontaktujte nás
-          </a>
         </div>
+
+        <ServiceList />
       </div>
     </section>
 
-    <!-- REFERENCE -->
+    <CtaBanner />
     <ClientLogos />
   </main>
 

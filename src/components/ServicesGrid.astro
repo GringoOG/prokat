@@ -1,0 +1,51 @@
+---
+const services = [
+  {
+    title: 'Vzduchotechnika',
+    subtitle: '– Garance mikroklimatických podmínek',
+    image: '/images/service-hvac.jpg',
+    alt: 'Vzduchotechnika',
+  },
+  {
+    title: 'Topné zdroje',
+    image: '/images/service-heating.jpg',
+    alt: 'Topné zdroje',
+  },
+  {
+    title: 'Chlazení',
+    image: '/images/service-cooling.png',
+    alt: 'Chlazení',
+  },
+  {
+    title: 'Fotovoltaika',
+    image: '/images/service-solar.png',
+    alt: 'Fotovoltaika',
+  },
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+  {
+    services.map((service) => (
+      <a
+        href="/kontakt"
+        class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-gold/30 transition-all"
+      >
+        <img
+          src={service.image}
+          alt={service.alt}
+          class="w-full h-48 sm:h-56 lg:h-64 object-cover"
+          loading="lazy"
+        />
+        <div class="p-6 lg:p-8">
+          <h2 class="text-xl lg:text-[28px] font-semibold text-navy group-hover:text-gold transition-colors">
+            {service.title}
+          </h2>
+          {service.subtitle && (
+            <p class="mt-2 text-base lg:text-lg font-medium text-navy/60">{service.subtitle}</p>
+          )}
+        </div>
+      </a>
+    ))
+  }
+</div>
