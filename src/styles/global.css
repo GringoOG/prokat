@@ -18,7 +18,7 @@
 
 .section-watermark {
   background-color: #f6f6f6;
-  background-image: url('/images/blueprint-watermark.png');
+  background-image: url('/images/pozadi-prokat.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -26,9 +26,9 @@
 
 .services-watermark {
   background-color: #f6f6f6;
-  background-image: url('/images/blueprint-watermark.png');
+  background-image: url('/images/pozadi-prokat.png');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
