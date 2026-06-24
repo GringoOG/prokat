@@ -20,23 +20,27 @@ const isActive = (href: string) =>
         <img
           src="/images/logo.png"
           alt="PROKAT invest"
-          class="h-10 w-auto md:h-12"
+          class="h-12 w-auto sm:h-14 lg:h-[60px]"
           width="322"
           height="80"
         />
       </a>
 
-      <ul class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-navy">
+      <ul class="hidden lg:flex items-center gap-9 text-base lg:text-[17px] font-medium text-navy">
         {
           navItems.map((item) => (
             <li>
               {isActive(item.href) ? (
-                <a href={item.href} class="inline-flex items-center gap-2 text-navy" aria-current="page">
+                <a
+                  href={item.href}
+                  class="inline-flex items-center gap-2 text-navy hover:text-gold-bright transition-colors"
+                  aria-current="page"
+                >
                   <span class="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href} class="text-navy/80 hover:text-navy transition-colors">
+                <a href={item.href} class="text-navy/80 hover:text-gold-bright transition-colors">
                   {item.label}
                 </a>
               )}
@@ -47,13 +51,13 @@ const isActive = (href: string) =>
 
       <a
         href="/kontakt"
-        class="btn-gradient hidden sm:inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity"
+        class="btn-gradient hidden sm:inline-flex items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-1 text-white text-base font-medium h-[56px] hover:opacity-95 transition-opacity"
       >
         <span>Získejte CN</span>
         <span
-          class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+          class="btn-gradient-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
         >
-          <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
+          <img src="/icons/arrow.svg" alt="" class="h-3.5 w-4" width="16" height="12" />
         </span>
       </a>
 
@@ -71,17 +75,23 @@ const isActive = (href: string) =>
     </nav>
 
     <div id="mobile-menu" class="hidden lg:hidden pb-6 border-t border-gray-200">
-      <ul class="flex flex-col gap-4 pt-4 text-[15px] font-medium text-navy">
+      <ul class="flex flex-col gap-4 pt-4 text-base font-medium text-navy">
         {
           navItems.map((item) => (
             <li>
               {isActive(item.href) ? (
-                <a href={item.href} class="inline-flex items-center gap-2" aria-current="page">
-                  <span class="h-1.5 w-1.5 rounded-full bg-navy" />
+                <a
+                  href={item.href}
+                  class="inline-flex items-center gap-2 hover:text-gold-bright transition-colors"
+                  aria-current="page"
+                >
+                  <span class="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href}>{item.label}</a>
+                <a href={item.href} class="hover:text-gold-bright transition-colors">
+                  {item.label}
+                </a>
               )}
             </li>
           ))
@@ -89,11 +99,11 @@ const isActive = (href: string) =>
         <li class="pt-2">
           <a
             href="/kontakt"
-            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium"
+            class="btn-gradient inline-flex items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-1 text-white text-base font-medium h-[56px]"
           >
             Získejte CN
             <span
-              class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+              class="btn-gradient-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
             >
               <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
             </span>

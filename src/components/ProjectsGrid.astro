@@ -25,21 +25,21 @@ const projects = [
     client: 'Hotel Marriott',
     subtitle: 'Chlazení, topení, VZT, TZB, rekonstrukce kotelny i pokojů',
     savings: '12%',
-    image: '/images/projects/project-marriott.png',
+    image: '/images/projects/project-marriott.jpg',
     alt: 'Hotel Marriott',
   },
   {
     client: "King's Casino",
     subtitle: 'Chlazení, topení, VZT, TZB',
     savings: '15%',
-    image: '/images/projects/project-casino.png',
+    image: '/images/projects/project-casino.jpg',
     alt: "King's Casino",
   },
   {
     client: 'Hotel Epiq',
     subtitle: 'Výstavba kotelny',
     savings: '19%',
-    image: '/images/projects/project-epiq.png',
+    image: '/images/projects/project-epiq.jpg',
     alt: 'Hotel Epiq — výstavba kotelny',
   },
 ];
@@ -49,8 +49,8 @@ const projects = [
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
     {
       projects.map((project) => (
-        <article class="grid grid-cols-1 sm:grid-cols-2 bg-white rounded-xl overflow-hidden min-h-[200px]">
-          <div class="flex flex-col justify-center p-6 lg:p-8">
+        <article class="grid grid-cols-1 sm:grid-cols-2 bg-white rounded-xl overflow-hidden">
+          <div class="flex flex-col justify-center p-6 lg:p-8 min-h-[200px] sm:min-h-[240px]">
             <h2 class="text-xl lg:text-2xl font-semibold text-gold leading-tight">{project.client}</h2>
             <p class="mt-2 text-sm lg:text-base font-medium text-navy/70 leading-snug">{project.subtitle}</p>
             <div class="mt-4 lg:mt-6">
@@ -58,12 +58,13 @@ const projects = [
               <p class="mt-1 text-sm lg:text-base font-medium text-navy/60">Úspora provozních nákladů</p>
             </div>
           </div>
-          <div class="relative min-h-[180px] sm:min-h-full">
+          <div class="relative min-h-[220px] sm:min-h-0 sm:h-full overflow-hidden bg-gray-100">
             <img
               src={project.image}
               alt={project.alt}
-              class="absolute inset-0 w-full h-full object-cover"
+              class="absolute inset-0 h-full w-full object-cover object-center"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </article>
