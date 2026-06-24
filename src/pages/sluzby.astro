@@ -2,47 +2,30 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import ServiceList from '../components/ServiceList.astro';
-import CtaBanner from '../components/CtaBanner.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import ServicesCta from '../components/ServicesCta.astro';
+import FaqSection from '../components/FaqSection.astro';
 ---
 
 <Layout
   title="Služby | Prokat Invest"
-  description="Flexibilní řešení pro široký rozsah použití TZB systémů — vzduchotechnika, topné zdroje, chlazení a fotovoltaika."
+  description="Naše služby — vzduchotechnika, topné zdroje, chlazení a fotovoltaika. Kompletní realizace od projektu po servis."
 >
   <Navbar />
 
   <main>
     <section class="services-watermark bg-surface py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <div class="space-y-4 max-w-3xl">
-            <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy">
-              <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
-              Co děláme
-            </p>
-            <h1 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.1] font-semibold text-navy tracking-tight">
-              Flexibilní řešení pro <span class="text-gold">široký</span> rozsah použití TZB systémů
-            </h1>
-          </div>
-          <a
-            href="/kontakt"
-            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity shrink-0 self-start lg:self-auto"
-          >
-            <span>Získejte CN</span>
-            <span
-              class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-            >
-              <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-            </span>
-          </a>
-        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight text-center mb-12 lg:mb-16">
+          Naše služby
+        </h1>
 
-        <ServiceList />
+        <ServicesGrid />
       </div>
     </section>
 
-    <CtaBanner />
+    <ServicesCta />
+    <FaqSection />
   </main>
 
   <Footer />

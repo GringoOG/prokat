@@ -1,0 +1,46 @@
+---
+import { contactDepartments } from '../data/contacts';
+---
+
+<section class="bg-white py-16 lg:py-20">
+  <div class="mx-auto max-w-site px-6 lg:px-10">
+    <h2 class="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-navy text-center mb-12 lg:mb-16">
+      Kontaktní osoby
+    </h2>
+
+    <div class="space-y-12 lg:space-y-16">
+      {
+        contactDepartments.map((department) => (
+          <div>
+            <h3 class="text-lg lg:text-xl font-semibold text-navy mb-6">{department.title}</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
+              {department.people.map((person) => (
+                <div class="space-y-1 text-base lg:text-[21px] font-medium text-navy/90">
+                  {person.location && (
+                    <p class="text-xs lg:text-sm font-semibold tracking-wide text-navy/50 uppercase">
+                      {person.location}
+                    </p>
+                  )}
+                  <p class="font-semibold text-navy">{person.name}</p>
+                  {person.role && person.role !== person.location && (
+                    <p class="text-navy/70">{person.role}</p>
+                  )}
+                  <p>
+                    <a href={`tel:${person.phone.replace(/\s/g, '')}`} class="hover:text-gold transition-colors">
+                      {person.phone}
+                    </a>
+                  </p>
+                  <p>
+                    <a href={`mailto:${person.email}`} class="hover:text-gold transition-colors break-all">
+                      {person.email}
+                    </a>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

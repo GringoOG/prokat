@@ -2,76 +2,30 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import CtaBanner from '../components/CtaBanner.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import ContactCompanyInfo from '../components/ContactCompanyInfo.astro';
+import ContactPersons from '../components/ContactPersons.astro';
 ---
 
 <Layout
   title="Kontakt | Prokat Invest"
-  description="Kontaktujte PROKAT invest s.r.o. — Plzeňská 1348/95, Praha 5. Poptávejte technická řešení v oblasti TZB a energetiky."
+  description="Kontakty PROKAT invest s.r.o. — sídlo v Praze, provozní střediska a kompletní seznam kontaktních osob."
 >
   <Navbar />
 
   <main>
     <section class="section-watermark bg-surface py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div class="space-y-6">
-            <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy">
-              <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
-              Kontakt
-            </p>
-            <h1 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.1] font-semibold text-navy tracking-tight">
-              Pojďme probrat vaše potřeby v oblasti <span class="text-gold">TZB</span> a energetiky
-            </h1>
-            <p class="text-lg md:text-[23px] font-medium text-navy/80 leading-relaxed">
-              Jsme připraveni navrhnout a realizovat technologický celek na míru vašemu provozu — od studie
-              energetické hospodárnosti až po záruční a pozáruční servis.
-            </p>
-          </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight text-center mb-12 lg:mb-16">
+          Kontakty
+        </h1>
 
-          <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-gray-100 space-y-6">
-            <h2 class="text-xl lg:text-[28px] font-semibold text-navy">PROKAT invest s.r.o.</h2>
-
-            <address class="not-italic text-[21px] font-medium leading-relaxed text-navy/90 space-y-1">
-              <p>Plzeňská 1348/95</p>
-              <p>Praha 5, 150 00</p>
-              <p class="pt-4">
-                IČ: 25238876<br />
-                DIČ: CZ25238876<br />
-                Datová schránka: ns3u7ke
-              </p>
-              <p class="pt-4">Městský soud v Praze, oddíl C, vložka 350481.</p>
-            </address>
-
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-3 text-base lg:text-[23px] font-medium text-navy hover:text-gold transition-colors"
-            >
-              <img src="/icons/linkedin.png" alt="" class="h-8 w-8 rounded" width="32" height="32" />
-              LinkedIn
-            </a>
-
-            <a
-              href="https://maps.google.com/?q=Plzeňská+1348/95,+Praha"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-1.5 text-white text-sm font-medium h-[52px] hover:opacity-95 transition-opacity"
-            >
-              <span>Zobrazit na mapě</span>
-              <span
-                class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-              >
-                <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-              </span>
-            </a>
-          </div>
-        </div>
+        <ContactCompanyInfo />
       </div>
     </section>
 
-    <CtaBanner />
+    <ContactPersons />
+    <ClientLogos />
   </main>
 
   <Footer />

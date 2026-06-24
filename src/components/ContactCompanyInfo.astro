@@ -1,0 +1,23 @@
+---
+import { companyInfo } from '../data/contacts';
+
+const blocks = [
+  companyInfo.headquarters,
+  companyInfo.bank,
+  companyInfo.operations,
+  companyInfo.technicalOffice,
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 text-[21px] font-medium leading-relaxed text-navy/90">
+  {
+    blocks.map((block) => (
+      <div>
+        <h2 class="font-semibold text-navy mb-2">{block.title}</h2>
+        {block.lines.map((line) => (
+          <p>{line}</p>
+        ))}
+      </div>
+    ))
+  }
+</div>
