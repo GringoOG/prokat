@@ -52,7 +52,23 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .marquee-track,
+  .since-marquee-track {
     animation: none;
   }
+}
+
+.since-marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+.since-marquee-text {
+  margin: 0;
+  padding: 0.75rem 0;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.14);
+  white-space: nowrap;
 }
