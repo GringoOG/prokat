@@ -22,45 +22,62 @@ import Footer from '../components/Footer.astro';
               Plzeňská 1348/95, 150 00 Praha 5
             </p>
           </div>
-
-          <p class="text-xl sm:text-2xl lg:text-[42px] lg:leading-[1.2] font-semibold text-navy tracking-tight">
-            <span class="text-gold">25 let</span> špičkových realizací a uznání
-          </p>
         </div>
       </div>
     </section>
 
-    <section class="bg-white py-12 lg:py-16 overflow-hidden">
-      <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
-          <div class="overflow-hidden">
-            <img
-              src="/images/about-building.jpg"
-              alt="Budova PROKAT invest"
-              class="h-full w-full object-cover min-h-[280px] lg:min-h-[480px]"
-              width="980"
-              height="551"
-              loading="eager"
-            />
-          </div>
+    <section class="overflow-hidden bg-white pb-12 lg:pb-16">
+      <div class="mx-auto max-w-site px-6 lg:px-10 pt-2 pb-8 lg:pb-10">
+        <p class="text-xl sm:text-2xl lg:text-[42px] lg:leading-[1.2] font-semibold text-navy tracking-tight max-w-3xl">
+          <span class="text-gold">25 let</span> špičkových realizací a uznání
+        </p>
+      </div>
 
-          <div class="relative bg-gold text-white p-8 lg:p-12 flex flex-col justify-center">
-            <img
-              src="/images/about-since-bg.png"
-              alt=""
-              class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-              aria-hidden="true"
-            />
-            <div class="relative space-y-4 text-base lg:text-lg leading-relaxed font-medium">
-              <p>
-                Realizujeme technologické celky včetně studie energetické hospodárnosti, projektu, realizace,
-                záručního a pozáručního servisu včetně vzdáleného monitoringu.
-              </p>
-              <p>
-                Společnost je držitelem ocenění <strong>AAA Excellent</strong> stability award — záruka finanční
-                stability a spolehlivého partnerství.
-              </p>
-            </div>
+      <div class="relative grid grid-cols-1 lg:grid-cols-2">
+        <div class="overflow-hidden">
+          <img
+            src="/images/about-building.jpg"
+            alt="Budova PROKAT invest"
+            class="h-full w-full min-h-[300px] object-cover lg:min-h-[520px]"
+            width="980"
+            height="551"
+            loading="eager"
+          />
+        </div>
+
+        <div class="relative flex min-h-[360px] items-center overflow-hidden bg-navy lg:min-h-[520px]">
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 z-[1] w-28 bg-gradient-to-r from-gold/80 via-gold/25 to-transparent sm:w-36 lg:w-44"
+            aria-hidden="true"
+          ></div>
+          <img
+            src="/images/about-since-bg.png"
+            alt=""
+            class="pointer-events-none absolute inset-0 z-[2] h-full w-full object-cover opacity-[0.08]"
+            aria-hidden="true"
+          />
+
+          <div class="relative z-10 space-y-4 px-8 py-14 pb-28 text-base font-medium leading-relaxed text-white sm:px-10 lg:px-14 lg:py-16 lg:pb-32 lg:text-lg">
+            <p>
+              Realizujeme technologické celky včetně studie energetické hospodárnosti, projektu, realizace,
+              záručního a pozáručního servisu včetně vzdáleného monitoringu.
+            </p>
+            <p>
+              Společnost je držitelem ocenění <strong>AAA Excellent</strong> stability award — záruka finanční
+              stability a spolehlivého partnerství.
+            </p>
+          </div>
+        </div>
+
+        <div class="pointer-events-none absolute bottom-0 left-0 right-0 z-20 overflow-hidden" aria-hidden="true">
+          <div class="since-marquee-track flex w-max items-center">
+            {
+              Array.from({ length: 2 }).map(() => (
+                <p class="since-marquee-text">
+                  SINCE - 1999 &nbsp; SINCE - 1999 &nbsp; SINCE - 1999 &nbsp; SINCE - 1999 &nbsp;
+                </p>
+              ))
+            }
           </div>
         </div>
       </div>

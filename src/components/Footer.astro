@@ -8,8 +8,8 @@ const isActive = (href: string) =>
 
 const footerLinkClass = (href: string) =>
   isActive(href)
-    ? 'footer-link footer-link--active'
-    : 'footer-link';
+    ? 'text-gold-bright transition-colors'
+    : 'text-[#a7a3a2] hover:text-gold-bright transition-colors';
 ---
 
 <footer class="footer-panel relative text-white overflow-hidden">
@@ -79,15 +79,5 @@ const footerLinkClass = (href: string) =>
       radial-gradient(ellipse 85% 90% at 50% 35%, rgba(180, 130, 55, 0.65) 0%, rgba(100, 72, 38, 0.4) 32%, transparent 68%),
       radial-gradient(ellipse 120% 80% at 50% 100%, rgba(40, 30, 20, 0.9) 0%, transparent 55%),
       linear-gradient(180deg, #0a0812 0%, #15101c 35%, #3d2e1a 55%, #15101c 80%, #080810 100%);
-  }
-
-  .footer-link {
-    color: rgb(167 163 162);
-    transition: color 0.45s cubic-bezier(0.44, 0, 0.56, 1);
-  }
-
-  .footer-link:hover,
-  .footer-link--active {
-    color: #f66234;
   }
 </style>
