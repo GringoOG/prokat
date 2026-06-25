@@ -9,14 +9,14 @@ import ServiceList from '../components/ServiceList.astro';
 
 <Layout>
   <div class="section-watermark bg-surface relative">
-    <Navbar transparent />
+    <Navbar />
 
     <!-- HERO -->
     <section class="pb-0">
         <div class="mx-auto max-w-site px-6 lg:px-10 pb-0 pt-8 lg:pt-28">
           <div class="flex flex-col gap-10 text-center lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-16 lg:gap-y-6 lg:text-left xl:gap-x-16">
             <p
-              class="mx-auto inline-flex max-w-full flex-wrap items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-xs font-medium text-navy sm:text-sm md:text-base lg:col-start-1 lg:row-start-1 lg:mx-0"
+              class="mx-auto inline-flex w-fit max-w-full items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-xs font-medium text-navy sm:text-sm md:text-base lg:col-start-1 lg:row-start-1 lg:mx-0 lg:justify-self-start"
             >
               <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold-bright" aria-hidden="true"></span>
               Váš spolehlivý partner pro technologické celky
@@ -39,7 +39,7 @@ import ServiceList from '../components/ServiceList.astro';
             </p>
 
             <div
-              class="mx-auto flex w-full max-w-md shrink-0 flex-col items-center gap-8 lg:col-start-2 lg:row-start-2 lg:row-span-3 lg:mx-0 lg:max-w-lg lg:self-start"
+              class="mx-auto flex w-full max-w-md shrink-0 flex-col items-center gap-8 lg:col-start-2 lg:row-start-3 lg:row-span-2 lg:mx-0 lg:max-w-lg lg:items-end lg:self-start lg:text-right"
             >
               <address class="not-italic space-y-0.5 text-base font-medium leading-relaxed text-navy sm:text-[21px]">
                 <p>Sídlo společnosti:</p>
@@ -53,7 +53,7 @@ import ServiceList from '../components/ServiceList.astro';
 
               <a
                 href="/sluzby"
-                class="btn-gradient inline-flex min-h-[52px] h-auto w-full items-center justify-between gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl py-3 pl-[18px] pr-1.5 text-sm font-medium text-white hover:opacity-95 transition-opacity sm:w-auto sm:justify-start lg:justify-center"
+                class="btn-gradient inline-flex min-h-[52px] h-auto w-full items-center justify-between gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl py-3 pl-[18px] pr-1.5 text-sm font-medium text-white hover:opacity-95 transition-opacity sm:w-auto sm:justify-start lg:ml-auto lg:justify-center"
               >
                 <span>Prozkoumejte naše služby</span>
                 <span

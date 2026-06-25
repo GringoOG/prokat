@@ -18,10 +18,10 @@ const { class: className = 'bg-white' } = Astro.props;
       {
         contactDepartments.map((department) => (
           <div>
-            <h3 class="text-lg lg:text-xl font-semibold text-navy mb-6">{department.title}</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
+            <h3 class="mb-6 text-center text-lg font-semibold text-navy lg:text-xl">{department.title}</h3>
+            <div class="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
               {department.people.map((person) => (
-                <div class="space-y-1 text-base lg:text-[21px] font-medium text-navy/90">
+                <div class="space-y-1 text-center text-base font-medium text-navy/90 lg:text-[21px]">
                   {person.location && (
                     <p class="text-xs lg:text-sm font-semibold tracking-wide text-navy/50 uppercase">
                       {person.location}

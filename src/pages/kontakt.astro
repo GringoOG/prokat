@@ -11,10 +11,11 @@ import ContactPersons from '../components/ContactPersons.astro';
   title="Kontakt | Prokat Invest"
   description="Kontakty PROKAT invest s.r.o. — sídlo v Praze, provozní střediska a kompletní seznam kontaktních osob."
 >
-  <Navbar />
+  <div class="contact-page relative">
+    <Navbar />
 
-  <main class="contact-page">
-    <section class="py-16 lg:py-24">
+    <main>
+      <section class="pb-16 pt-8 lg:pb-24 lg:pt-28">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <h1 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight text-center mb-12 lg:mb-16">
           Kontakty
@@ -26,7 +27,8 @@ import ContactPersons from '../components/ContactPersons.astro';
 
     <ContactPersons class="bg-transparent" />
     <ClientLogos />
-  </main>
+    </main>
+  </div>
 
   <Footer />
 </Layout>
