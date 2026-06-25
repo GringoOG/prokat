@@ -1,5 +1,5 @@
 ---
-const projects = [
+const visibleProjects = [
   {
     client: 'Škoda Auto',
     subtitle: 'Datové centrum',
@@ -43,22 +43,46 @@ const projects = [
     alt: 'Hotel Epiq — výstavba kotelny',
   },
 ];
+
+const moreProjects = [
+  {
+    client: 'Košířská brána',
+    subtitle: 'Chlazení, topení, VZT, TZB',
+    savings: '17%',
+    image: '/images/projects/project-kosirska.jpg',
+    alt: 'Košířská brána',
+  },
+  {
+    client: 'Lutz',
+    subtitle: 'FVE — Čestlice, Plzeň, Letňany, Modřice, Liberec, Stodůlky',
+    savings: '20%',
+    image: '/images/projects/project-lutz.png',
+    alt: 'Lutz — fotovoltaika',
+  },
+  {
+    client: 'Möbelix Liberec',
+    subtitle: 'FVE — Liberec',
+    savings: '20%',
+    image: '/images/projects/project-mobelix.png',
+    alt: 'Möbelix Liberec — fotovoltaika',
+  },
+];
 ---
 
 <div class="rounded-2xl border border-gold/60 bg-navy p-4 sm:p-6 lg:p-8">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+  <div id="projects-grid" class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
     {
-      projects.map((project) => (
-        <article class="grid grid-cols-1 sm:grid-cols-2 bg-white rounded-xl overflow-hidden">
-          <div class="flex flex-col justify-center p-6 lg:p-8 min-h-[200px] sm:min-h-[240px]">
-            <h2 class="text-xl lg:text-2xl font-semibold text-gold leading-tight">{project.client}</h2>
-            <p class="mt-2 text-sm lg:text-base font-medium text-navy/70 leading-snug">{project.subtitle}</p>
+      visibleProjects.map((project) => (
+        <article class="grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
+          <div class="flex min-h-[200px] flex-col justify-center p-6 sm:min-h-[240px] lg:p-8">
+            <h2 class="text-xl font-semibold leading-tight text-gold lg:text-2xl">{project.client}</h2>
+            <p class="mt-2 text-sm font-medium leading-snug text-navy/70 lg:text-base">{project.subtitle}</p>
             <div class="mt-4 lg:mt-6">
-              <p class="text-3xl lg:text-4xl font-semibold text-navy leading-none">{project.savings}</p>
-              <p class="mt-1 text-sm lg:text-base font-medium text-navy/60">Úspora provozních nákladů</p>
+              <p class="text-3xl font-semibold leading-none text-navy lg:text-4xl">{project.savings}</p>
+              <p class="mt-1 text-sm font-medium text-navy/60 lg:text-base">Úspora provozních nákladů</p>
             </div>
           </div>
-          <div class="relative min-h-[220px] sm:min-h-0 sm:h-full overflow-hidden bg-gray-100">
+          <div class="relative min-h-[220px] overflow-hidden bg-gray-100 sm:h-full sm:min-h-0">
             <img
               src={project.image}
               alt={project.alt}
@@ -70,14 +94,56 @@ const projects = [
         </article>
       ))
     }
+
+    <div id="projects-more" class="contents hidden">
+      {
+        moreProjects.map((project) => (
+          <article class="grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
+            <div class="flex min-h-[200px] flex-col justify-center p-6 sm:min-h-[240px] lg:p-8">
+              <h2 class="text-xl font-semibold leading-tight text-gold lg:text-2xl">{project.client}</h2>
+              <p class="mt-2 text-sm font-medium leading-snug text-navy/70 lg:text-base">{project.subtitle}</p>
+              <div class="mt-4 lg:mt-6">
+                <p class="text-3xl font-semibold leading-none text-navy lg:text-4xl">{project.savings}</p>
+                <p class="mt-1 text-sm font-medium text-navy/60 lg:text-base">Úspora provozních nákladů</p>
+              </div>
+            </div>
+            <div class="relative min-h-[220px] overflow-hidden bg-gray-100 sm:h-full sm:min-h-0">
+              <img
+                src={project.image}
+                alt={project.alt}
+                class="absolute inset-0 h-full w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </div>
 
   <div class="mt-8 flex justify-center">
     <button
+      id="projects-show-more"
       type="button"
-      class="rounded-full bg-gold-bright px-8 py-3 text-sm font-semibold text-navy hover:bg-gold transition-colors"
+      class="rounded-full bg-gold-bright px-8 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold"
     >
       Zobrazit více
     </button>
+    <p id="projects-coming-soon" class="hidden text-base font-semibold text-gold-bright lg:text-lg">
+      Již brzy více referencí …
+    </p>
   </div>
 </div>
+
+<script>
+  const showMoreBtn = document.getElementById('projects-show-more');
+  const moreProjects = document.getElementById('projects-more');
+  const comingSoon = document.getElementById('projects-coming-soon');
+
+  showMoreBtn?.addEventListener('click', () => {
+    moreProjects?.classList.remove('hidden');
+    showMoreBtn.classList.add('hidden');
+    comingSoon?.classList.remove('hidden');
+  });
+</script>
