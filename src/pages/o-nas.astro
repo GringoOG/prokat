@@ -8,31 +8,34 @@ import Footer from '../components/Footer.astro';
   title="O nás | Prokat Invest"
   description="PROKAT invest — 25 let špičkových realizací v oblasti vzduchotechniky, vytápění, chlazení a ZTI od roku 1999."
 >
-  <Navbar />
+  <div class="section-watermark bg-surface relative">
+    <Navbar />
 
-  <main>
-    <section class="section-watermark bg-surface py-16 lg:py-20">
-      <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <div>
-            <h1 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight mb-4">
-              O nás
-            </h1>
-            <p class="text-lg md:text-[23px] font-medium text-navy/80">
-              Plzeňská 1348/95, 150 00 Praha 5
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="overflow-hidden bg-white pb-12 lg:pb-16">
-      <div class="mx-auto max-w-site px-6 lg:px-10 pt-2 pb-8 lg:pb-10">
-        <p class="text-xl sm:text-2xl lg:text-[42px] lg:leading-[1.2] font-semibold text-navy tracking-tight max-w-3xl">
-          <span class="text-gold">25 let</span> špičkových realizací a uznání
+    <section class="relative flex min-h-[420px] flex-col pb-32 pt-8 sm:min-h-[480px] lg:min-h-[520px] lg:pb-40 lg:pt-28">
+      <div class="mx-auto flex w-full max-w-site flex-1 flex-col items-center justify-center px-6 text-center lg:px-10">
+        <h1 class="text-3xl font-semibold tracking-tight text-navy sm:text-4xl lg:text-[58px]">
+          O nás
+        </h1>
+        <p class="mt-4 text-lg font-medium text-navy/80 md:text-[23px]">
+          Plzeňská 1348/95, 150 00 Praha 5
         </p>
       </div>
 
+      <div class="absolute bottom-10 left-6 right-6 sm:bottom-12 lg:bottom-16 lg:left-10 lg:right-10">
+        <div class="mx-auto max-w-site">
+          <p
+            class="max-w-md text-left text-xl font-semibold leading-[1.15] tracking-tight text-navy sm:text-2xl lg:text-[42px] lg:leading-[1.2]"
+          >
+            <span class="text-gold">25 let</span> špičkových<br />
+            realizací a uznání
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <section class="overflow-hidden bg-white pb-12 lg:pb-16">
       <div class="relative grid grid-cols-1 lg:grid-cols-2">
         <div class="overflow-hidden">
           <img
@@ -85,78 +88,100 @@ import Footer from '../components/Footer.astro';
 
     <section class="services-watermark bg-surface py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10 lg:mb-14">
-          <p class="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base">
-            <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
-            Naše cesta
-          </p>
+        <p
+          class="mb-8 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
+        >
+          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold-bright" aria-hidden="true"></span>
+          Naše cesta
+        </p>
+
+        <div class="mb-12 flex flex-col gap-8 lg:mb-16 lg:flex-row lg:items-start lg:gap-10 xl:gap-14">
           <img
-            src="/images/aaa-award.png"
+            src="/images/aaa-award-vertical.png"
             alt="AAA Czech Stability Award Excellent"
-            class="h-16 lg:h-20 w-auto"
-            width="200"
-            height="80"
+            class="h-[184px] w-[135px] shrink-0 object-contain object-left"
+            width="135"
+            height="184"
           />
+          <h2
+            class="max-w-4xl text-3xl font-semibold leading-[1.1] tracking-tight text-navy sm:text-4xl lg:pt-1 lg:text-[58px]"
+          >
+            Budujeme důvěru a kvalitu na základech <span class="text-gold">dlouholetých</span> inženýrských
+            zkušeností.
+          </h2>
         </div>
 
-        <h2
-          class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.1] font-semibold text-navy tracking-tight max-w-4xl mb-12 lg:mb-16"
-        >
-          Budujeme důvěru a kvalitu na základech <span class="text-gold">dlouholetých</span> inženýrských zkušeností.
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-start">
-          <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,305px)_1fr] lg:gap-12 xl:gap-16">
+          <div class="relative mx-auto w-full max-w-[305px] overflow-hidden rounded-2xl lg:mx-0">
             <img
               src="/images/about-director.png"
               alt="Ing. Vladimír Škrlant"
-              class="w-full max-w-[280px] rounded-lg object-cover mb-4"
+              class="aspect-[305/420] w-full object-cover"
               width="305"
-              height="304"
+              height="420"
             />
-            <p class="text-lg font-semibold text-navy">Ing. Vladimír Škrlant</p>
-            <p class="text-base text-navy/70">Majitel &amp; ředitel</p>
-          </div>
-
-          <div>
-            <h3 class="text-xl lg:text-2xl font-semibold text-navy mb-4">Náš příběh</h3>
-            <div class="space-y-4 text-base lg:text-lg text-navy/80 leading-relaxed">
-              <p>
-                Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní řešení
-                v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o komplexní služby
-                včetně měření, regulace a fotovoltaiky.
-              </p>
-              <p>
-                Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
-                cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
-              </p>
+            <div
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/45 to-transparent px-6 pb-6 pt-16"
+            >
+              <p class="text-sm font-medium text-white/90 sm:text-base">Ing. Vladimír Škrlant</p>
+              <p class="mt-1 text-xl font-semibold leading-tight text-white sm:text-2xl">Majitel &amp; ředitel</p>
             </div>
           </div>
 
-          <div>
-            <h3 class="text-xl lg:text-2xl font-semibold text-navy mb-4">Naše odborné kompetence</h3>
-            <ul class="space-y-3 mb-8">
-              {
-                ['Vzduchotechnika', 'Topné zdroje', 'Chlazení', 'Fotovoltaika'].map((item) => (
-                  <li class="flex items-center gap-3 text-base lg:text-lg font-medium text-navy">
-                    <img src="/icons/arrow.svg" alt="" class="h-3 w-4 rotate-180 shrink-0" aria-hidden="true" />
-                    {item}
-                  </li>
-                ))
-              }
-            </ul>
+          <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 lg:gap-12">
+            <div>
+              <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
+              <div class="space-y-4 text-base leading-relaxed text-navy/80 lg:text-lg">
+                <p>
+                  Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
+                  řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
+                  komplexní služby včetně měření, regulace a fotovoltaiky.
+                </p>
+                <p>
+                  Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
+                  cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
+                </p>
+              </div>
+            </div>
 
-            <a
-              href="/projekty"
-              class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-3 text-white text-sm font-medium min-h-[52px] h-auto hover:opacity-95 transition-opacity w-full sm:w-auto justify-between sm:justify-start"
-            >
-              <span>Zobrazit naše realizace</span>
-              <span
-                class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+            <div class="flex flex-col">
+              <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
+              <ul class="mb-8 divide-y divide-gray-200 border-t border-gray-200">
+                {
+                  ['Vzduchotechnika', 'Topné zdroje', 'Chlazení', 'Fotovoltaika'].map((item) => (
+                    <li class="flex items-center justify-between gap-4 py-4 text-base font-medium text-navy lg:text-lg">
+                      <span>{item}</span>
+                      <svg
+                        class="h-3 w-4 shrink-0 text-gold-bright"
+                        viewBox="0 0 16 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="m14.425 6-5-5m5 5-5 5m5-5H1.575"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"></path>
+                      </svg>
+                    </li>
+                  ))
+                }
+              </ul>
+
+              <a
+                href="/projekty"
+                class="btn-gradient mt-auto inline-flex min-h-[52px] h-auto w-full items-center justify-between gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl py-3 pl-[18px] pr-1.5 text-sm font-medium text-white hover:opacity-95 transition-opacity sm:w-auto sm:justify-start"
               >
-                <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-              </span>
-            </a>
+                <span>Zobrazit naše realizace.</span>
+                <span
+                  class="btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+                >
+                  <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

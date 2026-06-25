@@ -9,19 +9,21 @@ import ProjectsGrid from '../components/ProjectsGrid.astro';
   title="Projekty | Prokat Invest"
   description="Naše projekty — reference realizací pro Škoda Auto, Pilsner Urquell, Letiště Václava Havla, Hotel Marriott a další."
 >
-  <Navbar />
+  <div class="section-watermark bg-surface relative">
+    <Navbar />
 
-  <main>
-    <section class="section-watermark bg-surface py-16 lg:py-24">
-      <div class="mx-auto max-w-site px-6 lg:px-10">
-        <h1 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight text-center mb-12 lg:mb-16">
-          Naše projekty
-        </h1>
+    <main>
+      <section class="pb-16 pt-8 lg:pb-24 lg:pt-28">
+        <div class="mx-auto max-w-site px-6 lg:px-10">
+          <h1 class="text-3xl sm:text-4xl lg:text-[58px] font-semibold text-navy tracking-tight text-center mb-12 lg:mb-16">
+            Naše projekty
+          </h1>
 
-        <ProjectsGrid />
-      </div>
-    </section>
-  </main>
+          <ProjectsGrid />
+        </div>
+      </section>
+    </main>
+  </div>
 
   <Footer />
 </Layout>
