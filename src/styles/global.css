@@ -21,16 +21,16 @@
 .contact-page {
   background-color: #f6f6f6;
   background-image: url('/images/pozadi-prokat.png');
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center top;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
-@media (min-width: 768px) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .section-watermark,
   .services-watermark,
   .contact-page {
-    background-position: center center;
+    background-image: url('/images/pozadi-prokat@2x.png');
   }
 }
 

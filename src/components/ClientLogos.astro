@@ -1,35 +1,24 @@
 ---
-interface Props {
-  class?: string;
-}
-
-const { class: className = 'bg-white' } = Astro.props;
-
 const clients = [
   { src: '/images/client-hutchinson.png', alt: 'Hutchinson' },
   { src: '/images/client-pilsner.png', alt: 'Pilsner Urquell' },
   { src: '/images/client-skoda.png', alt: 'Škoda' },
   { src: '/images/client-autoopat.png', alt: 'Auto Opat' },
   { src: '/images/client-centralgroup.png', alt: 'Central Group' },
-  { src: '/images/client-xxxlutz.png', alt: 'XXXLutz', wide: true },
+  { src: '/images/client-xxxlutz.png', alt: 'XXXLutz' },
   { src: '/images/client-mobelix.png', alt: 'Möbelix' },
 ];
 ---
 
-<section class:list={['py-12 lg:py-16 overflow-hidden', className]} aria-label="Reference klientů">
-  <div class="relative">
-    <div class="marquee-track flex w-max items-center gap-14 lg:gap-24">
+<section class="w-full overflow-hidden bg-white py-8" aria-label="Reference klientů">
+  <div class="relative bg-white">
+    <div class="marquee-track flex w-max items-center gap-10 lg:gap-12">
       {
         [...clients, ...clients].map((client, index) => (
           <img
             src={client.src}
             alt={index < clients.length ? client.alt : ''}
-            class:list={[
-              'w-auto object-contain shrink-0',
-              client.wide
-                ? 'h-12 sm:h-14 lg:h-16 max-h-16'
-                : 'h-14 sm:h-16 lg:h-[72px] max-h-[72px]',
-            ]}
+            class="client-logo h-14 w-auto shrink-0 object-contain object-center sm:h-16 lg:h-[4.25rem]"
             aria-hidden={index >= clients.length ? true : undefined}
             loading="lazy"
           />
