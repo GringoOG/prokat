@@ -1,22 +1,26 @@
 ---
 const services = [
   {
+    id: 'vzduchotechnika',
     title: 'Vzduchotechnika',
     subtitle: '– Garance mikroklimatických podmínek',
     image: '/images/service-hvac.jpg',
     alt: 'Vzduchotechnika',
   },
   {
+    id: 'topne-zdroje',
     title: 'Topné zdroje',
     image: '/images/service-heating.jpg',
     alt: 'Topné zdroje',
   },
   {
+    id: 'chlazeni',
     title: 'Chlazení',
     image: '/images/service-cooling.png',
     alt: 'Chlazení',
   },
   {
+    id: 'fotovoltaika',
     title: 'Fotovoltaika',
     image: '/images/service-solar.png',
     alt: 'Fotovoltaika',
@@ -28,8 +32,9 @@ const services = [
   {
     services.map((service) => (
       <a
+        id={service.id}
         href="/kontakt"
-        class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-gold/30 transition-all"
+        class="group scroll-mt-28 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-gold/30 transition-all"
       >
         <img
           src={service.image}
