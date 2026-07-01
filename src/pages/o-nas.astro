@@ -2,6 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+const competencies = [
+  { title: 'Vzduchotechnika', href: '/sluzby#vzduchotechnika' },
+  { title: 'Topné zdroje', href: '/sluzby#topne-zdroje' },
+  { title: 'Chlazení', href: '/sluzby#chlazeni' },
+  { title: 'Fotovoltaika', href: '/sluzby#fotovoltaika' },
+];
 ---
 
 <Layout
@@ -146,23 +153,28 @@ import Footer from '../components/Footer.astro';
               <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
               <ul class="mb-8 divide-y divide-gray-200 border-t border-gray-200">
                 {
-                  ['Vzduchotechnika', 'Topné zdroje', 'Chlazení', 'Fotovoltaika'].map((item) => (
-                    <li class="flex items-center justify-between gap-4 py-4 text-base font-medium text-navy lg:text-lg">
-                      <span>{item}</span>
-                      <svg
-                        class="h-3 w-4 shrink-0 text-gold-bright"
-                        viewBox="0 0 16 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
+                  competencies.map((item) => (
+                    <li>
+                      <a
+                        href={item.href}
+                        class="group flex items-center justify-between gap-4 py-4 text-base font-medium text-navy transition-colors hover:text-gold lg:text-lg"
                       >
-                        <path
-                          d="m14.425 6-5-5m5 5-5 5m5-5H1.575"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"></path>
-                      </svg>
+                        <span>{item.title}</span>
+                        <svg
+                          class="h-3 w-4 shrink-0 text-gold-bright transition-transform group-hover:translate-x-0.5"
+                          viewBox="0 0 16 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="m14.425 6-5-5m5 5-5 5m5-5H1.575"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"></path>
+                        </svg>
+                      </a>
                     </li>
                   ))
                 }
