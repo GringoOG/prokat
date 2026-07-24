@@ -43,10 +43,10 @@ import { serviceHref, services } from '../data/services';
         </div>
         <a
           href={serviceHref(service.slug)}
-          class="btn-flip btn-flip--icon-only btn-gradient-icon justify-self-end rounded-lg sm:col-start-2 lg:col-start-auto"
+          class="btn-flip btn-flip--icon-only btn-gradient-icon inline-flex h-10 w-10 shrink-0 items-center justify-center justify-self-end rounded-tl rounded-tr rounded-br-[10px] rounded-bl sm:col-start-2 lg:col-start-auto"
           aria-label={service.ariaLabel}
         >
-          <span class="btn-flip-icon">
+          <span class="btn-flip-icon inline-flex items-center justify-center">
             <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
           </span>
         </a>
