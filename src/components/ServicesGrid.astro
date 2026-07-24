@@ -1,29 +1,52 @@
 ---
 const services = [
   {
-    id: 'vzduchotechnika',
-    title: 'Vzduchotechnika',
-    subtitle: '– Garance mikroklimatických podmínek',
-    image: '/images/service-hvac.jpg',
-    alt: 'Vzduchotechnika',
-  },
-  {
-    id: 'topne-zdroje',
-    title: 'Topné zdroje',
-    image: '/images/service-heating.jpg',
-    alt: 'Topné zdroje',
-  },
-  {
     id: 'chlazeni',
     title: 'Chlazení',
     image: '/images/service-cooling.png',
     alt: 'Chlazení',
+    points: [
+      'Studie vhodnosti použití způsobu chlazení jednotlivých aplikacích',
+      'Provozní náklady',
+      'Rekuperace a akumulace chladu',
+      'Použití chladiv s nízkým koeficientem GWP (vliv chladiva na ozónovou díru)',
+    ],
   },
   {
     id: 'fotovoltaika',
     title: 'Fotovoltaika',
     image: '/images/service-solar.png',
     alt: 'Fotovoltaika',
+    points: [
+      'Volba velikosti FVE s ohledem na návratnost',
+      'Ukládání energie do baterek, sdílení energie',
+      'Analýza trendů',
+      'Servisní činnost',
+    ],
+  },
+  {
+    id: 'topne-zdroje',
+    title: 'Topné zdroje',
+    image: '/images/service-heating.jpg',
+    alt: 'Topné zdroje',
+    points: [
+      'Výpočty spotřeb tepla dle norem',
+      'Provozní náklady',
+      'Alternativní zdroje tepla',
+      'Rekuperace tepla',
+    ],
+  },
+  {
+    id: 'vzduchotechnika',
+    title: 'Vzduchotechnika',
+    image: '/images/service-hvac.jpg',
+    alt: 'Vzduchotechnika',
+    points: [
+      'Garance mikroklimatických podmínek',
+      'Přizpůsobení provozním režimům',
+      'Rekuperace tepla a chladu',
+      'Garance úzkých pásem tolerance mikroklimatických podmínek pro technologické procesy',
+    ],
   },
 ];
 ---
@@ -46,9 +69,14 @@ const services = [
           <h2 class="text-xl lg:text-[28px] font-semibold text-navy group-hover:text-gold transition-colors">
             {service.title}
           </h2>
-          {service.subtitle && (
-            <p class="mt-2 text-base lg:text-lg font-medium text-navy/60">{service.subtitle}</p>
-          )}
+          <ul class="mt-4 space-y-2 text-base lg:text-lg font-medium text-navy/80">
+            {service.points.map((point) => (
+              <li class="flex items-start gap-2">
+                <img src="/icons/check.svg" alt="" class="mt-1.5 shrink-0" width="15" height="10" />
+                {point}
+              </li>
+            ))}
+          </ul>
         </div>
       </a>
     ))
