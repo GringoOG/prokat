@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FlipButton from '../components/FlipButton.astro';
 
 const competencies = [
+  { title: 'Vzduchotechnika', href: '/sluzby#vzduchotechnika' },
+  { title: 'Topné zdroje', href: '/sluzby#topne-zdroje' },
   { title: 'Chlazení', href: '/sluzby#chlazeni' },
   { title: 'Fotovoltaika', href: '/sluzby#fotovoltaika' },
-  { title: 'Topné zdroje', href: '/sluzby#topne-zdroje' },
-  { title: 'Vzduchotechnika', href: '/sluzby#vzduchotechnika' },
 ];
 ---
 
@@ -75,17 +76,17 @@ const competencies = [
               stability a spolehlivého partnerství.
             </p>
           </div>
-        </div>
 
-        <div class="pointer-events-none absolute bottom-0 left-0 right-0 z-20 overflow-hidden" aria-hidden="true">
-          <div class="since-marquee-track flex w-max items-center">
-            {
-              Array.from({ length: 2 }).map(() => (
-                <p class="since-marquee-text">
-                  SINCE - 1999 &nbsp; SINCE - 1999 &nbsp; SINCE - 1999 &nbsp; SINCE - 1999 &nbsp;
-                </p>
-              ))
-            }
+          <div class="pointer-events-none absolute inset-x-0 bottom-0 z-20 overflow-hidden" aria-hidden="true">
+            <div class="since-marquee-track flex w-max items-center">
+              {
+                Array.from({ length: 2 }).map(() => (
+                  <p class="since-marquee-text">
+                    SINCE - 1999 &nbsp; SINCE - 1999 &nbsp; SINCE - 1999 &nbsp; SINCE - 1999 &nbsp;
+                  </p>
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -180,17 +181,11 @@ const competencies = [
                 }
               </ul>
 
-              <a
+              <FlipButton
                 href="/projekty"
-                class="btn-gradient mt-auto inline-flex min-h-[52px] h-auto w-full items-center justify-between gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl py-3 pl-[18px] pr-1.5 text-sm font-medium text-white hover:opacity-95 transition-opacity sm:w-auto sm:justify-start"
-              >
-                <span>Zobrazit naše realizace.</span>
-                <span
-                  class="btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-                >
-                  <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-                </span>
-              </a>
+                label="Zobrazit naše realizace."
+                class="mt-auto w-full sm:w-auto"
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,6 @@
 ---
+import FlipButton from './FlipButton.astro';
+
 const pathname = Astro.url.pathname;
 
 const navItems = [
@@ -29,7 +31,7 @@ const isActive = (href: string) =>
         />
       </a>
 
-      <ul class="hidden lg:flex items-center gap-9 text-base lg:text-[17px] font-medium text-navy">
+      <ul class="hidden lg:flex items-center gap-9 text-lg lg:text-[22px] font-medium text-navy">
         {
           navItems.map((item) => (
             <li>
@@ -52,17 +54,13 @@ const isActive = (href: string) =>
         }
       </ul>
 
-      <a
+      <FlipButton
         href="/kontakt"
-        class="btn-gradient hidden lg:inline-flex items-center gap-2.5 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-5 pr-1 py-2 text-white text-base font-medium min-h-[56px] h-auto hover:opacity-95 transition-opacity shrink-0"
-      >
-        <span>Získejte CN</span>
-        <span
-          class="btn-gradient-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-        >
-          <img src="/icons/arrow.svg" alt="" class="h-3.5 w-4" width="16" height="12" />
-        </span>
-      </a>
+        label="Získejte CN"
+        class="hidden lg:inline-flex shrink-0 text-base min-h-[56px]"
+        labelClass="btn-flip-label pl-5 pr-1 py-2"
+        iconClass="btn-gradient-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+      />
 
       <button
         type="button"
@@ -80,7 +78,7 @@ const isActive = (href: string) =>
       id="mobile-menu"
       class="hidden border-t border-white/15 pb-6 lg:hidden"
     >
-      <ul class="flex flex-col gap-4 pt-4 text-base font-medium text-white/90">
+      <ul class="flex flex-col gap-4 pt-4 text-lg font-medium text-white/90">
         {
           navItems.map((item) => (
             <li>
