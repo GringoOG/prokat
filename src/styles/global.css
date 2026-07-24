@@ -11,8 +11,8 @@
   body {
     @apply font-sans text-black antialiased;
     background-color: #f6f6f6;
-    /* v2 = mirrored left↔right (cache-bust filename) */
-    background-image: url('/images/pozadi-prokat-v2.png');
+    /* v3 = skutečně zrcadlené L↔R (v2 byl omylem stejný jako originál) */
+    background-image: url('/images/pozadi-prokat-v3.png');
     background-size: 100% auto;
     background-position: center top;
     background-repeat: repeat-y;
