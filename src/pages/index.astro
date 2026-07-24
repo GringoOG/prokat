@@ -119,8 +119,8 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Right column: company seat -->
-          <div class="mx-auto flex w-full max-w-[360px] flex-col justify-center lg:mx-0 lg:h-full lg:max-w-none lg:-translate-y-4 xl:-translate-y-6">
+          <!-- Right column: company seat + CRIF badge -->
+          <div class="relative z-10 mx-auto flex w-full max-w-[360px] flex-col justify-center gap-4 lg:mx-0 lg:h-full lg:max-w-none lg:-translate-y-4 xl:-translate-y-6">
             <address
               class="relative not-italic overflow-hidden rounded-2xl border border-white/40 bg-white/10 p-5 sm:p-6"
             >
@@ -158,6 +158,22 @@ import SeoLabel from '../components/SeoLabel.astro';
                 <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
               </div>
             </address>
+
+            <a
+              href="/o-nas"
+              class="inline-flex w-fit max-w-full self-start opacity-90 transition-opacity hover:opacity-100"
+              aria-label="CRIF Business Elite 2026 — více na stránce O nás"
+            >
+              <img
+                src="/images/crif-elite-badge.png"
+                alt="CRIF Business Elite 2026 — Skvěle řízená společnost"
+                width="136"
+                height="68"
+                class="h-auto w-[136px] rounded-sm shadow-sm"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
           </div>
         </div>
 
