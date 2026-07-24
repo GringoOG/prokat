@@ -201,6 +201,14 @@
   background: transparent;
 }
 
+/* Gold–dark panel (projekty, footer) */
+.panel-gold-dark {
+  background:
+    radial-gradient(ellipse 85% 90% at 50% 35%, rgba(180, 130, 55, 0.65) 0%, rgba(100, 72, 38, 0.4) 32%, transparent 68%),
+    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(40, 30, 20, 0.9) 0%, transparent 55%),
+    linear-gradient(180deg, #0a0812 0%, #15101c 35%, #3d2e1a 55%, #15101c 80%, #080810 100%);
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
