@@ -81,21 +81,25 @@ if (!service) {
         <div class="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {
             service.benefits.map((benefit) => (
-              <article class="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/90 p-5 shadow-sm lg:p-6">
-                <img
-                  src="/images/prokat-mark.png"
-                  alt=""
-                  width="928"
-                  height="887"
-                  aria-hidden="true"
-                  decoding="async"
-                  class="pointer-events-none absolute inset-0 z-0 m-auto h-full w-full object-contain p-3 opacity-[0.045] mix-blend-multiply select-none"
-                />
-                <div class="relative z-10 flex flex-1 flex-col">
-                  <h3 class="mb-2 text-lg font-semibold leading-snug text-navy lg:text-xl">
-                    {benefit.title}
-                  </h3>
-                  <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
+              <article
+                class="benefit-card relative flex h-full flex-col rounded-2xl p-px shadow-sm"
+              >
+                <div class="relative flex flex-1 flex-col overflow-hidden rounded-[15px] bg-white/90 p-5 lg:p-6">
+                  <img
+                    src="/images/prokat-mark.png"
+                    alt=""
+                    width="928"
+                    height="887"
+                    aria-hidden="true"
+                    decoding="async"
+                    class="pointer-events-none absolute inset-0 z-0 m-auto h-full w-full object-contain p-3 opacity-[0.045] mix-blend-multiply select-none"
+                  />
+                  <div class="relative z-10 flex flex-1 flex-col">
+                    <h3 class="mb-2 text-lg font-semibold leading-snug text-navy lg:text-xl">
+                      {benefit.title}
+                    </h3>
+                    <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
+                  </div>
                 </div>
               </article>
             ))
@@ -284,6 +288,17 @@ if (!service) {
       #5c4a28 42%,
       #1a1520 68%,
       #0c0c12 100%
+    );
+  }
+
+  .benefit-card {
+    /* 1px brand gradient rim (navy → gold), same scale as seat accent */
+    background: linear-gradient(
+      165deg,
+      #101029 0%,
+      #3d2e1a 40%,
+      #d49d39 70%,
+      #8e6b33 100%
     );
   }
 
