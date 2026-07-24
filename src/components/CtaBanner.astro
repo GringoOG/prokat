@@ -2,29 +2,31 @@
 import FlipButton from './FlipButton.astro';
 ---
 
-<section class="mx-auto max-w-[1200px] px-6 py-12 lg:px-10 lg:py-16">
-  <div class="relative overflow-hidden rounded-2xl bg-navy">
-    <img
-      src="/images/banner-bg-blue.jpg"
-      alt=""
-      class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      aria-hidden="true"
-    />
-    <div
-      class="relative flex flex-col items-start justify-between gap-6 px-7 py-7 sm:px-8 sm:py-8 lg:flex-row lg:items-center lg:gap-10 lg:px-10 lg:py-9"
-    >
-      <h2
-        class="max-w-[22rem] text-2xl font-semibold leading-snug text-white sm:text-[28px] lg:max-w-md lg:text-[32px]"
-      >
-        Pojďme probrat vaše potřeby v oblasti TZB a energetiky.
-      </h2>
-      <FlipButton
-        href="/kontakt"
-        label="Poptat technické řešení"
-        variant="white"
-        class="w-full shrink-0 sm:w-auto"
-        iconClass="btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+<section class="services-watermark bg-surface py-12 lg:py-16">
+  <div class="mx-auto max-w-[1200px] px-6 lg:px-10">
+    <div class="relative overflow-hidden rounded-lg bg-navy">
+      <img
+        src="/images/banner-bg-blue.jpg"
+        alt=""
+        class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
       />
+      <div
+        class="relative flex flex-col items-start justify-between gap-6 px-7 py-7 sm:px-8 sm:py-8 lg:flex-row lg:items-center lg:gap-10 lg:px-10 lg:py-9"
+      >
+        <h2
+          class="max-w-[22rem] text-2xl font-semibold leading-snug text-white sm:text-[28px] lg:max-w-md lg:text-[32px]"
+        >
+          Pojďme probrat vaše potřeby v oblasti TZB a energetiky.
+        </h2>
+        <FlipButton
+          href="/kontakt"
+          label="Poptat technické řešení"
+          variant="white"
+          class="w-full shrink-0 sm:w-auto"
+          iconClass="btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-[4px]"
+        />
+      </div>
     </div>
   </div>
 </section>

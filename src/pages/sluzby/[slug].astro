@@ -23,14 +23,14 @@ if (!service) {
   <div class="services-watermark bg-surface relative">
     <Navbar />
 
-    <section class="pb-10 pt-8 lg:pb-14 lg:pt-28">
+    <section class="pb-0 pt-8 lg:pt-28">
       <div class="mx-auto max-w-site px-6 text-center lg:px-10">
         <h1
           class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]"
         >
           {service.title}
         </h1>
-        <div class="mt-8 flex justify-center">
+        <div class="mt-8 mb-10 flex justify-center lg:mb-14">
           <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." />
         </div>
       </div>
@@ -38,16 +38,18 @@ if (!service) {
   </div>
 
   <main>
-    <section class="bg-[#1a1a1a]">
-      <div class="mx-auto max-w-site px-6 lg:px-10">
-        <img
-          src={service.image}
-          alt={service.title}
-          class="mx-auto h-auto w-full object-cover"
-          width="1200"
-          height="800"
-          loading="eager"
-        />
+    <section class="services-watermark bg-surface">
+      <div class="mx-auto max-w-[1280px]">
+        <div class="aspect-[16/9] w-full overflow-hidden sm:aspect-[2/1]">
+          <img
+            src={service.image}
+            alt={service.title}
+            class="h-full w-full object-cover object-center"
+            width="1280"
+            height="640"
+            loading="eager"
+          />
+        </div>
       </div>
     </section>
 
