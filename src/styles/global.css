@@ -27,6 +27,21 @@
   background: linear-gradient(135deg, #d49d39 0%, #8e6b33 100%);
 }
 
+/* Same outer shape as „Získejte CN“ — keep colors separate */
+.btn-shape {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.btn-shape-icon {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0.25rem;
+}
+
 /* Framer-style: text flips up, arrow slides right */
 .btn-flip {
   line-height: 1;

@@ -14,7 +14,7 @@ const {
   href,
   label,
   class: className = '',
-  iconClass = 'btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl',
+  iconClass = 'btn-gradient-icon btn-shape-icon flex h-10 w-10 shrink-0 items-center justify-center',
   labelClass = 'btn-flip-label',
   variant = 'gradient',
   ariaLabel,
@@ -22,8 +22,8 @@ const {
 
 const baseClass =
   variant === 'white'
-    ? 'btn-flip btn-flip--white inline-flex items-center rounded-[4px] bg-white text-navy text-sm font-semibold min-h-[52px] hover:bg-gray-100 transition-colors'
-    : 'btn-flip btn-gradient inline-flex items-center text-white text-sm font-medium min-h-[52px] rounded-tl rounded-tr rounded-br-[14px] rounded-bl';
+    ? 'btn-flip btn-flip--white btn-shape inline-flex items-center bg-white text-navy text-sm font-semibold min-h-[52px] hover:bg-gray-100 transition-colors'
+    : 'btn-flip btn-gradient btn-shape inline-flex items-center text-white text-sm font-medium min-h-[52px]';
 ---
 
 <a href={href} class:list={[baseClass, className]} aria-label={ariaLabel}>
