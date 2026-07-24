@@ -119,8 +119,24 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Right column: company seat + CRIF badge -->
+          <!-- Right column: CRIF badge + company seat -->
           <div class="relative z-10 mx-auto flex w-full max-w-[360px] flex-col justify-center gap-4 lg:mx-0 lg:h-full lg:max-w-none lg:-translate-y-4 xl:-translate-y-6">
+            <a
+              href="/o-nas"
+              class="inline-flex w-fit max-w-full self-center opacity-95 transition-opacity hover:opacity-100"
+              aria-label="CRIF Business Elite 2026 — více na stránce O nás"
+            >
+              <img
+                src="/images/crif-elite-badge.png"
+                alt="CRIF Business Elite 2026 — Czech Republic"
+                width="180"
+                height="131"
+                class="h-auto w-[160px] sm:w-[180px]"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
             <address
               class="relative not-italic overflow-hidden rounded-2xl border border-white/40 bg-white/10 p-5 sm:p-6"
             >
@@ -158,99 +174,10 @@ import SeoLabel from '../components/SeoLabel.astro';
                 <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
               </div>
             </address>
-
-            <a
-              href="/o-nas"
-              class="inline-flex w-fit max-w-full self-center opacity-95 transition-opacity hover:opacity-100"
-              aria-label="CRIF Business Elite 2026 — více na stránce O nás"
-            >
-              <img
-                src="/images/crif-elite-badge.png"
-                alt="CRIF Business Elite 2026 — Czech Republic"
-                width="180"
-                height="131"
-                class="h-auto w-[160px] sm:w-[180px]"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
           </div>
         </div>
 
-        <!-- Values strip -->
-        <div
-          class="relative z-10 mt-12 grid grid-cols-1 gap-6 rounded-2xl border border-white/40 bg-white/20 px-6 py-7 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-gray-200/60 lg:px-2 lg:py-8"
-        >
-          <div class="flex gap-3 lg:px-5">
-            <svg class="mt-0.5 h-6 w-6 shrink-0 text-navy" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M12 3 4 6v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V6l-8-3Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linejoin="round"></path>
-              <path d="m9 12 2 2 4-4" stroke="#d49d39" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-              ></path>
-            </svg>
-            <div>
-              <p class="text-sm font-bold text-navy">Spolehlivost</p>
-              <p class="mt-1 text-xs font-medium leading-relaxed text-navy/60">
-                Dlouhodobá garance kvality realizací a servisu.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-3 lg:px-5">
-            <svg class="mt-0.5 h-6 w-6 shrink-0 text-navy" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M12 3 14 8.5 20 9l-4.5 3.8L17 19l-5-3-5 3 1.5-6.2L4 9l6-.5L12 3Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linejoin="round"></path>
-              <circle cx="12" cy="12" r="1.5" fill="#d49d39"></circle>
-            </svg>
-            <div>
-              <p class="text-sm font-bold text-navy">Kvalita</p>
-              <p class="mt-1 text-xs font-medium leading-relaxed text-navy/60">
-                Precizní montáž a kontrola v každé fázi projektu.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-3 lg:px-5">
-            <svg class="mt-0.5 h-6 w-6 shrink-0 text-navy" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.5"></circle>
-              <circle cx="16" cy="9" r="3" stroke="currentColor" stroke-width="1.5"></circle>
-              <path
-                d="M3.5 19c.8-3 2.8-4.5 5.5-4.5S13.7 16 14.5 19M12.5 14.5c1.2-.7 2.6-1 4-1 2.7 0 4.7 1.5 5.5 4.5"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"></path>
-              <circle cx="12.5" cy="11" r="1.2" fill="#d49d39"></circle>
-            </svg>
-            <div>
-              <p class="text-sm font-bold text-navy">Partnerství</p>
-              <p class="mt-1 text-xs font-medium leading-relaxed text-navy/60">
-                Blízká spolupráce od návrhu až po provoz.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-3 lg:px-5">
-            <svg class="mt-0.5 h-6 w-6 shrink-0 text-navy" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linejoin="round"></path>
-              <path d="M12 8.5c1 1.5 1.5 3 1.5 4.5" stroke="#d49d39" stroke-width="1.5" stroke-linecap="round"></path>
-            </svg>
-            <div>
-              <p class="text-sm font-bold text-navy">Udržitelnost</p>
-              <p class="mt-1 text-xs font-medium leading-relaxed text-navy/60">
-                Energeticky úsporná řešení s ohledem na provoz.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="pb-3 pt-10 text-center lg:pb-4 lg:pt-14">
+        <div class="pb-3 pt-10 text-center lg:pb-4 lg:pt-12">
           <a
             href="#technologie"
             class="text-lg font-medium text-navy/80 transition-colors hover:text-gold lg:text-[22px]"
