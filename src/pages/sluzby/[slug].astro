@@ -351,7 +351,16 @@ if (!service) {
   }
 
   .process-circle--navy {
-    background: #101029;
+    /* Brand scale: navy → gold (not flat near-black) */
+    background: linear-gradient(
+      165deg,
+      #101029 0%,
+      #15102a 42%,
+      #3d2e1a 78%,
+      #8e6b33 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   .process-circle--white {
@@ -364,10 +373,17 @@ if (!service) {
         circle at 88% 12%,
         rgba(255, 180, 18, 0.95) 0%,
         rgba(212, 157, 57, 0.55) 22%,
-        rgba(16, 16, 41, 0.2) 48%,
+        rgba(16, 16, 41, 0.15) 48%,
         transparent 62%
       ),
-      #101029;
+      linear-gradient(
+        200deg,
+        #101029 0%,
+        #15102a 55%,
+        #3d2e1a 100%
+      );
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
   }
 
   @media (min-width: 1024px) {
