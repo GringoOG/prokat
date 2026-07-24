@@ -37,7 +37,16 @@ import FlipButton from '../components/FlipButton.astro';
               </p>
             </div>
 
-            <!-- Features — style from foto 2 -->
+            <!-- Od roku 1999 -->
+            <div class="space-y-2 text-left">
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Od roku 1999</p>
+              <p class="max-w-xl text-base font-medium leading-relaxed text-navy/75 md:text-lg">
+                Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
+                měření a regulace a využitím AI.
+              </p>
+            </div>
+
+            <!-- Features -->
             <div
               class="grid grid-cols-1 divide-y divide-gray-200 border-y border-gray-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0"
             >
@@ -95,22 +104,17 @@ import FlipButton from '../components/FlipButton.astro';
                 </p>
               </div>
             </div>
-
-            <!-- Od roku 1999 — bez karty/baneru -->
-            <div class="space-y-2 text-left">
-              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Od roku 1999</p>
-              <p class="max-w-xl text-base font-medium leading-relaxed text-navy/75 md:text-lg">
-                Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
-                měření a regulace a využitím AI.
-              </p>
-            </div>
           </div>
 
           <!-- Right column: sídlo + služby, stejná šířka -->
           <div class="mx-auto flex w-full max-w-[380px] flex-col gap-4 lg:mx-0 lg:max-w-none">
             <address
-              class="not-italic rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_12px_40px_rgba(16,16,41,0.08)] sm:p-7"
+              class="relative not-italic overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_12px_40px_rgba(16,16,41,0.08)] sm:p-7"
             >
+              <span
+                class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-navy via-gold to-[#8e6b33] shadow-[4px_0_18px_rgba(212,157,57,0.45),2px_0_10px_rgba(16,16,41,0.35)]"
+                aria-hidden="true"
+              ></span>
               <div class="mb-5 flex items-center gap-3">
                 <span
                   class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy"
@@ -142,45 +146,40 @@ import FlipButton from '../components/FlipButton.astro';
               </div>
             </address>
 
-            <a
-              href="/sluzby"
-              class="group flex w-full items-center gap-4 rounded-2xl bg-navy px-5 py-4 text-left transition-opacity hover:opacity-95"
-            >
-              <span
-                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35"
+            <div class="relative overflow-hidden rounded-2xl bg-navy">
+              <img
+                src="/images/banner-bg-blue.jpg"
+                alt=""
+                class="pointer-events-none absolute inset-0 h-full w-full object-cover"
                 aria-hidden="true"
-              >
-                <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <path
-                    d="M4 14v-1a8 8 0 0 1 16 0v1"
-                    stroke-linecap="round"></path>
-                  <path
-                    d="M4 14v2a2 2 0 0 0 2 2h1v-4H4ZM20 14v2a2 2 0 0 1-2 2h-1v-4h3Z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                  <path d="M12 19v2M9 21h6" stroke-linecap="round"></path>
-                </svg>
-              </span>
-              <span class="min-w-0 flex-1">
-                <span class="block text-sm font-semibold text-white sm:text-base">Prozkoumejte naše služby</span>
-                <span class="mt-0.5 block text-xs font-medium leading-snug text-white/65 sm:text-sm">
-                  Komplexní řešení pro váš provoz od návrhu až po servis.
+              />
+              <div class="relative flex w-full flex-col items-stretch gap-4 px-5 py-4 sm:flex-row sm:items-center sm:gap-4">
+                <span
+                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35"
+                  aria-hidden="true"
+                >
+                  <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M4 14v-1a8 8 0 0 1 16 0v1" stroke-linecap="round"></path>
+                    <path
+                      d="M4 14v2a2 2 0 0 0 2 2h1v-4H4ZM20 14v2a2 2 0 0 1-2 2h-1v-4h3Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path d="M12 19v2M9 21h6" stroke-linecap="round"></path>
+                  </svg>
                 </span>
-              </span>
-              <span
-                class="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gold px-3 py-2 text-xs font-semibold text-navy transition-transform group-hover:translate-x-0.5 sm:px-3.5 sm:text-sm"
-              >
-                Prozkoumat
-                <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path
-                    d="M2 6h8M7 3l3 3-3 3"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg>
-              </span>
-            </a>
+                <div class="min-w-0 flex-1 text-left">
+                  <p class="text-sm font-semibold text-white sm:text-base">Prozkoumejte naše služby</p>
+                  <p class="mt-0.5 text-xs font-medium leading-snug text-white/65 sm:text-sm">
+                    Komplexní řešení pro váš provoz od návrhu až po servis.
+                  </p>
+                </div>
+                <FlipButton
+                  href="/sluzby"
+                  label="Prozkoumat"
+                  class="w-full shrink-0 sm:w-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
