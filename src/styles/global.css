@@ -12,10 +12,9 @@
     @apply font-sans text-black antialiased;
     background-color: #f6f6f6;
     background-image: url('/images/pozadi-prokat.webp');
-    /* ~50% width = zoomed out watermark (was 100% = too close-up) */
-    background-size: 50% auto;
+    background-size: 100% auto;
     background-position: center top;
-    background-repeat: repeat;
+    background-repeat: repeat-y;
   }
 }
 
