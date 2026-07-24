@@ -15,16 +15,18 @@ import FlipButton from '../components/FlipButton.astro';
     <!-- HERO -->
     <section class="pb-0">
       <div class="mx-auto max-w-site px-6 pb-0 pt-8 lg:px-10 lg:pt-28">
-        <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)] lg:gap-x-12 xl:gap-x-16">
-          <!-- Left column -->
-          <div class="space-y-8 text-center lg:text-left">
-            <p
-              class="inline-flex max-w-full flex-wrap items-center justify-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-navy sm:text-xs lg:justify-start"
-            >
-              <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-              Váš spolehlivý partner pro technologické celky
-            </p>
+        <p
+          class="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-navy sm:text-xs lg:mb-8 lg:justify-start"
+        >
+          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
+          Váš spolehlivý partner pro technologické celky
+        </p>
 
+        <div
+          class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-stretch lg:gap-x-12 xl:gap-x-16"
+        >
+          <!-- Left column -->
+          <div class="flex flex-col gap-8 text-center lg:text-left">
             <div class="space-y-4">
               <h1
                 class="text-4xl font-semibold leading-snug tracking-tight text-navy sm:text-5xl lg:text-[64px] lg:leading-[1.15]"
@@ -38,7 +40,7 @@ import FlipButton from '../components/FlipButton.astro';
             </div>
 
             <!-- Od roku 1999 -->
-            <div class="space-y-2 text-left">
+            <div class="space-y-2 text-left lg:flex-1">
               <p class="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Od roku 1999</p>
               <p class="max-w-xl text-base font-medium leading-relaxed text-navy/75 md:text-lg">
                 Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
@@ -50,7 +52,7 @@ import FlipButton from '../components/FlipButton.astro';
             <div
               class="grid grid-cols-1 divide-y divide-gray-200 border-y border-gray-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0"
             >
-              <div class="px-0 py-5 text-left sm:px-5 sm:py-6 sm:first:pl-0 sm:last:pr-0">
+              <div class="px-0 py-5 text-left sm:px-4 sm:py-5 sm:first:pl-0 sm:last:pr-0 lg:px-5 lg:py-6">
                 <svg class="mb-3 h-8 w-8 text-navy" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                   <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.5"></circle>
                   <circle cx="16" cy="16" r="2" fill="#d49d39"></circle>
@@ -66,7 +68,7 @@ import FlipButton from '../components/FlipButton.astro';
                   Navrhujeme efektivní a spolehlivá technická řešení.
                 </p>
               </div>
-              <div class="px-0 py-5 text-left sm:px-5 sm:py-6">
+              <div class="px-0 py-5 text-left sm:px-4 sm:py-5 lg:px-5 lg:py-6">
                 <svg class="mb-3 h-8 w-8 text-navy" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                   <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5"></circle>
                   <circle cx="16" cy="16" r="1.8" fill="#d49d39"></circle>
@@ -81,7 +83,7 @@ import FlipButton from '../components/FlipButton.astro';
                   Od projektu a realizace až po uvedení do provozu.
                 </p>
               </div>
-              <div class="px-0 py-5 text-left sm:px-5 sm:py-6 sm:last:pr-0">
+              <div class="px-0 py-5 text-left sm:px-4 sm:py-5 sm:last:pr-0 lg:px-5 lg:py-6">
                 <svg class="mb-3 h-8 w-8 text-navy" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                   <path d="M7 24V16M13 24V12M19 24V14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   ></path>
@@ -106,16 +108,16 @@ import FlipButton from '../components/FlipButton.astro';
             </div>
           </div>
 
-          <!-- Right column: sídlo + služby, stejná šířka -->
-          <div class="mx-auto flex w-full max-w-[380px] flex-col gap-4 lg:mx-0 lg:max-w-none">
+          <!-- Right column: top = h1, bottom = features -->
+          <div class="mx-auto flex w-full max-w-[360px] flex-col justify-between gap-4 lg:mx-0 lg:h-full lg:max-w-none">
             <address
-              class="relative not-italic overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_12px_40px_rgba(16,16,41,0.08)] sm:p-7"
+              class="relative not-italic overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_12px_40px_rgba(16,16,41,0.08)] sm:p-6"
             >
               <span
                 class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-navy via-gold to-[#8e6b33] shadow-[4px_0_18px_rgba(212,157,57,0.45),2px_0_10px_rgba(16,16,41,0.35)]"
                 aria-hidden="true"
               ></span>
-              <div class="mb-5 flex items-center gap-3">
+              <div class="mb-4 flex items-center gap-3">
                 <span
                   class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy"
                   aria-hidden="true"
@@ -129,7 +131,7 @@ import FlipButton from '../components/FlipButton.astro';
                 <p class="text-sm font-bold uppercase tracking-[0.12em] text-gold">Sídlo společnosti</p>
               </div>
 
-              <div class="space-y-1 text-base font-medium leading-relaxed text-navy">
+              <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
                 <p class="font-semibold">PROKAT invest s.r.o.</p>
                 <p>Plzeňská 1348/95</p>
                 <p>Praha 5</p>
@@ -137,9 +139,9 @@ import FlipButton from '../components/FlipButton.astro';
                 <p>DIČ: CZ25238876</p>
               </div>
 
-              <div class="my-5 h-px bg-gray-200"></div>
+              <div class="my-4 h-px bg-gray-200"></div>
 
-              <div class="space-y-1 text-base font-medium leading-relaxed text-navy">
+              <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
                 <p>Datová schránka: ns3u7ke</p>
                 <p>Společnost je zapsaná v obchodním rejstříku:</p>
                 <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
@@ -153,30 +155,32 @@ import FlipButton from '../components/FlipButton.astro';
                 class="pointer-events-none absolute inset-0 h-full w-full object-cover"
                 aria-hidden="true"
               />
-              <div class="relative flex w-full flex-col items-stretch gap-4 px-5 py-4 sm:flex-row sm:items-center sm:gap-4">
-                <span
-                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35"
-                  aria-hidden="true"
-                >
-                  <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                    <path d="M4 14v-1a8 8 0 0 1 16 0v1" stroke-linecap="round"></path>
-                    <path
-                      d="M4 14v2a2 2 0 0 0 2 2h1v-4H4ZM20 14v2a2 2 0 0 1-2 2h-1v-4h3Z"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                    <path d="M12 19v2M9 21h6" stroke-linecap="round"></path>
-                  </svg>
-                </span>
-                <div class="min-w-0 flex-1 text-left">
-                  <p class="text-sm font-semibold text-white sm:text-base">Prozkoumejte naše služby</p>
-                  <p class="mt-0.5 text-xs font-medium leading-snug text-white/65 sm:text-sm">
-                    Komplexní řešení pro váš provoz od návrhu až po servis.
-                  </p>
+              <div class="relative flex flex-col gap-3 px-4 py-3.5 sm:flex-row sm:items-center sm:gap-3">
+                <div class="flex min-w-0 flex-1 items-center gap-3 text-left">
+                  <span
+                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/35"
+                    aria-hidden="true"
+                  >
+                    <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M4 14v-1a8 8 0 0 1 16 0v1" stroke-linecap="round"></path>
+                      <path
+                        d="M4 14v2a2 2 0 0 0 2 2h1v-4H4ZM20 14v2a2 2 0 0 1-2 2h-1v-4h3Z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                      <path d="M12 19v2M9 21h6" stroke-linecap="round"></path>
+                    </svg>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold leading-snug text-white">Prozkoumejte služby</p>
+                    <p class="mt-0.5 text-xs font-medium text-white/65">Od návrhu až po servis.</p>
+                  </div>
                 </div>
                 <FlipButton
                   href="/sluzby"
                   label="Prozkoumat"
-                  class="w-full shrink-0 sm:w-auto"
+                  class="w-full shrink-0 !min-h-[44px] sm:w-auto"
+                  labelClass="btn-flip-label !py-2 !pl-4 !pr-1"
+                  iconClass="btn-gradient-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
                 />
               </div>
             </div>
