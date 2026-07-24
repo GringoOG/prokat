@@ -11,16 +11,11 @@
   body {
     @apply font-sans text-black antialiased;
     background-color: #f6f6f6;
-    background-image: url('/images/pozadi-prokat.webp');
+    /* Native PNG line-art — avoid soft upscaled WebP */
+    background-image: url('/images/pozadi-prokat.png');
     background-size: 100% auto;
     background-position: center top;
     background-repeat: repeat-y;
-  }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  body {
-    background-image: url('/images/pozadi-prokat@2x.webp');
   }
 }
 
@@ -191,6 +186,43 @@
   .service-card:hover .service-media img {
     transform: none;
   }
+}
+
+/* Unified SEO / section eyebrow labels */
+.seo-label {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 16, 41, 0.2);
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #101029;
+}
+
+@media (min-width: 768px) {
+  .seo-label {
+    font-size: 1.5rem;
+  }
+}
+
+.seo-label-dot {
+  height: 0.375rem;
+  width: 0.375rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: #d49d39;
+}
+
+.seo-label--light {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
 }
 
 /* Legacy class kept for markup compatibility — page bg lives on body */

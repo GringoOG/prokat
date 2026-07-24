@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FlipButton from '../components/FlipButton.astro';
+import SeoLabel from '../components/SeoLabel.astro';
 
 const competencies = [
   { title: 'Vzduchotechnika', href: '/sluzby/vzduchotechnika' },
@@ -93,12 +94,7 @@ const competencies = [
 
     <section class="services-watermark py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
-        <p
-          class="mx-auto mb-8 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base lg:mx-0"
-        >
-          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-          Naše cesta
-        </p>
+        <SeoLabel class="mx-auto mb-8 lg:mx-0">Naše cesta</SeoLabel>
 
         <h2
           class="mb-12 max-w-4xl text-center text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:mb-16 lg:text-left lg:text-[58px] lg:leading-[1.25]"

@@ -1,4 +1,6 @@
 ---
+import SeoLabel from './SeoLabel.astro';
+
 const faqs = [
   {
     question: 'Jaké realizační služby zajišťujete?',
@@ -29,33 +31,30 @@ const faqs = [
 ];
 ---
 
-<section class=" py-16 lg:py-24">
+<section class="py-16 lg:py-24">
   <div class="mx-auto max-w-site px-6 lg:px-10">
-    <div class="text-center mb-12">
-      <p class="inline-flex items-center gap-2 text-sm md:text-[24px] font-medium text-navy mb-4">
-        <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
-        FAQ
-      </p>
-      <h2 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.25] font-semibold text-navy tracking-tight leading-snug">
+    <div class="mb-12 text-center">
+      <SeoLabel class="mx-auto mb-4">FAQ</SeoLabel>
+      <h2 class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.25]">
         Často kladené dotazy
       </h2>
     </div>
 
-    <div class="max-w-3xl mx-auto space-y-3">
+    <div class="mx-auto max-w-3xl space-y-3">
       {
         faqs.map((faq) => (
-          <details class="faq-item group bg-white rounded-2xl border border-gray-100 overflow-hidden" open={faq.open}>
-            <summary class="flex items-center justify-between gap-3 sm:gap-4 p-4 sm:p-6 lg:p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <span class="text-sm sm:text-base lg:text-xl font-semibold text-navy text-left">{faq.question}</span>
+          <details class="faq-item group overflow-hidden rounded-2xl border border-gray-100 bg-white" open={faq.open}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6 lg:p-8 [&::-webkit-details-marker]:hidden">
+              <span class="text-left text-sm font-semibold text-navy sm:text-base lg:text-xl">{faq.question}</span>
               <span
-                class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold text-xl font-light leading-none"
+                class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-xl font-light leading-none text-gold"
                 aria-hidden="true"
               >
                 +
               </span>
             </summary>
-            <div class="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 -mt-2">
-              <p class="text-base lg:text-lg font-medium text-navy/70 leading-relaxed">{faq.answer}</p>
+            <div class="-mt-2 px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
+              <p class="text-base font-medium leading-relaxed text-navy/70 lg:text-lg">{faq.answer}</p>
             </div>
           </details>
         ))

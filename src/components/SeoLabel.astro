@@ -1,0 +1,14 @@
+---
+interface Props {
+  class?: string;
+  /** light = white text + light border (dark backgrounds) */
+  variant?: 'default' | 'light';
+}
+
+const { class: className = '', variant = 'default' } = Astro.props;
+---
+
+<p class:list={['seo-label', variant === 'light' && 'seo-label--light', className]}>
+  <span class="seo-label-dot" aria-hidden="true"></span>
+  <slot />
+</p>
