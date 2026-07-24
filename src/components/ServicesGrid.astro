@@ -1,68 +1,19 @@
 ---
-const services = [
-  {
-    id: 'vzduchotechnika',
-    title: 'Vzduchotechnika',
-    image: '/images/service-hvac.jpg',
-    alt: 'Vzduchotechnika',
-    points: [
-      'Garance mikroklimatických podmínek',
-      'Garance úzkých pásem tolerance mikroklimatických podmínek pro technologické procesy',
-      'Přizpůsobení provozním režimům',
-      'Rekuperace tepla a chladu',
-    ],
-  },
-  {
-    id: 'topne-zdroje',
-    title: 'Topné zdroje',
-    image: '/images/service-heating.jpg',
-    alt: 'Topné zdroje',
-    points: [
-      'Alternativní zdroje tepla',
-      'Provozní náklady',
-      'Rekuperace tepla',
-      'Výpočty spotřeb tepla dle norem',
-    ],
-  },
-  {
-    id: 'chlazeni',
-    title: 'Chlazení',
-    image: '/images/service-cooling.png',
-    alt: 'Chlazení',
-    points: [
-      'Použití chladiv s nízkým koeficientem GWP (vliv chladiva na ozónovou díru)',
-      'Provozní náklady',
-      'Rekuperace a akumulace chladu',
-      'Studie vhodnosti použití způsobu chlazení jednotlivých aplikacích',
-    ],
-  },
-  {
-    id: 'fotovoltaika',
-    title: 'Fotovoltaika',
-    image: '/images/service-solar.png',
-    alt: 'Fotovoltaika',
-    points: [
-      'Analýza trendů',
-      'Servisní činnost',
-      'Ukládání energie do baterek, sdílení energie',
-      'Volba velikosti FVE s ohledem na návratnost',
-    ],
-  },
-];
+import { serviceHref, services } from '../data/services';
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
   {
     services.map((service) => (
       <a
-        id={service.id}
-        href="/kontakt"
+        id={service.slug}
+        href={serviceHref(service.slug)}
         class="service-card group scroll-mt-28 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all hover:border-gold/30 hover:shadow-md"
       >
         <div class="service-media">
           <img
             src={service.image}
-            alt={service.alt}
+            alt={service.title}
             class="h-48 w-full object-cover sm:h-56 lg:h-64"
             loading="lazy"
           />
@@ -72,7 +23,7 @@ const services = [
             {service.title}
           </h2>
           <ul class="mt-4 space-y-2 text-base lg:text-lg font-medium text-navy/80">
-            {service.points.map((point) => (
+            {service.listPoints.map((point) => (
               <li class="flex items-start gap-2">
                 <img src="/icons/check.svg" alt="" class="mt-1.5 shrink-0" width="15" height="10" />
                 {point}

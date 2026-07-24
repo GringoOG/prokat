@@ -22,23 +22,18 @@ const {
 
 const baseClass =
   variant === 'white'
-    ? 'btn-flip btn-flip--white inline-flex items-center rounded-full bg-white text-navy text-sm font-semibold min-h-[52px] hover:bg-gray-100 transition-colors'
+    ? 'btn-flip btn-flip--white inline-flex items-center rounded-[14px] bg-white text-navy text-sm font-semibold min-h-[52px] hover:bg-gray-100 transition-colors'
     : 'btn-flip btn-gradient inline-flex items-center text-white text-sm font-medium min-h-[52px] rounded-tl rounded-tr rounded-br-[14px] rounded-bl';
 ---
 
 <a href={href} class:list={[baseClass, className]} aria-label={ariaLabel}>
-  <span class="btn-flip-track">
-    <span class="btn-flip-item">
-      <span class={labelClass}>{label}</span>
-      <span class={iconClass}>
-        <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
-      </span>
+  <span class="btn-flip-label-mask">
+    <span class="btn-flip-label-track">
+      <span class:list={[labelClass, 'btn-flip-label-line']}>{label}</span>
+      <span class:list={[labelClass, 'btn-flip-label-line']} aria-hidden="true">{label}</span>
     </span>
-    <span class="btn-flip-item" aria-hidden="true">
-      <span class={labelClass}>{label}</span>
-      <span class={iconClass}>
-        <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
-      </span>
-    </span>
+  </span>
+  <span class:list={[iconClass, 'btn-flip-icon']}>
+    <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
   </span>
 </a>

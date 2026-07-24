@@ -1,24 +1,30 @@
-<section class="mx-auto max-w-site px-6 lg:px-10 py-12 lg:py-16">
-  <div class="relative overflow-hidden rounded-3xl bg-navy">
+---
+import FlipButton from './FlipButton.astro';
+---
+
+<section class="mx-auto max-w-[1200px] px-6 py-12 lg:px-10 lg:py-16">
+  <div class="relative overflow-hidden rounded-2xl bg-navy">
     <img
       src="/images/cta-bg.png"
       alt=""
-      class="absolute inset-0 w-full h-full object-cover opacity-40"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50"
       aria-hidden="true"
     />
-    <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8 p-8 lg:p-12">
-      <h2 class="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-white leading-tight max-w-xl">
+    <div
+      class="relative flex flex-col items-start justify-between gap-6 px-7 py-7 sm:px-8 sm:py-8 lg:flex-row lg:items-center lg:gap-10 lg:px-10 lg:py-9"
+    >
+      <h2
+        class="max-w-[22rem] text-2xl font-semibold leading-snug text-white sm:text-[28px] lg:max-w-md lg:text-[32px]"
+      >
         Jste připraveni zahájit projekt?
       </h2>
-      <a
+      <FlipButton
         href="/kontakt"
-        class="inline-flex items-center gap-3 rounded-full bg-white pl-6 pr-1.5 py-3 text-navy text-sm font-semibold min-h-[52px] h-auto hover:bg-gray-100 transition-colors shrink-0 w-full sm:w-auto justify-between sm:justify-start"
-      >
-        <span>Naplánujte si konzultaci hned teď.</span>
-        <span class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-full">
-          <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-        </span>
-      </a>
+        label="Naplánujte si konzultaci hned teď."
+        variant="white"
+        class="w-full shrink-0 sm:w-auto"
+        iconClass="btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
+      />
     </div>
   </div>
 </section>

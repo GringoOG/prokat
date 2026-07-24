@@ -1,58 +1,5 @@
 ---
-const services = [
-  {
-    id: 'vzduchotechnika',
-    title: 'Vzduchotechnika',
-    image: '/images/service-hvac.jpg',
-    href: '/sluzby#vzduchotechnika',
-    ariaLabel: 'Více o vzduchotechnice',
-    points: [
-      'Garance mikroklimatických podmínek',
-      'Garance úzkých pásem tolerance mikroklimatických podmínek pro technologické procesy',
-      'Přizpůsobení provozním režimům',
-      'Rekuperace tepla a chladu',
-    ],
-  },
-  {
-    id: 'topne-zdroje',
-    title: 'Topné zdroje',
-    image: '/images/service-heating.jpg',
-    href: '/sluzby#topne-zdroje',
-    ariaLabel: 'Více o topných zdrojích',
-    points: [
-      'Alternativní zdroje tepla',
-      'Provozní náklady',
-      'Rekuperace tepla',
-      'Výpočty spotřeb tepla dle norem',
-    ],
-  },
-  {
-    id: 'chlazeni',
-    title: 'Chlazení',
-    image: '/images/service-cooling.png',
-    href: '/sluzby#chlazeni',
-    ariaLabel: 'Více o chlazení',
-    points: [
-      'Použití chladiv s nízkým koeficientem GWP (vliv chladiva na ozónovou díru)',
-      'Provozní náklady',
-      'Rekuperace a akumulace chladu',
-      'Studie vhodnosti použití způsobu chlazení jednotlivých aplikacích',
-    ],
-  },
-  {
-    id: 'fotovoltaika',
-    title: 'Fotovoltaika',
-    image: '/images/service-solar.png',
-    href: '/sluzby#fotovoltaika',
-    ariaLabel: 'Více o fotovoltaice',
-    points: [
-      'Analýza trendů',
-      'Servisní činnost',
-      'Ukládání energie do baterek, sdílení energie',
-      'Volba velikosti FVE s ohledem na návratnost',
-    ],
-  },
-];
+import { serviceHref, services } from '../data/services';
 ---
 
 <div class="service-stack">
@@ -69,7 +16,7 @@ const services = [
           aria-hidden="true"
         />
         <a
-          href={service.href}
+          href={serviceHref(service.slug)}
           class="service-media block shrink-0 sm:row-span-2 lg:row-span-1"
           aria-label={service.ariaLabel}
         >
@@ -80,9 +27,13 @@ const services = [
           />
         </a>
         <div class="space-y-3">
-          <h3 class="text-xl font-semibold text-navy lg:text-[28px]">{service.title}</h3>
+          <h3 class="text-xl font-semibold text-navy lg:text-[28px]">
+            <a href={serviceHref(service.slug)} class="hover:text-gold transition-colors">
+              {service.title}
+            </a>
+          </h3>
           <ul class="space-y-2 text-base font-medium text-navy/90 lg:text-[23px]">
-            {service.points.map((point) => (
+            {service.listPoints.map((point) => (
               <li class="flex items-start gap-2">
                 <img src="/icons/check.svg" alt="" class="mt-2 shrink-0" width="15" height="10" />
                 {point}
@@ -91,17 +42,12 @@ const services = [
           </ul>
         </div>
         <a
-          href={service.href}
+          href={serviceHref(service.slug)}
           class="btn-flip btn-flip--icon-only btn-gradient-icon justify-self-end rounded-lg sm:col-start-2 lg:col-start-auto"
           aria-label={service.ariaLabel}
         >
-          <span class="btn-flip-track">
-            <span class="btn-flip-item">
-              <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-            </span>
-            <span class="btn-flip-item" aria-hidden="true">
-              <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-            </span>
+          <span class="btn-flip-icon">
+            <img src="/icons/arrow.svg" alt="" class="h-3 w-4" width="16" height="12" />
           </span>
         </a>
       </article>
