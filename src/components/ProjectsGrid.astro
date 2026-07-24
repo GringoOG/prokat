@@ -67,14 +67,15 @@ const moreProjects = [
     alt: 'Möbelix Liberec — fotovoltaika',
   },
 ];
+
 ---
 
-<div class="rounded-2xl border border-gold/60 bg-navy p-4 sm:p-6 lg:p-8">
+<div class="panel-gold-dark overflow-hidden rounded-2xl border border-gold/40 p-4 sm:p-6 lg:p-8">
   <div id="projects-grid" class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
     {
       visibleProjects.map((project) => (
-        <article class="grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
-          <div class="flex min-h-[200px] flex-col justify-center p-6 sm:min-h-[240px] lg:p-8">
+        <article class="project-card group relative grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
+          <div class="relative z-10 flex min-h-[200px] flex-col justify-center bg-white p-6 transition-opacity duration-300 group-hover:opacity-0 sm:min-h-[240px] lg:p-8">
             <h2 class="text-xl font-semibold leading-snug text-gold lg:text-2xl">{project.client}</h2>
             <p class="mt-2 text-sm font-medium leading-snug text-navy/70 lg:text-base">{project.subtitle}</p>
             <div class="mt-4 lg:mt-6">
@@ -82,7 +83,8 @@ const moreProjects = [
               <p class="mt-1 text-sm font-medium text-navy/60 lg:text-base">Úspora provozních nákladů</p>
             </div>
           </div>
-          <div class="relative min-h-[220px] overflow-hidden bg-gray-100 sm:h-full sm:min-h-0">
+
+          <div class="relative z-10 min-h-[220px] overflow-hidden bg-gray-100 transition-opacity duration-300 group-hover:opacity-0 sm:h-full sm:min-h-0">
             <img
               src={project.image}
               alt={project.alt}
@@ -91,6 +93,27 @@ const moreProjects = [
               decoding="async"
             />
           </div>
+
+          <div
+            class="pointer-events-none absolute inset-0 z-20 overflow-hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            aria-hidden="true"
+          >
+            <img
+              src={project.image}
+              alt=""
+              class="absolute inset-0 h-full w-full scale-100 object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/45" />
+            <div class="absolute inset-0 flex items-center justify-center p-6">
+              <img
+                src="/images/logo.png"
+                alt=""
+                class="h-12 w-auto drop-shadow-md sm:h-14 lg:h-16"
+                width="322"
+                height="80"
+              />
+            </div>
+          </div>
         </article>
       ))
     }
@@ -98,8 +121,8 @@ const moreProjects = [
     <div id="projects-more" class="contents hidden">
       {
         moreProjects.map((project) => (
-          <article class="grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
-            <div class="flex min-h-[200px] flex-col justify-center p-6 sm:min-h-[240px] lg:p-8">
+          <article class="project-card group relative grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
+            <div class="relative z-10 flex min-h-[200px] flex-col justify-center bg-white p-6 transition-opacity duration-300 group-hover:opacity-0 sm:min-h-[240px] lg:p-8">
               <h2 class="text-xl font-semibold leading-snug text-gold lg:text-2xl">{project.client}</h2>
               <p class="mt-2 text-sm font-medium leading-snug text-navy/70 lg:text-base">{project.subtitle}</p>
               <div class="mt-4 lg:mt-6">
@@ -107,7 +130,8 @@ const moreProjects = [
                 <p class="mt-1 text-sm font-medium text-navy/60 lg:text-base">Úspora provozních nákladů</p>
               </div>
             </div>
-            <div class="relative min-h-[220px] overflow-hidden bg-gray-100 sm:h-full sm:min-h-0">
+
+            <div class="relative z-10 min-h-[220px] overflow-hidden bg-gray-100 transition-opacity duration-300 group-hover:opacity-0 sm:h-full sm:min-h-0">
               <img
                 src={project.image}
                 alt={project.alt}
@@ -115,6 +139,27 @@ const moreProjects = [
                 loading="lazy"
                 decoding="async"
               />
+            </div>
+
+            <div
+              class="pointer-events-none absolute inset-0 z-20 overflow-hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden="true"
+            >
+              <img
+                src={project.image}
+                alt=""
+                class="absolute inset-0 h-full w-full scale-100 object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-black/45" />
+              <div class="absolute inset-0 flex items-center justify-center p-6">
+                <img
+                  src="/images/logo.png"
+                  alt=""
+                  class="h-12 w-auto drop-shadow-md sm:h-14 lg:h-16"
+                  width="322"
+                  height="80"
+                />
+              </div>
             </div>
           </article>
         ))
@@ -126,9 +171,14 @@ const moreProjects = [
     <button
       id="projects-show-more"
       type="button"
-      class="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-navy transition-opacity hover:opacity-90"
+      class="btn-flip inline-flex min-h-[52px] items-center rounded-lg bg-gold text-sm font-semibold text-white transition-colors hover:bg-[#c48d2f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#15101c]"
     >
-      Zobrazit více
+      <span class="btn-flip-label-mask">
+        <span class="btn-flip-label-track">
+          <span class="btn-flip-label btn-flip-label-line px-8 py-3">Zobrazit více</span>
+          <span class="btn-flip-label btn-flip-label-line px-8 py-3" aria-hidden="true">Zobrazit více</span>
+        </span>
+      </span>
     </button>
     <p id="projects-coming-soon" class="hidden text-base font-semibold text-gold lg:text-lg">
       Již brzy více referencí …
@@ -138,11 +188,11 @@ const moreProjects = [
 
 <script>
   const showMoreBtn = document.getElementById('projects-show-more');
-  const moreProjects = document.getElementById('projects-more');
+  const moreProjectsEl = document.getElementById('projects-more');
   const comingSoon = document.getElementById('projects-coming-soon');
 
   showMoreBtn?.addEventListener('click', () => {
-    moreProjects?.classList.remove('hidden');
+    moreProjectsEl?.classList.remove('hidden');
     showMoreBtn.classList.add('hidden');
     comingSoon?.classList.remove('hidden');
   });
