@@ -78,22 +78,25 @@ if (!service) {
           height="1000"
           loading="lazy"
         />
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div class="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {
             service.benefits.map((benefit) => (
-              <article class="rounded-2xl bg-white/90 p-6 shadow-sm lg:p-8">
+              <article class="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/90 p-5 shadow-sm lg:p-6">
                 <img
-                  src="/icons/service-icon.png"
+                  src="/images/prokat-mark.png"
                   alt=""
-                  class="mb-5 h-9 w-9 object-contain"
-                  width="36"
-                  height="36"
+                  width="928"
+                  height="887"
                   aria-hidden="true"
+                  decoding="async"
+                  class="pointer-events-none absolute inset-0 z-0 m-auto h-full w-full object-contain p-3 opacity-[0.045] mix-blend-multiply select-none"
                 />
-                <h3 class="mb-3 text-lg font-semibold leading-snug text-navy lg:text-xl">
-                  {benefit.title}
-                </h3>
-                <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
+                <div class="relative z-10 flex flex-1 flex-col">
+                  <h3 class="mb-2 text-lg font-semibold leading-snug text-navy lg:text-xl">
+                    {benefit.title}
+                  </h3>
+                  <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
+                </div>
               </article>
             ))
           }
@@ -102,7 +105,9 @@ if (!service) {
     </section>
 
     <section class="capabilities-panel relative overflow-hidden py-16 text-white lg:py-24">
-      <div class="capabilities-glow pointer-events-none absolute inset-x-0 bottom-0 h-48" aria-hidden="true"
+      <div
+        class="capabilities-glow pointer-events-none absolute inset-x-0 bottom-0 h-56 lg:h-64"
+        aria-hidden="true"
       ></div>
       <div class="capabilities-grid-lines pointer-events-none absolute inset-0" aria-hidden="true"></div>
 
@@ -229,11 +234,11 @@ if (!service) {
           </h2>
         </div>
 
-        <div class="mx-auto w-full max-w-2xl space-y-3">
+        <div class="mx-auto flex max-w-2xl flex-col items-center gap-3">
           {
             service.faqs.map((faq, index) => (
               <details
-                class="faq-item group w-full overflow-hidden rounded-[14px] bg-white shadow-[0_8px_30px_rgba(16,16,41,0.08)]"
+                class="faq-item group w-fit max-w-full overflow-hidden rounded-[14px] bg-white shadow-[0_8px_30px_rgba(16,16,41,0.08)]"
                 open={index === 0}
               >
                 <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 sm:gap-5 sm:p-5 lg:gap-6 lg:p-5 [&::-webkit-details-marker]:hidden">
@@ -247,7 +252,7 @@ if (!service) {
                     +
                   </span>
                 </summary>
-                <div class="-mt-1 px-4 pb-4 sm:px-5 sm:pb-5 lg:px-5 lg:pb-5">
+                <div class="-mt-1 max-w-[32rem] px-4 pb-4 sm:px-5 sm:pb-5 lg:px-5 lg:pb-5">
                   <p class="text-base font-medium leading-relaxed text-navy/70">
                     {faq.answer}
                   </p>
@@ -288,12 +293,22 @@ if (!service) {
   }
 
   .capabilities-glow {
-    background: radial-gradient(
-      ellipse 90% 100% at 50% 100%,
-      rgba(212, 157, 57, 0.55) 0%,
-      rgba(212, 157, 57, 0.18) 42%,
-      transparent 72%
-    );
+    /* Full-width gold band (brand #d49d39), not a center blob */
+    background:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(212, 157, 57, 0.06) 28%,
+        rgba(212, 157, 57, 0.28) 62%,
+        rgba(212, 157, 57, 0.55) 88%,
+        rgba(212, 157, 57, 0.72) 100%
+      ),
+      radial-gradient(
+        ellipse 120% 90% at 50% 100%,
+        rgba(255, 180, 18, 0.35) 0%,
+        rgba(212, 157, 57, 0.2) 40%,
+        transparent 72%
+      );
   }
 
   .capabilities-grid-lines {
