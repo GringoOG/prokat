@@ -1,12 +1,12 @@
 ---
 const clients = [
-  { src: '/images/client-hutchinson.png', alt: 'Hutchinson', scale: 1 },
-  { src: '/images/client-pilsner.png', alt: 'Pilsner Urquell', scale: 0.92 },
-  { src: '/images/client-skoda.png', alt: 'Škoda', scale: 0.82 },
-  { src: '/images/client-autoopat.png', alt: 'Auto Opat', scale: 0.88 },
-  { src: '/images/client-centralgroup.png', alt: 'Central Group', scale: 1.05 },
-  { src: '/images/client-xxxlutz.png', alt: 'XXXLutz', scale: 0.95 },
-  { src: '/images/client-mobelix.png', alt: 'Möbelix', scale: 1 },
+  { src: '/images/client-hutchinson.png', alt: 'Hutchinson' },
+  { src: '/images/client-pilsner.png', alt: 'Pilsner Urquell' },
+  { src: '/images/client-skoda.png', alt: 'Škoda' },
+  { src: '/images/client-autoopat.png', alt: 'Auto Opat' },
+  { src: '/images/client-centralgroup.png', alt: 'Central Group' },
+  { src: '/images/client-xxxlutz.png', alt: 'XXXLutz' },
+  { src: '/images/client-mobelix.png', alt: 'Möbelix' },
 ];
 
 /** 3× set → seamless loop even on very wide screens */
@@ -23,7 +23,6 @@ const loop = [...clients, ...clients, ...clients];
               src={client.src}
               alt={index < clients.length ? client.alt : ''}
               class="client-logo-img"
-              style={`--logo-scale: ${client.scale}`}
               loading="lazy"
               decoding="async"
             />
