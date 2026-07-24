@@ -11,6 +11,16 @@
   body {
     @apply font-sans text-black antialiased;
     background-color: #f6f6f6;
+    background-image: url('/images/pozadi-prokat.webp');
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    background-image: url('/images/pozadi-prokat@2x.webp');
   }
 }
 
@@ -183,36 +193,11 @@
   }
 }
 
-/* Legacy class kept for markup compatibility — page bg lives on .site-bg */
+/* Legacy class kept for markup compatibility — page bg lives on body */
 .section-watermark,
 .services-watermark,
 .contact-page {
   background: transparent;
-}
-
-/* One continuous page background — no tile seams */
-.site-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-color: #f6f6f6;
-  background-image: image-set(
-    url('/images/pozadi-prokat.webp') type('image/webp'),
-    url('/images/pozadi-prokat.png') type('image/png')
-  );
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .site-bg {
-    background-image: image-set(
-      url('/images/pozadi-prokat@2x.webp') type('image/webp'),
-      url('/images/pozadi-prokat@2x.png') type('image/png')
-    );
-  }
 }
 
 @keyframes marquee {
