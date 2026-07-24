@@ -20,7 +20,7 @@ if (!service) {
 ---
 
 <Layout title={`${service.title} | Prokat Invest`} description={service.description}>
-  <div class="services-watermark bg-surface relative">
+  <div class="services-watermark relative">
     <Navbar />
 
     <section class="pb-0 pt-8 lg:pt-28">
@@ -38,7 +38,7 @@ if (!service) {
   </div>
 
   <main>
-    <section class="services-watermark bg-surface">
+    <section class="services-watermark">
       <div class="mx-auto max-w-[1280px]">
         <div class="aspect-[16/9] w-full overflow-hidden sm:aspect-[2/1]">
           <img
@@ -53,7 +53,7 @@ if (!service) {
       </div>
     </section>
 
-    <section class="services-watermark bg-surface py-16 lg:py-24">
+    <section class="services-watermark py-16 lg:py-24">
       <div class="mx-auto max-w-3xl px-6 lg:px-10">
         <p
           class="mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
@@ -72,7 +72,7 @@ if (!service) {
       </div>
     </section>
 
-    <section class="bg-white py-16 lg:py-24">
+    <section class="py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <img
           src={service.heroImage}
@@ -85,7 +85,7 @@ if (!service) {
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {
             service.benefits.map((benefit) => (
-              <article class="rounded-2xl bg-white p-6 shadow-sm lg:p-8">
+              <article class="rounded-2xl bg-white/90 p-6 shadow-sm lg:p-8">
                 <img
                   src="/icons/service-icon.png"
                   alt=""
@@ -165,7 +165,7 @@ if (!service) {
       </div>
     </section>
 
-    <section class="bg-white py-16 lg:py-24">
+    <section class="py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <p
           class="mb-4 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
@@ -182,7 +182,7 @@ if (!service) {
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           {
             processSteps.map((item, index) => (
-              <article class="relative rounded-2xl border border-gray-100 bg-surface p-6 lg:p-8">
+              <article class="relative rounded-2xl border border-gray-100 bg-white/90 p-6 lg:p-8">
                 <p class="mb-3 text-sm font-medium text-gold">{item.step}</p>
                 <h3 class="text-xl font-semibold leading-snug text-navy lg:text-2xl">{item.title}</h3>
                 {index < processSteps.length - 1 && (
@@ -200,7 +200,7 @@ if (!service) {
       </div>
     </section>
 
-    <section class="bg-surface py-16 lg:py-24">
+    <section class="py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <div class="mb-12 text-center">
           <p class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-navy md:text-[24px]">
@@ -218,7 +218,7 @@ if (!service) {
           {
             service.faqs.map((faq, index) => (
               <details
-                class="faq-item group overflow-hidden rounded-2xl border border-gray-100 bg-white"
+                class="faq-item group overflow-hidden rounded-2xl border border-gray-100 bg-white/90"
                 open={index === 0}
               >
                 <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6 lg:p-8 [&::-webkit-details-marker]:hidden">
