@@ -59,19 +59,20 @@ export const services: ServiceDetail[] = [
           'Vzdálený dohled, řízení, prediktivní analýza údržby a optimalizace, notifikace, adaptivní autonomní řízení a další.',
       },
       {
-        title: 'BMS kompatibilita',
+        title: 'Přizpůsobení provozním režimům',
         description:
           'Naše systémy jsou připraveny na integraci do stávajících platforem řízení budov (BMS) pomocí standardizovaných protokolů.',
       },
       {
-        title: 'Úspora 10–20 % provozních nákladů pomocí AI managementu',
+        title: 'Rekuperace tepla a chladu',
         description:
-          'Inteligentní řízení systémů pro automatickou optimalizaci výkonu a maximální úspory energií.',
+          'Řízení systémů optimalizuje pomocí AI modulu provozní spotřeby VZT zařízení.',
       },
       {
-        title: 'Zaručení mikroklimatických podmínek',
+        title:
+          'Garance úzkých pásem tolerance mikroklimatických podmínek pro technologické procesy',
         description:
-          'Stabilita vnitřního mikroklimatu prostřednictvím automatizované regulace entalpie, filtrace a distribuce vzduchu.',
+          'Je to zejména stěžejní pro technologie výroby, kdy na úzkých pásmech tolerancí závisí produkce výrobku.',
       },
     ],
     capabilities: [
@@ -156,19 +157,24 @@ export const services: ServiceDetail[] = [
     ],
     benefits: [
       {
-        title: 'AI analýza spotových cen',
+        title: 'Výpočty spotřeb tepla dle norem',
         description:
-          'Optimalizace nákladů na provoz na základě predikce cen energií pro nákup v nejlevnějších tržních slotech.',
+          'Přenos a úprava teoretických výpočtů do praxe na základě dlouholetých zkušeností, které jsou podloženy měřením jednotlivých funkčních energetických celků.',
       },
       {
-        title: 'Úspora 10–20 % provozních nákladů',
+        title: 'Provozní náklady',
         description:
-          'Inteligentní řízení systémů pro automatickou optimalizaci výkonu a maximální úspory energií.',
+          'Optimalizace provozních nákladů na provoz na základě predikce cen energií pro nákup v nejlevnějších tržních slotech.',
       },
       {
-        title: 'Všechny typy tepelných zdrojů',
+        title: 'Alternativní zdroje tepla',
         description:
-          'Plynové i kondenzační kotelny, tepelná čerpadla, bivalentní systémy a další.',
+          'Použití různých zdrojů tepla a jejich kombinace jako jsou plynové kotelny, tepelná čerpadla, FVE, odpadní teplo atd.',
+      },
+      {
+        title: 'Rekuperace tepla',
+        description:
+          'Všechno odpadní teplo je v zimě rekuperováno nejenom z topných zdrojů, ale i např. od kompresorů, kondenzátorů, odpadní vody z wellness atd.',
       },
     ],
     capabilities: [
@@ -252,19 +258,24 @@ export const services: ServiceDetail[] = [
     ],
     benefits: [
       {
-        title: 'Záruční a pozáruční servis zařízení',
+        title: 'Studie vhodnosti použití způsobu chlazení jednotlivých aplikací',
         description:
-          'Protože známe váš systém do posledního detailu, jsme nejlepšími garanty jeho bezchybného chodu.',
+          'Vypracování různých návrhů a možností zdrojů chladu, jejich porovnání a vyhodnocení.',
       },
       {
-        title: 'Úspora 10–20 % provozních nákladů',
+        title: 'Provozní náklady',
         description:
-          'Inteligentní řízení systémů pro automatickou optimalizaci výkonu a maximální úspory energií.',
+          'Hlídání provozních nákladů pomocí vzdáleného přístupu a vyhodnocování trendů za pomocí AI.',
       },
       {
-        title: 'Propan a butan, amoniak, oxid uhličitý, syntetická chladiva',
+        title: 'Rekuperace a akumulace chladu',
         description:
-          'Používáme všechny druhy chladicích technologií v závislosti na efektivitě a vašem požadavku.',
+          'Využíváme všech možností pro rekuperaci chladu např. z odtahovaného vzduchu nebo akumulace chladu v případě, že jsou nízké spotové ceny energie nebo jsou přetoky z výroby FVE.',
+      },
+      {
+        title: 'Použití chladiv s nízkým koeficientem GWP (vliv chladiva na ozónovou díru)',
+        description:
+          'Naším krédem je využití chladiv, které mají minimální dopad na životní prostředí.',
       },
     ],
     capabilities: [
@@ -346,19 +357,24 @@ export const services: ServiceDetail[] = [
     ],
     benefits: [
       {
-        title: 'Analýza každého článku baterie a jednotlivých stringů',
+        title: 'Volba velikosti FVE s ohledem na návratnost',
         description:
-          'Kontinuální diagnostika pro maximalizaci výkonu a bezpečnosti BESS.',
+          'Nejdůležitější skutečností při návrhu FVE je určení využitelnosti její výroby s ohledem na spotřebu a návratnost investice.',
       },
       {
-        title: 'Úspora 10–20 % provozních nákladů',
+        title: 'Ukládání energie do baterek, sdílení energie',
         description:
-          'Inteligentní řízení systémů pro automatickou optimalizaci výkonu a maximální úspory energií.',
+          'Využití nadvýroby z FVE pro pozdější využití, kdy FVE již nevyrábí z důvodu klimatických podmínek nebo noci.',
       },
       {
-        title: 'Analýza trendů pomocí AI',
+        title: 'Analýza trendů',
         description:
-          'Naše AI algoritmy neustále korelují reálná produkční data s lokálními meteorologickými modely a historickými trendy.',
+          'Vzdálená správa FVE s vyhodnocováním trendů pomocí AI modelu je garancí optimální využitelnosti vyráběné energie a její použití v ostatních systémech budovy.',
+      },
+      {
+        title: 'Servisní činnost',
+        description:
+          'Nepostradatelnou činností je pravidelný servis FVE, který zabezpečí nejenom bezporuchový chod, ale i bezpečnost systému.',
       },
     ],
     capabilities: [
