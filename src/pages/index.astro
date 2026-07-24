@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ClientLogos from '../components/ClientLogos.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import ServiceList from '../components/ServiceList.astro';
+import FlipButton from '../components/FlipButton.astro';
 ---
 
 <Layout>
@@ -15,53 +16,55 @@ import ServiceList from '../components/ServiceList.astro';
     <section class="pb-0">
         <div class="mx-auto max-w-site px-6 lg:px-10 pb-0 pt-8 lg:pt-28">
           <div class="flex flex-col gap-10 text-center lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-16 lg:gap-y-6 lg:text-left xl:gap-x-16">
+            <h1
+              class="text-4xl sm:text-5xl lg:col-start-1 lg:row-start-1 lg:text-[72px] lg:leading-[1.05] font-semibold text-navy tracking-tight"
+            >
+              Od <span class="text-gold-bright">návrhu</span> až po realizaci a servis
+            </h1>
+
+            <p class="text-lg md:text-[23px] font-medium leading-snug text-navy lg:col-start-1 lg:row-start-2">
+              Provozní úspory 10-20% nákladů pomocí AI managmentu.
+            </p>
+
+            <p class="mx-auto max-w-xl text-lg md:text-[23px] font-medium leading-relaxed text-navy lg:col-start-1 lg:row-start-3 lg:mx-0">
+              // Od roku 1999 //<br />
+              Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
+              měření a regulace a využitím AI
+            </p>
+
             <p
-              class="mx-auto inline-flex w-fit max-w-full items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-xs font-medium text-navy sm:text-sm md:text-base lg:col-start-1 lg:row-start-1 lg:mx-0 lg:justify-self-start"
+              class="mx-auto inline-flex w-fit max-w-full items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-xs font-medium text-navy sm:text-sm md:text-base lg:col-start-1 lg:row-start-4 lg:mx-0 lg:justify-self-start"
             >
               <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold-bright" aria-hidden="true"></span>
               Váš spolehlivý partner pro technologické celky
             </p>
 
-            <h1
-              class="text-4xl sm:text-5xl lg:col-start-1 lg:row-start-2 lg:text-[72px] lg:leading-[1.05] font-semibold text-navy tracking-tight"
-            >
-              Od <span class="text-gold-bright">návrhu</span> až po spuštění zdroje.
-            </h1>
-
-            <p class="text-lg md:text-[23px] font-medium leading-snug text-navy lg:col-start-1 lg:row-start-3">
-              Provozní úspory 10-20% nákladů pomocí AI managmentu.
-            </p>
-
-            <p class="mx-auto max-w-xl text-lg md:text-[23px] font-medium leading-relaxed text-navy lg:col-start-1 lg:row-start-4 lg:mx-0">
-              // Od roku 1999 //<br />
-              Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
-              měření a regulace.
-            </p>
-
             <div
-              class="mx-auto flex w-full max-w-md shrink-0 flex-col items-center gap-8 lg:col-start-2 lg:row-start-3 lg:row-span-2 lg:mx-0 lg:max-w-lg lg:items-end lg:self-start lg:text-right"
+              class="mx-auto flex w-full max-w-md shrink-0 flex-col items-center gap-8 lg:col-start-2 lg:row-start-1 lg:row-span-4 lg:mx-0 lg:max-w-lg lg:self-start"
             >
-              <address class="not-italic space-y-0.5 text-base font-medium leading-relaxed text-navy sm:text-[21px]">
-                <p>Sídlo společnosti:</p>
-                <p class="font-semibold">PROKAT invest s.r.o.</p>
-                <p>Plzeňská 1348/95, Praha 5</p>
-                <p>IČ: 25238876, DIČ: CZ25238876</p>
+              <address class="not-italic space-y-0.5 text-center text-base font-medium leading-relaxed text-navy sm:text-[21px]">
+                <p class="font-semibold">Sídlo společnosti:</p>
+                <p>PROKAT invest s.r.o.</p>
+                <p>Plzeňská 1348/95</p>
+                <p>Praha 5</p>
+                <p>IČ: 25238876</p>
+                <p>DIČ: CZ25238876</p>
                 <p>Datová schránka: ns3u7ke</p>
-                <p>Společnost je zapsaná v obchodním rejstříku:</p>
-                <p>Městský soud v Praze, oddíl C, vložka 350481.</p>
+                <p>
+                  Společnost je zapsaná v obchodním<br />
+                  rejstříku:
+                </p>
+                <p>
+                  Městský soud v Praze, oddíl C, vložka<br />
+                  350481.
+                </p>
               </address>
 
-              <a
+              <FlipButton
                 href="/sluzby"
-                class="btn-gradient inline-flex min-h-[52px] h-auto w-full items-center justify-between gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl py-3 pl-[18px] pr-1.5 text-sm font-medium text-white hover:opacity-95 transition-opacity sm:w-auto sm:justify-start lg:ml-auto lg:justify-center"
-              >
-                <span>Prozkoumejte naše služby</span>
-                <span
-                  class="btn-gradient-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-                >
-                  <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-                </span>
-              </a>
+                label="Prozkoumejte naše služby"
+                class="w-full sm:w-auto lg:justify-center"
+              />
             </div>
           </div>
         </div>
@@ -110,17 +113,11 @@ import ServiceList from '../components/ServiceList.astro';
           pozáručních servisu
         </p>
 
-        <a
+        <FlipButton
           href="/o-nas"
-          class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-3 text-white text-sm font-medium min-h-[52px] h-auto hover:opacity-95 transition-opacity mb-16 w-full sm:w-auto justify-center sm:justify-start"
-        >
-          <span>Více o naší společnosti</span>
-          <span
-            class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-          >
-            <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-          </span>
-        </a>
+          label="Více o naší společnosti"
+          class="mb-16 w-full sm:w-auto justify-center sm:justify-start"
+        />
 
         <div class="relative mx-auto w-full max-w-[760px] xl:max-w-[820px]">
           <!-- Mobil: přehledný stack -->
@@ -221,7 +218,7 @@ import ServiceList from '../components/ServiceList.astro';
     </section>
 
     <!-- SLUŽBY -->
-    <section class="services-watermark bg-surface py-16 lg:py-24">
+    <section class="services-watermark bg-surface py-16 lg:py-24 lg:pb-40">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div class="space-y-4 max-w-3xl">
@@ -233,17 +230,11 @@ import ServiceList from '../components/ServiceList.astro';
               Flexibilní řešení pro <span class="text-gold">široký</span> rozsah použití TZB systémů
             </h2>
           </div>
-          <a
+          <FlipButton
             href="/sluzby"
-            class="btn-gradient inline-flex items-center gap-3 rounded-tl rounded-tr rounded-br-[14px] rounded-bl pl-[18px] pr-1.5 py-3 text-white text-sm font-medium min-h-[52px] h-auto hover:opacity-95 transition-opacity shrink-0 self-stretch sm:self-start lg:self-auto w-full sm:w-auto justify-between sm:justify-start"
-          >
-            <span>Prozkoumejte naše služby</span>
-            <span
-              class="btn-gradient-icon flex h-10 w-10 items-center justify-center rounded-tl rounded-tr rounded-br-[10px] rounded-bl"
-            >
-              <img src="/icons/arrow.svg" alt="" class="h-3 w-4" />
-            </span>
-          </a>
+            label="Prozkoumejte naše služby"
+            class="shrink-0 self-stretch sm:self-start lg:self-auto w-full sm:w-auto"
+          />
         </div>
 
         <ServiceList />

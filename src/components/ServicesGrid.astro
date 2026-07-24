@@ -1,27 +1,15 @@
 ---
 const services = [
   {
-    id: 'chlazeni',
-    title: 'Chlazení',
-    image: '/images/service-cooling.png',
-    alt: 'Chlazení',
+    id: 'vzduchotechnika',
+    title: 'Vzduchotechnika',
+    image: '/images/service-hvac.jpg',
+    alt: 'Vzduchotechnika',
     points: [
-      'Studie vhodnosti použití způsobu chlazení jednotlivých aplikacích',
-      'Provozní náklady',
-      'Rekuperace a akumulace chladu',
-      'Použití chladiv s nízkým koeficientem GWP (vliv chladiva na ozónovou díru)',
-    ],
-  },
-  {
-    id: 'fotovoltaika',
-    title: 'Fotovoltaika',
-    image: '/images/service-solar.png',
-    alt: 'Fotovoltaika',
-    points: [
-      'Volba velikosti FVE s ohledem na návratnost',
-      'Ukládání energie do baterek, sdílení energie',
-      'Analýza trendů',
-      'Servisní činnost',
+      'Garance mikroklimatických podmínek',
+      'Garance úzkých pásem tolerance mikroklimatických podmínek pro technologické procesy',
+      'Přizpůsobení provozním režimům',
+      'Rekuperace tepla a chladu',
     ],
   },
   {
@@ -30,22 +18,34 @@ const services = [
     image: '/images/service-heating.jpg',
     alt: 'Topné zdroje',
     points: [
-      'Výpočty spotřeb tepla dle norem',
-      'Provozní náklady',
       'Alternativní zdroje tepla',
+      'Provozní náklady',
       'Rekuperace tepla',
+      'Výpočty spotřeb tepla dle norem',
     ],
   },
   {
-    id: 'vzduchotechnika',
-    title: 'Vzduchotechnika',
-    image: '/images/service-hvac.jpg',
-    alt: 'Vzduchotechnika',
+    id: 'chlazeni',
+    title: 'Chlazení',
+    image: '/images/service-cooling.png',
+    alt: 'Chlazení',
     points: [
-      'Garance mikroklimatických podmínek',
-      'Přizpůsobení provozním režimům',
-      'Rekuperace tepla a chladu',
-      'Garance úzkých pásem tolerance mikroklimatických podmínek pro technologické procesy',
+      'Použití chladiv s nízkým koeficientem GWP (vliv chladiva na ozónovou díru)',
+      'Provozní náklady',
+      'Rekuperace a akumulace chladu',
+      'Studie vhodnosti použití způsobu chlazení jednotlivých aplikacích',
+    ],
+  },
+  {
+    id: 'fotovoltaika',
+    title: 'Fotovoltaika',
+    image: '/images/service-solar.png',
+    alt: 'Fotovoltaika',
+    points: [
+      'Analýza trendů',
+      'Servisní činnost',
+      'Ukládání energie do baterek, sdílení energie',
+      'Volba velikosti FVE s ohledem na návratnost',
     ],
   },
 ];
@@ -57,14 +57,16 @@ const services = [
       <a
         id={service.id}
         href="/kontakt"
-        class="group scroll-mt-28 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-gold/30 transition-all"
+        class="service-card group scroll-mt-28 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all hover:border-gold/30 hover:shadow-md"
       >
-        <img
-          src={service.image}
-          alt={service.alt}
-          class="w-full h-48 sm:h-56 lg:h-64 object-cover"
-          loading="lazy"
-        />
+        <div class="service-media">
+          <img
+            src={service.image}
+            alt={service.alt}
+            class="h-48 w-full object-cover sm:h-56 lg:h-64"
+            loading="lazy"
+          />
+        </div>
         <div class="p-6 lg:p-8">
           <h2 class="text-xl lg:text-[28px] font-semibold text-navy group-hover:text-gold transition-colors">
             {service.title}
