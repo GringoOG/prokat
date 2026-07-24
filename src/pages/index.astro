@@ -10,6 +10,8 @@ import SeoLabel from '../components/SeoLabel.astro';
 ---
 
 <Layout>
+  <link slot="head" rel="preload" as="image" href="/images/vzt-poster.jpg" type="image/jpeg" fetchpriority="high" />
+  <link slot="head" rel="preload" as="video" href="/videos/vzt.webm" type="video/webm" />
   <div class="section-watermark relative">
     <Navbar />
 
@@ -106,24 +108,8 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Right column: services CTA + company seat -->
-          <div class="mx-auto flex w-full max-w-[360px] flex-col justify-center gap-2 lg:mx-0 lg:h-full lg:max-w-none">
-            <a
-              href="/sluzby"
-              class="relative block overflow-hidden rounded-lg bg-navy transition-opacity hover:opacity-95"
-            >
-              <img
-                src="/images/banner-bg-blue.jpg"
-                alt=""
-                class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-                aria-hidden="true"
-              />
-              <div class="relative px-4 py-3.5 text-left">
-                <p class="text-sm font-semibold leading-snug text-white">Prozkoumejte služby</p>
-                <p class="mt-0.5 text-xs font-medium text-white/65">Od návrhu až po servis.</p>
-              </div>
-            </a>
-
+          <!-- Right column: company seat -->
+          <div class="mx-auto flex w-full max-w-[360px] flex-col justify-center lg:mx-0 lg:h-full lg:max-w-none lg:-translate-y-4 xl:-translate-y-6">
             <address
               class="relative not-italic overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_12px_40px_rgba(16,16,41,0.08)] sm:p-6"
             >
@@ -250,28 +236,50 @@ import SeoLabel from '../components/SeoLabel.astro';
   </div>
 
   <main>
-    <section id="technologie" class="relative overflow-hidden min-h-[380px] sm:min-h-[460px] lg:min-h-[560px]">
+    <section
+      id="technologie"
+      class="relative min-h-[380px] overflow-hidden bg-[#1a1a1a] sm:min-h-[460px] lg:min-h-[560px]"
+      style="background-image: url('/images/vzt-poster.jpg'); background-size: cover; background-position: center;"
+    >
       <video
+        id="tech-video"
         autoplay
         muted
         loop
         playsinline
         preload="auto"
+        poster="/images/vzt-poster.jpg"
         class="absolute inset-0 h-full w-full object-cover object-center"
         aria-label="Průmyslové vzduchotechnické zařízení"
       >
         <source src="/videos/vzt.webm" type="video/webm" />
+        <source src="/videos/vzt.mp4" type="video/mp4" />
       </video>
       <div class="absolute inset-0 bg-black/25"></div>
       <div class="absolute inset-0 z-10 flex items-center justify-center px-6 lg:px-10">
         <h2
-          class="text-center text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.25] font-semibold text-white tracking-tight max-w-4xl drop-shadow-sm leading-snug"
+          class="max-w-4xl text-center text-3xl font-semibold leading-snug tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-[58px] lg:leading-[1.25]"
         >
           Nejnovější technologie.<br />
           Prověřeno v <span class="text-gold">praxi.</span><br />
           Provozně hospodárné systémy řízeny AI.
         </h2>
       </div>
+      <script>
+        const video = document.getElementById('tech-video');
+        if (video instanceof HTMLVideoElement) {
+          const tryPlay = () => {
+            video.muted = true;
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+              playPromise.catch(() => {});
+            }
+          };
+          if (video.readyState >= 2) tryPlay();
+          else video.addEventListener('loadeddata', tryPlay, { once: true });
+          document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
+        }
+      </script>
     </section>
 
     <!-- STATISTIKY -->
