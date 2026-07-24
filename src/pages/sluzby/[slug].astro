@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import FlipButton from '../../components/FlipButton.astro';
+import SeoLabel from '../../components/SeoLabel.astro';
 import { getServiceBySlug, processSteps, services } from '../../data/services';
 
 export function getStaticPaths() {
@@ -55,12 +56,7 @@ if (!service) {
 
     <section class="services-watermark py-16 lg:py-24">
       <div class="mx-auto max-w-3xl px-6 lg:px-10">
-        <p
-          class="mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
-        >
-          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-          Přehled služby
-        </p>
+        <SeoLabel class="mb-6">Přehled služby</SeoLabel>
         <h2
           class="mb-6 text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[42px] lg:leading-[1.2]"
         >
@@ -112,12 +108,7 @@ if (!service) {
 
       <div class="relative mx-auto max-w-site px-6 lg:px-10">
         <div class="mb-10 grid grid-cols-1 gap-6 lg:mb-14 lg:grid-cols-4 lg:gap-0 lg:items-center">
-          <p
-            class="inline-flex w-fit items-center gap-2.5 rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-white"
-          >
-            <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-            Možnosti &amp; Realizace
-          </p>
+          <SeoLabel variant="light">Možnosti &amp; Realizace</SeoLabel>
           <h2
             class="text-3xl font-semibold leading-snug tracking-tight text-white sm:text-4xl lg:col-span-2 lg:col-start-3 lg:text-[42px] lg:leading-[1.15]"
           >
@@ -172,12 +163,7 @@ if (!service) {
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:gap-12">
           <div class="max-w-md shrink-0 lg:max-w-[320px] xl:max-w-md">
-            <p
-              class="mb-5 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-navy shadow-sm md:text-base"
-            >
-              <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-              Jak fungujeme
-            </p>
+            <SeoLabel class="mb-5">Jak fungujeme</SeoLabel>
             <h2
               class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[42px] lg:leading-[1.2]"
             >
@@ -235,12 +221,7 @@ if (!service) {
     <section class="faq-panel relative overflow-hidden py-16 lg:py-24">
       <div class="relative mx-auto max-w-site px-6 lg:px-10">
         <div class="mb-10 text-center lg:mb-14">
-          <p
-            class="mx-auto mb-5 inline-flex w-fit items-center gap-2.5 rounded-full border border-navy/15 bg-white/90 px-4 py-2 text-sm font-medium text-navy shadow-sm md:text-base"
-          >
-            <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-            Časté dotazy
-          </p>
+          <SeoLabel class="mx-auto mb-5">Časté dotazy</SeoLabel>
           <h2
             class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]"
           >
