@@ -16,11 +16,10 @@ export type ServiceFaq = {
 export type ServiceDetail = {
   slug: string;
   title: string;
-  heroSubtitle?: string;
   description: string;
-  /** Listing / card photo */
+  /** Listing / card / detail hero photo */
   image: string;
-  /** Large schema on service detail page (below hero CTA) */
+  /** Technology schema shown below overview, above benefits */
   heroImage: string;
   overviewTitle: string;
   overview: string[];
@@ -41,7 +40,6 @@ export const services: ServiceDetail[] = [
   {
     slug: 'vzduchotechnika',
     title: 'Vzduchotechnika',
-    heroSubtitle: 'Garance mikroklimatických podmínek',
     description:
       'Realizace VZT systémů s rekuperací, inteligentní regulací a garancí mikroklimatických podmínek.',
     image: '/images/service-hvac.jpg',

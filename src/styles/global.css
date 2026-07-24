@@ -95,12 +95,47 @@
 /* Service sticky stack + image zoom */
 .service-stack {
   position: relative;
+  isolation: isolate;
 }
 
 .service-stack-item {
   position: sticky;
-  top: 6.5rem;
   background: #fff;
+}
+
+/* Framer-style cascade: each row sticks lower so they stack over each other */
+.service-stack-item:nth-child(1) {
+  top: 100px;
+}
+
+.service-stack-item:nth-child(2) {
+  top: 220px;
+}
+
+.service-stack-item:nth-child(3) {
+  top: 340px;
+}
+
+.service-stack-item:nth-child(4) {
+  top: 460px;
+}
+
+@media (max-width: 809px) {
+  .service-stack-item:nth-child(1) {
+    top: 1rem;
+  }
+
+  .service-stack-item:nth-child(2) {
+    top: 1.75rem;
+  }
+
+  .service-stack-item:nth-child(3) {
+    top: 2.5rem;
+  }
+
+  .service-stack-item:nth-child(4) {
+    top: 3.25rem;
+  }
 }
 
 .service-media {
