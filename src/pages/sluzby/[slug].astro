@@ -43,14 +43,14 @@ if (!service) {
   </div>
 
   <main>
-    <section class="bg-white">
+    <section class="bg-[#1a1a1a]">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <img
-          src={service.image}
-          alt={service.title}
-          class="h-[240px] w-full object-cover sm:h-[360px] lg:h-[480px]"
-          width="1600"
-          height="480"
+          src={service.heroImage}
+          alt={`Schéma — ${service.title}`}
+          class="mx-auto h-auto w-full object-contain"
+          width="1024"
+          height="487"
           loading="eager"
         />
       </div>

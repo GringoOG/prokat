@@ -18,7 +18,10 @@ export type ServiceDetail = {
   title: string;
   heroSubtitle?: string;
   description: string;
+  /** Listing / card photo */
   image: string;
+  /** Large schema on service detail page (below hero CTA) */
+  heroImage: string;
   overviewTitle: string;
   overview: string[];
   benefits: ServiceBenefit[];
@@ -42,6 +45,7 @@ export const services: ServiceDetail[] = [
     description:
       'Realizace VZT systémů s rekuperací, inteligentní regulací a garancí mikroklimatických podmínek.',
     image: '/images/service-hvac.jpg',
+    heroImage: '/images/service-schema-vzt.jpg',
     overviewTitle: 'Realizace VZT',
     overview: [
       'Naše realizační služby v oblasti VZT kombinují nejmodernější technologie s týmem zkušených techniků pro instalaci systémů, které splňují nejvyšší průmyslové standardy. S využitím pokročilých rekuperačních jednotek a inteligentních prvků regulace realizujeme vše od jednoduchých projektů po technologicky náročné celky s nekompromisní přesností.',
@@ -143,6 +147,7 @@ export const services: ServiceDetail[] = [
     description:
       'Montáž a integrace topných zdrojů — kotelny, tepelná čerpadla a bivalentní systémy s AI řízením.',
     image: '/images/service-heating.jpg',
+    heroImage: '/images/service-schema-heating.jpg',
     overviewTitle: 'Odborná montáž a integrace technologií',
     overview: [
       'Naše služby v oblasti montáže propojují precizní řemeslné zpracování s moderními technologickými postupy. Dodáváme plně integrované celky, které splňují nejnáročnější průmyslové standardy. Od dílčích sestav až po komplexní vícekomponentní systémy (jako jsou kotelny či chladicí strojovny) garantujeme přesnost, spolehlivost a bezchybnou funkčnost.',
@@ -239,6 +244,7 @@ export const services: ServiceDetail[] = [
     description:
       'Návrh, montáž a servis chladicích celků — chillery, VRV/VRF i přírodní chladiva.',
     image: '/images/service-cooling.png',
+    heroImage: '/images/service-schema-cooling.jpg',
     overviewTitle: 'Montáž chladicích celků',
     overview: [
       'Naše služby v chlazení spojují moderní technologie a zkušené techniky k proměně plánů v přesné, vysoce kvalitní celky. Od návrhu, montáže a zapojení až po svařování a revize řešíme každou fázi s přesností a důsledností.',
@@ -331,6 +337,7 @@ export const services: ServiceDetail[] = [
     description:
       'Instalace FVE od střešních řešení po systémy s bateriovým úložištěm a AI monitoringem.',
     image: '/images/service-solar.png',
+    heroImage: '/images/service-schema-solar.jpg',
     overviewTitle: 'Instalace FVE',
     overview: [
       'Naše služby v oblasti instalace FVE propojují precizní řemeslné zpracování s pokročilými technologickými postupy, abychom dodali energetické celky splňující nejvyšší průmyslové standardy. Od jednoduchých střešních instalací až po komplexní systémy s bateriovým úložištěm zajišťujeme přesnost, spolehlivost a bezproblémovou funkčnost celého řešení.',
