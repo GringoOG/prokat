@@ -38,14 +38,14 @@ const isActive = (href: string) =>
               {isActive(item.href) ? (
                 <a
                   href={item.href}
-                  class="inline-flex items-center gap-2 text-navy hover:text-gold-bright transition-colors"
+                  class="inline-flex items-center gap-2 text-navy hover:text-gold transition-colors"
                   aria-current="page"
                 >
                   <span class="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href} class="text-navy/80 hover:text-gold-bright transition-colors">
+                <a href={item.href} class="text-navy/80 hover:text-gold transition-colors">
                   {item.label}
                 </a>
               )}
@@ -85,14 +85,14 @@ const isActive = (href: string) =>
               {isActive(item.href) ? (
                 <a
                   href={item.href}
-                  class="inline-flex items-center gap-2 text-gold-bright transition-colors"
+                  class="inline-flex items-center gap-2 text-gold transition-colors"
                   aria-current="page"
                 >
-                  <span class="h-1.5 w-1.5 rounded-full bg-gold-bright" aria-hidden="true" />
+                  <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href} class="hover:text-gold-bright transition-colors">
+                <a href={item.href} class="hover:text-gold transition-colors">
                   {item.label}
                 </a>
               )}
