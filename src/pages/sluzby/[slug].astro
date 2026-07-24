@@ -168,50 +168,81 @@ if (!service) {
       </div>
     </section>
 
-    <section class="py-16 lg:py-24">
+    <section class="process-panel relative overflow-hidden py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-10">
-        <p
-          class="mb-4 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
-        >
-          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
-          Jak fungujeme
-        </p>
-        <h2
-          class="mb-10 text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:mb-14 lg:text-[42px] lg:leading-[1.2]"
-        >
-          Náš osvědčený postup realizace.
-        </h2>
+        <div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:gap-12">
+          <div class="max-w-md shrink-0 lg:max-w-[320px] xl:max-w-md">
+            <p
+              class="mb-5 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-navy shadow-sm md:text-base"
+            >
+              <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
+              Jak fungujeme
+            </p>
+            <h2
+              class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[42px] lg:leading-[1.2]"
+            >
+              Náš <span class="text-gold">osvědčený</span> postup realizace.
+            </h2>
+          </div>
 
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-          {
-            processSteps.map((item, index) => (
-              <article class="relative rounded-2xl border border-gray-100 bg-white/90 p-6 lg:p-8">
-                <p class="mb-3 text-sm font-medium text-gold">{item.step}</p>
-                <h3 class="text-xl font-semibold leading-snug text-navy lg:text-2xl">{item.title}</h3>
-                {index < processSteps.length - 1 && (
-                  <span
-                    class="pointer-events-none absolute right-4 top-8 hidden text-gold/40 md:block"
-                    aria-hidden="true"
+          <div
+            class="process-circles relative mx-auto flex w-full max-w-[720px] items-center justify-center lg:mx-0 lg:max-w-none lg:justify-end"
+            aria-label="Postup realizace"
+          >
+            {
+              processSteps.map((item, index) => {
+                const variant =
+                  index === 0 ? 'navy' : index === 1 ? 'white' : 'glow';
+                const stepClass =
+                  index === 0
+                    ? 'text-gold'
+                    : index === 1
+                      ? 'text-gold'
+                      : 'text-white';
+                const titleClass =
+                  index === 0
+                    ? 'text-white'
+                    : index === 1
+                      ? 'text-gold'
+                      : 'text-white';
+                return (
+                  <article
+                    class:list={[
+                      'process-circle',
+                      `process-circle--${variant}`,
+                      index === 1 ? 'z-[3]' : index === 2 ? 'z-[2]' : 'z-[1]',
+                      index > 0 && 'process-circle--overlap',
+                    ]}
                   >
-                    →
-                  </span>
-                )}
-              </article>
-            ))
-          }
+                    <p class:list={['text-sm font-semibold md:text-base', stepClass]}>{item.step}</p>
+                    <h3
+                      class:list={[
+                        'mt-2 max-w-[9.5rem] text-base font-semibold leading-snug md:text-lg',
+                        titleClass,
+                      ]}
+                    >
+                      {item.title}
+                    </h3>
+                  </article>
+                );
+              })
+            }
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 lg:py-24">
-      <div class="mx-auto max-w-site px-6 lg:px-10">
-        <div class="mb-12 text-center">
-          <p class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-navy md:text-[24px]">
-            <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+    <section class="faq-panel relative overflow-hidden py-16 lg:py-24">
+      <div class="relative mx-auto max-w-site px-6 lg:px-10">
+        <div class="mb-10 text-center lg:mb-14">
+          <p
+            class="mx-auto mb-5 inline-flex w-fit items-center gap-2.5 rounded-full border border-navy/15 bg-white/90 px-4 py-2 text-sm font-medium text-navy shadow-sm md:text-base"
+          >
+            <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
             Časté dotazy
           </p>
           <h2
-            class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.25]"
+            class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]"
           >
             Často kladené dotazy
           </h2>
@@ -221,21 +252,21 @@ if (!service) {
           {
             service.faqs.map((faq, index) => (
               <details
-                class="faq-item group overflow-hidden rounded-2xl border border-gray-100 bg-white/90"
+                class="faq-item group overflow-hidden rounded-[14px] bg-white shadow-[0_8px_30px_rgba(16,16,41,0.08)]"
                 open={index === 0}
               >
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6 lg:p-8 [&::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-5 sm:gap-4 sm:p-6 lg:p-7 [&::-webkit-details-marker]:hidden">
                   <span class="text-left text-sm font-semibold text-navy sm:text-base lg:text-xl">
                     {faq.question}
                   </span>
                   <span
-                    class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-xl font-light leading-none text-gold"
+                    class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-xl font-light leading-none text-white"
                     aria-hidden="true"
                   >
                     +
                   </span>
                 </summary>
-                <div class="-mt-2 px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
+                <div class="-mt-1 px-5 pb-5 sm:px-6 sm:pb-6 lg:px-7 lg:pb-7">
                   <p class="text-base font-medium leading-relaxed text-navy/70 lg:text-lg">
                     {faq.answer}
                   </p>
@@ -257,6 +288,17 @@ if (!service) {
   }
   .faq-icon {
     transition: transform 0.2s ease;
+  }
+
+  .faq-panel {
+    background: linear-gradient(
+      180deg,
+      #c9a04a 0%,
+      #a67c37 18%,
+      #5c4a28 42%,
+      #1a1520 68%,
+      #0c0c12 100%
+    );
   }
 
   .capabilities-panel {
@@ -305,6 +347,64 @@ if (!service) {
   @media (max-width: 1023px) {
     .capabilities-grid-lines {
       display: none;
+    }
+  }
+
+  .process-circle {
+    display: flex;
+    width: min(38vw, 240px);
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(16, 16, 41, 0.14);
+  }
+
+  .process-circle--overlap {
+    margin-left: -1.75rem;
+  }
+
+  .process-circle--navy {
+    background: #101029;
+  }
+
+  .process-circle--white {
+    background: #fff;
+  }
+
+  .process-circle--glow {
+    background:
+      radial-gradient(
+        circle at 88% 12%,
+        rgba(255, 180, 18, 0.95) 0%,
+        rgba(212, 157, 57, 0.55) 22%,
+        rgba(16, 16, 41, 0.2) 48%,
+        transparent 62%
+      ),
+      #101029;
+  }
+
+  @media (min-width: 1024px) {
+    .process-circle {
+      width: min(22vw, 280px);
+    }
+
+    .process-circle--overlap {
+      margin-left: -3rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .process-circle {
+      width: 300px;
+    }
+
+    .process-circle--overlap {
+      margin-left: -3.5rem;
     }
   }
 </style>
