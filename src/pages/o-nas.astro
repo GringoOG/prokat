@@ -5,10 +5,10 @@ import Footer from '../components/Footer.astro';
 import FlipButton from '../components/FlipButton.astro';
 
 const competencies = [
-  { title: 'Vzduchotechnika', href: '/sluzby#vzduchotechnika' },
-  { title: 'Topné zdroje', href: '/sluzby#topne-zdroje' },
-  { title: 'Chlazení', href: '/sluzby#chlazeni' },
-  { title: 'Fotovoltaika', href: '/sluzby#fotovoltaika' },
+  { title: 'Vzduchotechnika', href: '/sluzby/vzduchotechnika' },
+  { title: 'Topné zdroje', href: '/sluzby/topne-zdroje' },
+  { title: 'Chlazení', href: '/sluzby/chlazeni' },
+  { title: 'Fotovoltaika', href: '/sluzby/fotovoltaika' },
 ];
 ---
 
@@ -22,7 +22,7 @@ const competencies = [
     <section class="pb-12 pt-8 lg:pb-16 lg:pt-28">
       <div class="mx-auto max-w-site px-6 lg:px-10">
         <div class="text-center">
-          <h1 class="text-3xl font-semibold leading-none tracking-tight text-navy sm:text-4xl lg:text-[58px]">
+          <h1 class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]">
             O nás
           </h1>
           <p class="mt-2 text-lg font-medium leading-snug text-navy/80 md:text-[23px]">
@@ -31,7 +31,7 @@ const competencies = [
         </div>
 
         <p
-          class="mt-8 max-w-md text-left text-xl font-semibold leading-none tracking-tight text-navy sm:text-2xl lg:mt-10 lg:text-[42px]"
+          class="mt-8 max-w-md text-left text-xl font-semibold leading-snug tracking-tight text-navy sm:text-2xl lg:mt-10 lg:text-[42px] lg:leading-[1.2]"
         >
           <span class="text-gold">25 let</span> špičkových<br />
           realizací a uznání
@@ -41,7 +41,7 @@ const competencies = [
   </div>
 
   <main>
-    <section class="overflow-hidden bg-white pb-12 lg:pb-16">
+    <section class="overflow-hidden bg-white">
       <div class="relative grid grid-cols-1 lg:grid-cols-2">
         <div class="overflow-hidden">
           <img
@@ -101,52 +101,47 @@ const competencies = [
           Naše cesta
         </p>
 
-        <div class="mb-12 flex flex-col items-center gap-8 lg:mb-16 lg:flex-row lg:items-start lg:gap-10 xl:gap-14">
-          <img
-            src="/images/crif-business-elite-cz.png"
-            alt="CRIF Business Elite 2026 — Certifikát PROKAT invest s.r.o."
-            class="mx-auto h-auto w-[160px] shrink-0 object-contain shadow-md lg:mx-0 lg:w-[180px]"
-            width="180"
-            height="254"
-          />
-          <h2
-            class="max-w-4xl text-center text-3xl font-semibold leading-[1.1] tracking-tight text-navy sm:text-4xl lg:pt-1 lg:text-left lg:text-[58px]"
-          >
-            Budujeme důvěru a kvalitu na základech <span class="text-gold">dlouholetých</span> inženýrských
-            zkušeností.
-          </h2>
-        </div>
+        <h2
+          class="mb-12 max-w-4xl text-center text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:mb-16 lg:text-left lg:text-[58px] lg:leading-[1.25]"
+        >
+          Budujeme důvěru a kvalitu na základech <span class="text-gold">dlouholetých</span> inženýrských
+          zkušeností.
+        </h2>
 
-        <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,305px)_1fr] lg:gap-12 xl:gap-16">
-          <div class="relative mx-auto w-full max-w-[305px] overflow-hidden rounded-2xl lg:mx-0">
-            <img
-              src="/images/about-director.png"
-              alt="Ing. Vladimír Škrlant"
-              class="aspect-[305/420] w-full object-cover"
-              width="305"
-              height="420"
-            />
-            <div
-              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/45 to-transparent px-6 pb-6 pt-16"
-            >
-              <p class="text-sm font-medium text-white/90 sm:text-base">Ing. Vladimír Škrlant</p>
-              <p class="mt-1 text-xl font-semibold leading-tight text-white sm:text-2xl">Majitel &amp; ředitel</p>
-            </div>
-          </div>
+        <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(340px,440px)] lg:gap-14 xl:gap-20">
+          <div class="order-2 space-y-10 lg:order-1">
+            <div class="grid grid-cols-1 items-start gap-10 sm:grid-cols-[minmax(0,240px)_1fr] sm:gap-8 lg:gap-10">
+              <div class="relative mx-auto w-full max-w-[240px] overflow-hidden rounded-2xl sm:mx-0 sm:max-w-none">
+                <img
+                  src="/images/about-director.png"
+                  alt="Ing. Vladimír Škrlant"
+                  class="aspect-[305/420] w-full object-cover"
+                  width="305"
+                  height="420"
+                />
+                <div
+                  class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/45 to-transparent px-5 pb-5 pt-14"
+                >
+                  <p class="text-sm font-medium text-white/90">Ing. Vladimír Škrlant</p>
+                  <p class="mt-1 text-lg font-semibold leading-snug text-white sm:text-xl">
+                    Majitel &amp; ředitel
+                  </p>
+                </div>
+              </div>
 
-          <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 lg:gap-12">
-            <div>
-              <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
-              <div class="space-y-4 text-base leading-relaxed text-navy/80 lg:text-lg">
-                <p>
-                  Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
-                  řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
-                  komplexní služby včetně měření, regulace a fotovoltaiky.
-                </p>
-                <p>
-                  Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
-                  cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
-                </p>
+              <div>
+                <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
+                <div class="space-y-4 text-base leading-relaxed text-navy/80 lg:text-lg">
+                  <p>
+                    Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
+                    řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
+                    komplexní služby včetně měření, regulace a fotovoltaiky.
+                  </p>
+                  <p>
+                    Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
+                    cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -173,7 +168,8 @@ const competencies = [
                             stroke="currentColor"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            stroke-width="1.5"></path>
+                            stroke-width="1.5"
+                          ></path>
                         </svg>
                       </a>
                     </li>
@@ -188,6 +184,20 @@ const competencies = [
               />
             </div>
           </div>
+
+          <figure class="order-1 mx-auto w-full max-w-[440px] lg:order-2 lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
+            <img
+              src="/images/crif-business-elite-cz.png"
+              alt="CRIF Business Elite 2026 — Certifikát PROKAT invest s.r.o."
+              class="h-auto w-full object-contain shadow-lg"
+              width="849"
+              height="1200"
+              loading="lazy"
+            />
+            <figcaption class="mt-4 text-center text-sm font-medium text-navy/60 lg:text-left">
+              CRIF Business Elite 2026
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

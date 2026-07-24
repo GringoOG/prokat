@@ -1,27 +1,33 @@
 ---
 const clients = [
-  { src: '/images/client-hutchinson.png', alt: 'Hutchinson' },
-  { src: '/images/client-pilsner.png', alt: 'Pilsner Urquell' },
-  { src: '/images/client-skoda.png', alt: 'Škoda' },
-  { src: '/images/client-autoopat.png', alt: 'Auto Opat' },
-  { src: '/images/client-centralgroup.png', alt: 'Central Group' },
-  { src: '/images/client-xxxlutz.png', alt: 'XXXLutz' },
-  { src: '/images/client-mobelix.png', alt: 'Möbelix' },
+  { src: '/images/client-hutchinson.png', alt: 'Hutchinson', scale: 1 },
+  { src: '/images/client-pilsner.png', alt: 'Pilsner Urquell', scale: 0.92 },
+  { src: '/images/client-skoda.png', alt: 'Škoda', scale: 0.82 },
+  { src: '/images/client-autoopat.png', alt: 'Auto Opat', scale: 0.88 },
+  { src: '/images/client-centralgroup.png', alt: 'Central Group', scale: 1.05 },
+  { src: '/images/client-xxxlutz.png', alt: 'XXXLutz', scale: 0.95 },
+  { src: '/images/client-mobelix.png', alt: 'Möbelix', scale: 1 },
 ];
+
+/** 3× set → seamless loop even on very wide screens */
+const loop = [...clients, ...clients, ...clients];
 ---
 
-<section class="w-full overflow-hidden bg-white py-8" aria-label="Reference klientů">
-  <div class="relative bg-white">
-    <div class="marquee-track flex w-max items-center gap-10 lg:gap-12">
+<section class="w-full overflow-hidden bg-white py-10" aria-label="Reference klientů">
+  <div class="client-marquee relative">
+    <div class="marquee-track flex w-max items-center">
       {
-        [...clients, ...clients].map((client, index) => (
-          <img
-            src={client.src}
-            alt={index < clients.length ? client.alt : ''}
-            class="client-logo h-14 w-auto shrink-0 object-contain object-center sm:h-16 lg:h-[4.25rem]"
-            aria-hidden={index >= clients.length ? true : undefined}
-            loading="lazy"
-          />
+        loop.map((client, index) => (
+          <div class="client-logo-slot" aria-hidden={index >= clients.length ? true : undefined}>
+            <img
+              src={client.src}
+              alt={index < clients.length ? client.alt : ''}
+              class="client-logo-img"
+              style={`--logo-scale: ${client.scale}`}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         ))
       }
     </div>

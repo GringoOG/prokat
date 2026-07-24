@@ -1,0 +1,241 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import FlipButton from '../../components/FlipButton.astro';
+import { getServiceBySlug, processSteps, services } from '../../data/services';
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const service = getServiceBySlug(slug!);
+
+if (!service) {
+  throw new Error(`Unknown service slug: ${slug}`);
+}
+---
+
+<Layout title={`${service.title} | Prokat Invest`} description={service.description}>
+  <div class="services-watermark bg-surface relative">
+    <Navbar />
+
+    <section class="pb-10 pt-8 lg:pb-14 lg:pt-28">
+      <div class="mx-auto max-w-site px-6 text-center lg:px-10">
+        <h1
+          class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]"
+        >
+          {service.title}
+        </h1>
+        {
+          service.heroSubtitle && (
+            <p class="mt-3 text-lg font-medium text-gold md:text-[23px]">{service.heroSubtitle}</p>
+          )
+        }
+        <div class="mt-8 flex justify-center">
+          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <section class="bg-white">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <img
+          src={service.image}
+          alt={service.title}
+          class="h-[240px] w-full object-cover sm:h-[360px] lg:h-[480px]"
+          width="1600"
+          height="480"
+          loading="eager"
+        />
+      </div>
+    </section>
+
+    <section class="services-watermark bg-surface py-16 lg:py-24">
+      <div class="mx-auto max-w-3xl px-6 lg:px-10">
+        <p
+          class="mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
+        >
+          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
+          Přehled služby
+        </p>
+        <h2
+          class="mb-6 text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[42px] lg:leading-[1.2]"
+        >
+          {service.overviewTitle}
+        </h2>
+        <div class="space-y-5 text-base font-medium leading-relaxed text-navy/80 lg:text-lg">
+          {service.overview.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <div
+          class:list={[
+            'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8',
+            service.benefits.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3',
+          ]}
+        >
+          {
+            service.benefits.map((benefit) => (
+              <article class="rounded-2xl border border-gray-100 bg-surface p-6 lg:p-8">
+                <span
+                  class="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-gold/15"
+                  aria-hidden="true"
+                >
+                  <span class="h-2.5 w-2.5 rounded-[2px] bg-gold" />
+                </span>
+                <h3 class="mb-3 text-lg font-semibold leading-snug text-navy lg:text-xl">
+                  {benefit.title}
+                </h3>
+                <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="services-watermark bg-surface py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <p
+          class="mb-4 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
+        >
+          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
+          Možnosti &amp; Realizace
+        </p>
+        <h2
+          class="mb-10 max-w-3xl text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:mb-14 lg:text-[42px] lg:leading-[1.2]"
+        >
+          Realizace a montáž našich celků.
+        </h2>
+
+        <div class="mb-4 hidden grid-cols-3 gap-8 border-b border-gray-200 pb-3 text-sm font-semibold uppercase tracking-wide text-navy/50 lg:grid">
+          <span>Kategorie</span>
+          <span class="col-span-2">Detaily</span>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6 lg:gap-10">
+          {
+            service.capabilities.map((capability) => (
+              <div class="rounded-2xl border border-gray-100 bg-white p-6 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
+                <h3 class="mb-4 text-lg font-semibold text-navy lg:text-xl">{capability.title}</h3>
+                <ul class="space-y-3 text-base font-medium leading-relaxed text-navy/75 lg:text-lg">
+                  {capability.items.map((item) => (
+                    <li class="flex items-start gap-2.5">
+                      <img
+                        src="/icons/check.svg"
+                        alt=""
+                        class="mt-1.5 shrink-0"
+                        width="15"
+                        height="10"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <p
+          class="mb-4 inline-flex w-fit items-center gap-2.5 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-medium text-navy md:text-base"
+        >
+          <span class="h-2 w-2 shrink-0 rounded-[2px] bg-gold" aria-hidden="true"></span>
+          Jak fungujeme
+        </p>
+        <h2
+          class="mb-10 text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:mb-14 lg:text-[42px] lg:leading-[1.2]"
+        >
+          Náš osvědčený postup realizace.
+        </h2>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+          {
+            processSteps.map((item, index) => (
+              <article class="relative rounded-2xl border border-gray-100 bg-surface p-6 lg:p-8">
+                <p class="mb-3 text-sm font-medium text-gold">{item.step}</p>
+                <h3 class="text-xl font-semibold leading-snug text-navy lg:text-2xl">{item.title}</h3>
+                {index < processSteps.length - 1 && (
+                  <span
+                    class="pointer-events-none absolute right-4 top-8 hidden text-gold/40 md:block"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                )}
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface py-16 lg:py-24">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <div class="mb-12 text-center">
+          <p class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-navy md:text-[24px]">
+            <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+            Časté dotazy
+          </p>
+          <h2
+            class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.25]"
+          >
+            Často kladené dotazy
+          </h2>
+        </div>
+
+        <div class="mx-auto max-w-3xl space-y-3">
+          {
+            service.faqs.map((faq, index) => (
+              <details
+                class="faq-item group overflow-hidden rounded-2xl border border-gray-100 bg-white"
+                open={index === 0}
+              >
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6 lg:p-8 [&::-webkit-details-marker]:hidden">
+                  <span class="text-left text-sm font-semibold text-navy sm:text-base lg:text-xl">
+                    {faq.question}
+                  </span>
+                  <span
+                    class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-xl font-light leading-none text-gold"
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </summary>
+                <div class="-mt-2 px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
+                  <p class="text-base font-medium leading-relaxed text-navy/70 lg:text-lg">
+                    {faq.answer}
+                  </p>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-icon {
+    transition: transform 0.2s ease;
+  }
+</style>
