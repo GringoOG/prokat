@@ -6,7 +6,7 @@ import { serviceHref, services } from '../data/services';
   {
     services.map((service, index) => (
       <article
-        class="service-stack-item grid grid-cols-1 sm:grid-cols-[200px_1fr] lg:grid-cols-[auto_200px_1fr_auto] gap-4 sm:gap-6 items-center border border-gray-100 bg-white p-4 shadow-sm sm:p-6 lg:p-8"
+        class="service-stack-item grid grid-cols-1 items-center gap-4 border border-gray-100 bg-white p-4 shadow-sm sm:grid-cols-[260px_1fr] sm:gap-6 sm:p-6 lg:grid-cols-[auto_280px_minmax(0,1fr)_auto] lg:gap-8 lg:p-8"
         style={`z-index: ${index + 1};`}
       >
         <img
@@ -17,26 +17,26 @@ import { serviceHref, services } from '../data/services';
         />
         <a
           href={serviceHref(service.slug)}
-          class="service-media block shrink-0 sm:row-span-2 lg:row-span-1"
+          class="service-media block shrink-0 self-stretch sm:row-span-2 lg:row-span-1"
           aria-label={service.ariaLabel}
         >
           <img
             src={service.image}
             alt={service.title}
-            class="h-[160px] w-full object-cover sm:h-full sm:min-h-[120px] sm:w-[200px] lg:h-[120px]"
+            class="h-[200px] w-full object-cover sm:h-full sm:min-h-[180px] sm:w-[260px] lg:h-[200px] lg:w-[280px]"
           />
         </a>
-        <div class="space-y-3">
+        <div class="space-y-3 text-base font-medium lg:max-w-[52ch] lg:text-[23px]">
           <h3 class="text-xl font-semibold text-navy lg:text-[28px]">
             <a href={serviceHref(service.slug)} class="hover:text-gold transition-colors">
               {service.title}
             </a>
           </h3>
-          <ul class="space-y-2 text-base font-medium text-navy/90 lg:text-[23px]">
+          <ul class="space-y-2 text-navy/90">
             {service.listPoints.map((point) => (
               <li class="flex items-start gap-2">
                 <img src="/icons/check.svg" alt="" class="mt-2 shrink-0" width="15" height="10" />
-                {point}
+                <span>{point}</span>
               </li>
             ))}
           </ul>
