@@ -11,7 +11,6 @@ import SeoLabel from '../components/SeoLabel.astro';
 
 <Layout>
   <link slot="head" rel="preload" as="image" href="/images/vzt-poster.jpg" type="image/jpeg" fetchpriority="high" />
-  <link slot="head" rel="preload" as="video" href="/videos/vzt.webm" type="video/webm" />
   <div class="section-watermark relative">
     <Navbar />
 
@@ -127,7 +126,7 @@ import SeoLabel from '../components/SeoLabel.astro';
         muted
         loop
         playsinline
-        preload="auto"
+        preload="none"
         poster="/images/vzt-poster.jpg"
         class="absolute inset-0 h-full w-full object-cover object-center"
         aria-label="Průmyslové vzduchotechnické zařízení"
@@ -155,9 +154,33 @@ import SeoLabel from '../components/SeoLabel.astro';
               playPromise.catch(() => {});
             }
           };
-          if (video.readyState >= 2) tryPlay();
-          else video.addEventListener('loadeddata', tryPlay, { once: true });
-          document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
+
+          // Load full video only when section is near viewport
+          const loadAndPlay = () => {
+            if (video.dataset.srcLoaded === '1') {
+              tryPlay();
+              return;
+            }
+            video.dataset.srcLoaded = '1';
+            video.preload = 'auto';
+            video.load();
+            if (video.readyState >= 2) tryPlay();
+            else video.addEventListener('loadeddata', tryPlay, { once: true });
+          };
+
+          if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(
+              (entries) => {
+                if (!entries.some((e) => e.isIntersecting)) return;
+                loadAndPlay();
+                io.disconnect();
+              },
+              { rootMargin: '200px 0px' },
+            );
+            io.observe(video);
+          } else {
+            loadAndPlay();
+          }
         }
 
         const scrollToStats = document.getElementById('scroll-to-stats');
