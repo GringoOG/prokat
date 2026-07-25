@@ -81,13 +81,11 @@ if (!service) {
         <div class="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {
             service.benefits.map((benefit) => (
-              <article class="benefit-card relative flex h-full flex-col rounded-2xl p-px">
-                <div class="relative flex flex-1 flex-col overflow-hidden rounded-[15px] bg-transparent p-5 lg:p-6">
-                  <h3 class="mb-2 text-lg font-semibold leading-snug text-navy lg:text-xl">
-                    {benefit.title}
-                  </h3>
-                  <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
-                </div>
+              <article class="benefit-card relative flex h-full flex-col rounded-2xl p-5 lg:p-6">
+                <h3 class="mb-2 text-lg font-semibold leading-snug text-navy lg:text-xl">
+                  {benefit.title}
+                </h3>
+                <p class="text-base font-medium leading-relaxed text-navy/70">{benefit.description}</p>
               </article>
             ))
           }
@@ -279,14 +277,19 @@ if (!service) {
   }
 
   .benefit-card {
-    /* 1px brand gradient rim (navy → gold), same scale as seat accent */
-    background: linear-gradient(
-      165deg,
-      #101029 0%,
-      #3d2e1a 40%,
-      #d49d39 70%,
-      #8e6b33 100%
-    );
+    /* Thin gradient outline only — card fill stays transparent */
+    border: 1px solid transparent;
+    background:
+      linear-gradient(transparent, transparent) padding-box,
+      linear-gradient(
+        165deg,
+        #101029 0%,
+        #3d2e1a 40%,
+        #d49d39 70%,
+        #8e6b33 100%
+      )
+        border-box;
+    background-clip: padding-box, border-box;
   }
 
   .capabilities-panel {
