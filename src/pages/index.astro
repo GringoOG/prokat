@@ -17,18 +17,7 @@ import SeoLabel from '../components/SeoLabel.astro';
 
     <!-- HERO -->
     <section class="pb-0">
-      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-[25px] pt-[73px] lg:px-[28px] lg:pb-[25px] lg:pt-[185px]">
-        <!-- Prokat mark watermark -->
-        <img
-          src="/images/prokat-mark.png"
-          alt=""
-          width="928"
-          height="887"
-          aria-hidden="true"
-          decoding="async"
-          class="pointer-events-none absolute left-1/2 top-[48%] z-0 w-[min(72vw,360px)] max-w-none -translate-x-1/2 -translate-y-1/2 select-none opacity-[0.07] mix-blend-multiply lg:top-[46%] lg:w-[min(40vw,420px)] lg:opacity-[0.08] xl:w-[440px]"
-        />
-
+      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-[10px] pt-[73px] lg:px-[28px] lg:pb-[10px] lg:pt-[185px]">
         <div
           class="relative z-10 grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16"
         >
@@ -51,19 +40,30 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Right: Od roku 1999 -->
-          <div class="flex w-full flex-col gap-8 text-left lg:col-span-5 lg:pt-14 xl:pt-16">
-            <div class="space-y-3">
-              <p class="text-base font-medium text-gold md:text-lg">Od roku 1999</p>
-              <p class="max-w-md text-base font-medium leading-relaxed text-navy/75 md:text-lg">
-                Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
-                měření a regulace a využitím AI.
-              </p>
+          <!-- Right: Od roku 1999 + mark watermark centered behind text -->
+          <div class="relative flex w-full flex-col text-left lg:col-span-5 lg:pt-14 xl:pt-16">
+            <div class="relative">
+              <img
+                src="/images/prokat-mark.png"
+                alt=""
+                width="928"
+                height="887"
+                aria-hidden="true"
+                decoding="async"
+                class="hero-mark pointer-events-none absolute left-1/2 top-1/2 z-0 w-[min(50vw,252px)] max-w-none -translate-x-1/2 -translate-y-1/2 select-none mix-blend-multiply lg:w-[294px] xl:w-[308px]"
+              />
+              <div class="relative z-10 space-y-3">
+                <p class="text-base font-medium text-gold md:text-lg lg:text-[20px]">Od roku 1999</p>
+                <p class="max-w-md text-base font-medium leading-relaxed text-navy/75 md:text-lg lg:text-[20px]">
+                  Jsme spolehlivým partnerem pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI, včetně
+                  měření a regulace a využitím AI.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="pb-3 pt-10 text-center lg:pb-4 lg:pt-12">
+        <div class="pb-1 pt-10 text-center lg:pb-1.5 lg:pt-12">
           <a
             href="#statistiky"
             id="scroll-to-stats"
@@ -326,6 +326,28 @@ import SeoLabel from '../components/SeoLabel.astro';
 </Layout>
 
 <style>
+  .hero-mark {
+    opacity: 0;
+    animation: hero-mark-in 0.7s ease forwards;
+    animation-delay: 2.5s;
+  }
+
+  @keyframes hero-mark-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.08;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mark {
+      animation: none;
+      opacity: 0.08;
+    }
+  }
+
   /* Pin end colors so the circle never shows a seam of the opposite stop */
   .stats-years-circle {
     overflow: hidden;
