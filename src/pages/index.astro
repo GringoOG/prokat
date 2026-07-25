@@ -17,7 +17,7 @@ import SeoLabel from '../components/SeoLabel.astro';
 
     <!-- HERO -->
     <section class="pb-0">
-      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-0 pt-12 lg:px-10 lg:pt-40">
+      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-0 pt-12 lg:px-[28px] lg:pt-40">
         <!-- Prokat mark watermark -->
         <img
           src="/images/prokat-mark.png"
@@ -65,8 +65,8 @@ import SeoLabel from '../components/SeoLabel.astro';
 
         <div class="pb-3 pt-10 text-center lg:pb-4 lg:pt-12">
           <a
-            href="#technologie"
-            id="scroll-to-tech"
+            href="#statistiky"
+            id="scroll-to-stats"
             class="text-lg font-medium text-navy/80 transition-colors hover:text-gold lg:text-[22px]"
           >
             Zjistit více
@@ -121,20 +121,23 @@ import SeoLabel from '../components/SeoLabel.astro';
           document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
         }
 
-        const scrollToTech = document.getElementById('scroll-to-tech');
-        const techSection = document.getElementById('technologie');
-        scrollToTech?.addEventListener('click', (event) => {
-          if (!(techSection instanceof HTMLElement)) return;
+        const scrollToStats = document.getElementById('scroll-to-stats');
+        const statsSection = document.getElementById('statistiky');
+        scrollToStats?.addEventListener('click', (event) => {
+          if (!(statsSection instanceof HTMLElement)) return;
           event.preventDefault();
-          techSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          history.replaceState(null, '', '#technologie');
+          statsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#statistiky');
         });
       </script>
     </section>
 
     <!-- STATISTIKY -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-[#101029] via-[#1a1528] to-[#8e6b33] py-12 lg:py-14">
-      <div class="mx-auto max-w-site px-6 text-center lg:px-10">
+    <section
+      id="statistiky"
+      class="relative scroll-mt-8 overflow-hidden bg-gradient-to-b from-[#101029] via-[#1a1528] to-[#8e6b33] py-12 sm:scroll-mt-10 lg:scroll-mt-12 lg:py-14"
+    >
+      <div class="mx-auto max-w-site px-6 text-center lg:px-[28px]">
         <p class="mx-auto mb-5 max-w-3xl text-lg font-medium text-white/90 md:text-[23px]">
           Realizujeme technologické celky včetně studie energetické hospodárnosti, projektu, realizace, záručního a
           pozáručních servisu
@@ -146,7 +149,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           class="mb-8 w-full justify-center sm:w-auto sm:justify-start lg:mb-10"
         />
 
-        <div class="relative mx-auto w-full max-w-[760px] xl:max-w-[920px]">
+        <div class="relative mx-auto w-full max-w-[760px] xl:max-w-[980px]">
           <!-- Mobil: úplně pod sebou -->
           <div class="flex flex-col items-center gap-6 lg:hidden">
             <div
@@ -241,10 +244,10 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Široký desktop: v řadě, za sebou, dotýkají se -->
+          <!-- Široký desktop: v řadě, mírný překryv -->
           <div class="mx-auto hidden items-center justify-center xl:flex">
             <div
-              class="relative z-30 -mr-12 flex h-[300px] w-[300px] shrink-0 flex-col items-center justify-center rounded-full bg-white px-8 shadow-2xl 2xl:-mr-14 2xl:h-[320px] 2xl:w-[320px]"
+              class="relative z-30 -mr-7 flex h-[300px] w-[300px] shrink-0 flex-col items-center justify-center rounded-full bg-white px-8 shadow-2xl 2xl:-mr-8 2xl:h-[320px] 2xl:w-[320px]"
             >
               <img src="/images/logo.png" alt="" class="mb-3 h-8 opacity-80" aria-hidden="true" />
               <p class="text-[56px] font-semibold leading-none text-stat 2xl:text-[64px]">
@@ -263,7 +266,7 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
 
             <div
-              class="relative z-20 -mr-12 h-[300px] w-[300px] shrink-0 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl 2xl:-mr-14 2xl:h-[320px] 2xl:w-[320px]"
+              class="relative z-20 -mr-6 h-[300px] w-[300px] shrink-0 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl 2xl:-mr-7 2xl:h-[320px] 2xl:w-[320px]"
             >
               <img
                 src="/images/about-industrial.jpg"
@@ -273,11 +276,11 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
 
             <div
-              class="stats-years-circle relative z-10 flex h-[300px] w-[300px] shrink-0 flex-col items-center justify-center rounded-full border border-black/30 px-7 shadow-2xl 2xl:h-[320px] 2xl:w-[320px]"
+              class="stats-years-circle relative z-10 flex h-[300px] w-[300px] shrink-0 flex-col items-center justify-center rounded-full border border-black/30 px-8 shadow-2xl 2xl:h-[320px] 2xl:w-[320px]"
             >
               <p class="text-base font-medium text-white/80 2xl:text-lg">// 1999-2026 //</p>
               <p class="mt-1 text-[52px] font-semibold leading-none text-gold 2xl:text-[60px]">25+</p>
-              <p class="mt-2 max-w-[220px] text-center text-sm leading-relaxed text-white/90">
+              <p class="mt-2 max-w-[200px] text-center text-sm leading-relaxed text-white/90">
                 Garantujeme špičkovou kvalitu realizací již od samého začátku.
               </p>
               <img
@@ -296,7 +299,7 @@ import SeoLabel from '../components/SeoLabel.astro';
 
     <!-- SLUŽBY -->
     <section class="services-watermark pt-16 pb-6 lg:pt-24 lg:pb-8">
-      <div class="mx-auto max-w-site px-6 lg:px-10">
+      <div class="mx-auto max-w-site px-6 lg:px-[28px]">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div class="space-y-4 max-w-3xl">
             <SeoLabel>Co děláme</SeoLabel>
