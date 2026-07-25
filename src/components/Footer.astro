@@ -10,6 +10,15 @@ const footerLinkClass = (href: string) =>
   isActive(href)
     ? 'text-gold transition-colors'
     : 'text-[#a7a3a2] hover:text-gold transition-colors';
+
+const footerLinks = [
+  { href: '/', label: 'Domů' },
+  { href: '/o-nas', label: 'O nás' },
+  { href: '/sluzby', label: 'Služby' },
+  { href: '/projekty', label: 'Projekty' },
+  { href: '/kontakt', label: 'Kontakt' },
+  { href: '/gdpr', label: 'GDPR' },
+];
 ---
 
 <footer class="panel-gold-dark relative overflow-hidden text-white">
@@ -22,25 +31,25 @@ const footerLinkClass = (href: string) =>
 
   <div class="relative z-10 mx-auto max-w-5xl px-6 pb-6 pt-16 lg:px-8 lg:pb-8 lg:pt-20">
     <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-      <div>
-        <h2 class="mb-6 text-xl font-semibold text-white lg:text-[28px]">Odkazy</h2>
-        <ul class="space-y-3 text-base font-medium lg:text-[23px]">
-          <li><a href="/" class={footerLinkClass('/')}>Domů</a></li>
-          <li><a href="/o-nas" class={footerLinkClass('/o-nas')}>O nás</a></li>
-          <li><a href="/sluzby" class={footerLinkClass('/sluzby')}>Služby</a></li>
+      <div class="sm:col-span-2 lg:col-span-2">
+        <h2 class="mb-5 text-xl font-semibold text-white lg:mb-6 lg:text-[28px]">Odkazy</h2>
+        <ul
+          class="grid grid-cols-2 gap-x-6 gap-y-3 text-base font-medium sm:grid-cols-3 lg:text-[23px]"
+        >
+          {
+            footerLinks.map((link) => (
+              <li>
+                <a href={link.href} class={footerLinkClass(link.href)}>
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
-      <div class="lg:pt-[3.25rem]">
-        <ul class="space-y-3 text-base font-medium lg:text-[23px]">
-          <li><a href="/projekty" class={footerLinkClass('/projekty')}>Projekty</a></li>
-          <li><a href="/kontakt" class={footerLinkClass('/kontakt')}>Kontakt</a></li>
-          <li><a href="/gdpr" class={footerLinkClass('/gdpr')}>GDPR</a></li>
-        </ul>
-      </div>
-
       <div>
-        <h2 class="mb-6 text-xl font-semibold text-white lg:text-[28px]">Kontakt</h2>
+        <h2 class="mb-5 text-xl font-semibold text-white lg:mb-6 lg:text-[28px]">Kontakt</h2>
         <a
           href="https://www.linkedin.com/company/prokat-invest-s-r-o/"
           target="_blank"
