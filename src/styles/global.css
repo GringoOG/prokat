@@ -38,6 +38,19 @@
     inset 0 -1px 0 rgba(16, 16, 41, 0.25);
 }
 
+/* CTA banner — classic navy → gold across the whole panel */
+.cta-banner-panel {
+  background: linear-gradient(
+    105deg,
+    #101029 0%,
+    #101029 28%,
+    #15102a 48%,
+    #3d2e1a 68%,
+    #8e6b33 86%,
+    #d49d39 100%
+  );
+}
+
 /* Same outer shape as „Získejte CN“ — keep colors separate */
 .btn-shape {
   border-top-left-radius: 0.25rem;
