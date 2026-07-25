@@ -20,12 +20,12 @@ const isActive = (href: string) =>
     <nav class="relative flex min-h-[68px] items-center lg:min-h-0 lg:justify-between lg:py-5" aria-label="Hlavní navigace">
       <a
         href="/"
-        class="absolute left-1/2 z-10 -translate-x-1/2 lg:static lg:translate-x-0 lg:shrink-0"
+        class="group absolute left-1/2 z-10 -translate-x-1/2 lg:static lg:translate-x-0 lg:shrink-0"
       >
         <img
           src="/images/logo.png"
           alt="PROKAT invest"
-          class="h-12 w-auto sm:h-14 lg:h-[72px]"
+          class="h-12 w-auto origin-center transition-transform duration-300 ease-out group-hover:scale-105 sm:h-14 lg:h-[72px] lg:origin-left"
           width="322"
           height="80"
         />
