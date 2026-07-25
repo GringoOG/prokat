@@ -276,19 +276,38 @@ if (!service) {
   }
 
   .benefit-card {
-    /* Thin gradient outline only — card fill stays transparent */
-    border: 1px solid transparent;
-    background:
-      linear-gradient(transparent, transparent) padding-box,
-      linear-gradient(
-        165deg,
-        #101029 0%,
-        #3d2e1a 40%,
-        #d49d39 70%,
-        #8e6b33 100%
-      )
-        border-box;
-    background-clip: padding-box, border-box;
+    background: transparent;
+    border: none;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      165deg,
+      #101029 0%,
+      #3d2e1a 40%,
+      #d49d39 70%,
+      #8e6b33 100%
+    );
+    pointer-events: none;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+
+  .benefit-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .capabilities-panel {
