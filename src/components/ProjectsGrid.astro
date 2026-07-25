@@ -71,13 +71,13 @@ const moreProjects = [
 const projects = [...visibleProjects];
 ---
 
-<div class="panel-gold-dark overflow-hidden rounded-2xl border border-gold/40 p-4 sm:p-6 lg:p-8">
-  <div id="projects-grid" class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
+<div class="panel-gold-dark overflow-hidden rounded-2xl border border-gold/40 p-3 sm:p-6 lg:p-8">
+  <div id="projects-grid" class="grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2 lg:gap-6">
     {
       projects.map((project) => (
         <article class="project-card group grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
-          <div class="flex min-h-[200px] flex-col justify-center bg-white p-6 sm:min-h-[240px] lg:p-8">
-            <h2 class="text-xl font-semibold leading-snug text-gold lg:text-2xl">{project.client}</h2>
+          <div class="flex min-h-[180px] flex-col justify-center bg-white p-5 sm:min-h-[240px] sm:p-6 lg:p-8">
+            <h2 class="text-lg font-semibold leading-snug text-gold sm:text-xl lg:text-2xl">{project.client}</h2>
             <p class="mt-2 text-sm font-medium leading-snug text-navy/70 lg:text-base">{project.subtitle}</p>
             <div class="mt-4 lg:mt-6">
               <p class="text-3xl font-semibold leading-none text-navy lg:text-4xl">{project.savings}</p>
@@ -114,8 +114,8 @@ const projects = [...visibleProjects];
       {
         moreProjects.map((project) => (
           <article class="project-card group grid grid-cols-1 overflow-hidden rounded-xl bg-white sm:grid-cols-2">
-            <div class="flex min-h-[200px] flex-col justify-center bg-white p-6 sm:min-h-[240px] lg:p-8">
-              <h2 class="text-xl font-semibold leading-snug text-gold lg:text-2xl">{project.client}</h2>
+            <div class="flex min-h-[180px] flex-col justify-center bg-white p-5 sm:min-h-[240px] sm:p-6 lg:p-8">
+              <h2 class="text-lg font-semibold leading-snug text-gold sm:text-xl lg:text-2xl">{project.client}</h2>
               <p class="mt-2 text-sm font-medium leading-snug text-navy/70 lg:text-base">{project.subtitle}</p>
               <div class="mt-4 lg:mt-6">
                 <p class="text-3xl font-semibold leading-none text-navy lg:text-4xl">{project.savings}</p>

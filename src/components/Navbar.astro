@@ -25,13 +25,13 @@ const isActive = (href: string) =>
         <img
           src="/images/logo.png"
           alt="PROKAT invest"
-          class="h-12 w-auto origin-center transition-transform duration-300 ease-out group-hover:scale-105 sm:h-14 lg:h-[72px] lg:origin-left"
+          class="h-9 w-auto max-w-[min(42vw,180px)] origin-center object-contain transition-transform duration-300 ease-out group-hover:scale-105 sm:h-12 sm:max-w-none lg:h-[72px] lg:origin-left"
           width="322"
           height="80"
         />
       </a>
 
-      <ul class="hidden lg:flex items-center gap-9 text-lg lg:text-[22px] font-medium text-navy">
+      <ul class="hidden items-center gap-5 text-base font-medium text-navy xl:gap-9 xl:text-[22px] lg:flex lg:text-lg">
         {
           navItems.map((item) => (
             <li>
@@ -74,7 +74,7 @@ const isActive = (href: string) =>
 
           <div
             id="seat-panel"
-            class="seat-panel pointer-events-none invisible absolute right-0 top-full z-40 w-[min(100vw-3rem,340px)] pt-3 opacity-0 transition-all duration-150"
+            class="seat-panel pointer-events-none invisible absolute right-0 top-full z-40 w-[min(100vw-1.5rem,340px)] max-w-[calc(100vw-1.5rem)] pt-3 opacity-0 transition-all duration-150"
             role="region"
             aria-label="Sídlo společnosti"
           >
@@ -111,9 +111,9 @@ const isActive = (href: string) =>
           <FlipButton
             href="/kontakt"
             label="Získejte CN"
-            class="inline-flex min-h-[56px] text-[26px] font-medium"
-            labelClass="btn-flip-label py-2 pl-5 pr-1"
-            iconClass="btn-gradient-icon btn-shape-icon flex h-11 w-11 shrink-0 items-center justify-center"
+            class="inline-flex min-h-[48px] text-lg font-medium xl:min-h-[56px] xl:text-[26px]"
+            labelClass="btn-flip-label py-2 pl-4 pr-1 xl:pl-5"
+            iconClass="btn-gradient-icon btn-shape-icon flex h-9 w-9 shrink-0 items-center justify-center xl:h-11 xl:w-11"
           />
         </div>
 
@@ -153,6 +153,15 @@ const isActive = (href: string) =>
           ))
         }
       </ul>
+      <div class="mt-6">
+        <FlipButton
+          href="/kontakt"
+          label="Získejte CN"
+          class="inline-flex w-full min-h-[48px] justify-center text-lg font-medium text-white"
+          labelClass="btn-flip-label py-2 pl-5 pr-1"
+          iconClass="btn-gradient-icon btn-shape-icon flex h-10 w-10 shrink-0 items-center justify-center"
+        />
+      </div>
     </div>
   </div>
 </header>

@@ -31,8 +31,8 @@ if (!service) {
         >
           {service.title}
         </h1>
-        <div class="mt-8 mb-10 flex justify-center lg:mb-14">
-          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." />
+        <div class="mt-6 mb-8 flex justify-center px-1 sm:mt-8 sm:mb-10 lg:mb-14">
+          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." class="w-full max-w-sm sm:w-auto" />
         </div>
       </div>
     </section>
@@ -100,10 +100,10 @@ if (!service) {
       <div class="capabilities-grid-lines pointer-events-none absolute inset-0" aria-hidden="true"></div>
 
       <div class="relative mx-auto max-w-site px-6 lg:px-[28px]">
-        <div class="mb-6 grid grid-cols-1 gap-4 lg:mb-8 lg:grid-cols-4 lg:gap-0 lg:items-center">
+        <div class="mb-6 grid grid-cols-1 gap-3 lg:mb-8 lg:grid-cols-4 lg:gap-0 lg:items-center">
           <SeoLabel variant="light">Možnosti &amp; Realizace</SeoLabel>
           <h2
-            class="text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl lg:col-span-2 lg:col-start-3 lg:text-[36px] lg:leading-[1.15]"
+            class="text-xl font-semibold leading-snug tracking-tight text-white sm:text-2xl lg:col-span-2 lg:col-start-3 lg:text-[36px] lg:leading-[1.15]"
           >
             Realizace a montáž našich celků.
           </h2>
@@ -152,20 +152,20 @@ if (!service) {
       </div>
     </section>
 
-    <section class="process-panel relative overflow-hidden pt-16 pb-8 lg:pt-24 lg:pb-10">
+    <section class="process-panel relative overflow-hidden pt-12 pb-8 lg:pt-24 lg:pb-10">
       <div class="mx-auto max-w-site px-6 lg:px-[28px]">
-        <div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:gap-12">
-          <div class="max-w-md shrink-0 lg:max-w-[320px] xl:max-w-md">
-            <SeoLabel class="mb-5">Jak fungujeme</SeoLabel>
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:gap-12">
+          <div class="max-w-md shrink-0 text-center sm:text-left lg:max-w-[320px] xl:max-w-md">
+            <SeoLabel class="mx-auto mb-4 sm:mx-0 sm:mb-5">Jak fungujeme</SeoLabel>
             <h2
-              class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[42px] lg:leading-[1.2]"
+              class="text-2xl font-semibold leading-snug tracking-tight text-navy sm:text-3xl md:text-4xl lg:text-[42px] lg:leading-[1.2]"
             >
               Náš <span class="text-gold">osvědčený</span> postup realizace.
             </h2>
           </div>
 
           <div
-            class="process-circles relative mx-auto flex w-full max-w-[720px] items-center justify-center lg:mx-0 lg:max-w-none lg:justify-end"
+            class="process-circles relative mx-auto flex w-full max-w-[720px] flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:gap-0 lg:mx-0 lg:max-w-none lg:justify-end"
             aria-label="Postup realizace"
           >
             {
@@ -193,10 +193,10 @@ if (!service) {
                       index > 0 && 'process-circle--overlap',
                     ]}
                   >
-                    <p class:list={['text-sm font-semibold md:text-base', stepClass]}>{item.step}</p>
+                    <p class:list={['text-xs font-semibold sm:text-sm md:text-base', stepClass]}>{item.step}</p>
                     <h3
                       class:list={[
-                        'mt-2 max-w-[9.5rem] text-base font-semibold leading-snug md:text-lg',
+                        'mt-1.5 max-w-[8.5rem] text-sm font-semibold leading-snug sm:mt-2 sm:max-w-[9.5rem] sm:text-base md:text-lg',
                         titleClass,
                       ]}
                     >
@@ -213,16 +213,16 @@ if (!service) {
 
     <section class="services-watermark relative pt-8 pb-16 lg:pt-10 lg:pb-24">
       <div class="relative mx-auto max-w-site px-6 lg:px-[28px]">
-        <div class="mb-10 text-center lg:mb-14">
-          <SeoLabel class="mx-auto mb-5">Časté dotazy</SeoLabel>
+        <div class="mb-8 text-center lg:mb-14">
+          <SeoLabel class="mx-auto mb-4 sm:mb-5">Časté dotazy</SeoLabel>
           <h2
-            class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]"
+            class="text-2xl font-semibold leading-snug tracking-tight text-navy sm:text-3xl md:text-4xl lg:text-[58px] lg:leading-[1.2]"
           >
             Často kladené dotazy
           </h2>
         </div>
 
-        <div class="faq-frame mx-auto w-full max-w-2xl rounded-2xl p-3 sm:p-4">
+        <div class="faq-frame mx-auto w-full max-w-2xl rounded-2xl p-2.5 sm:p-4">
           <div class="space-y-3">
             {
               service.faqs.map((faq, index) => (
@@ -230,12 +230,12 @@ if (!service) {
                   class="faq-item group w-full overflow-hidden rounded-[14px] bg-white shadow-[0_8px_30px_rgba(16,16,41,0.08)]"
                   open={index === 0}
                 >
-                  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 sm:gap-5 sm:p-5 lg:gap-6 lg:p-5 [&::-webkit-details-marker]:hidden">
-                    <span class="text-left text-sm font-semibold text-navy sm:text-base lg:text-lg">
+                  <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-3.5 sm:gap-5 sm:p-5 lg:gap-6 lg:p-5 [&::-webkit-details-marker]:hidden">
+                    <span class="min-w-0 flex-1 text-left text-sm font-semibold text-navy sm:text-base lg:text-lg">
                       {faq.question}
                     </span>
                     <span
-                      class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-xl font-light leading-none text-white"
+                      class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-lg font-light leading-none text-white sm:h-9 sm:w-9 sm:text-xl"
                       aria-hidden="true"
                     >
                       +
@@ -356,20 +356,42 @@ if (!service) {
 
   .process-circle {
     display: flex;
-    width: min(38vw, 240px);
+    width: min(46vw, 150px);
     flex-shrink: 0;
     aspect-ratio: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    padding: 1.25rem;
+    padding: 0.85rem;
     text-align: center;
     box-shadow: 0 16px 40px rgba(16, 16, 41, 0.14);
   }
 
   .process-circle--overlap {
-    margin-left: -1.75rem;
+    margin-left: 0;
+  }
+
+  @media (min-width: 640px) {
+    .process-circle {
+      width: min(30vw, 200px);
+      padding: 1rem;
+    }
+
+    .process-circle--overlap {
+      margin-left: -1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-circle {
+      width: min(38vw, 240px);
+      padding: 1.25rem;
+    }
+
+    .process-circle--overlap {
+      margin-left: -1.75rem;
+    }
   }
 
   .process-circle--navy {

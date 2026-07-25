@@ -22,13 +22,13 @@ import SeoLabel from '../components/SeoLabel.astro';
         >
           <!-- Left: headline stays -->
           <div class="flex min-w-0 flex-col gap-6 text-center lg:col-span-7 lg:text-left">
-            <SeoLabel class="mb-0 justify-center lg:justify-start">
+            <SeoLabel class="mb-0 max-w-[18rem] justify-center text-center sm:max-w-none lg:justify-start lg:text-left">
               Váš spolehlivý partner pro technologické celky
             </SeoLabel>
 
             <div class="space-y-4">
               <h1
-                class="text-4xl font-semibold leading-snug tracking-tight text-navy sm:text-5xl lg:text-[64px] lg:leading-[1.15]"
+                class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl md:text-5xl lg:text-[64px] lg:leading-[1.15]"
               >
                 Od <span class="text-gold">návrhu</span> až po<br class="hidden sm:block" />
                 spuštění zdroje.
@@ -58,8 +58,8 @@ import SeoLabel from '../components/SeoLabel.astro';
                   včetně měření a regulace s využitím AI. Kompletní služby od studie a projektu až po realizaci,
                   servis a vzdálený dohled.
                 </p>
-                <div class="flex w-[90%] items-center justify-between">
-                  <p class="shrink-0 whitespace-nowrap text-base font-semibold text-navy sm:text-lg lg:text-[20px]">
+                <div class="flex w-full max-w-md flex-wrap items-center justify-between gap-x-3 gap-y-2 sm:w-[90%] sm:max-w-none sm:flex-nowrap">
+                  <p class="shrink-0 text-sm font-semibold text-navy sm:text-base lg:text-[20px]">
                     25+&nbsp;let
                   </p>
                   <a
@@ -72,7 +72,7 @@ import SeoLabel from '../components/SeoLabel.astro';
                       alt="Czech Stability Award AAA Excellent"
                       width="270"
                       height="367"
-                      class="h-auto w-[32px] bg-transparent brightness-0 sm:w-[36px] lg:w-[40px]"
+                      class="h-auto w-7 bg-transparent brightness-0 sm:w-[36px] lg:w-[40px]"
                       loading="lazy"
                       decoding="async"
                     />
@@ -87,12 +87,12 @@ import SeoLabel from '../components/SeoLabel.astro';
                       alt="CRIF Business Elite 2026 — Czech Republic"
                       width="140"
                       height="102"
-                      class="h-auto w-[56px] sm:w-[64px] lg:w-[70px]"
+                      class="h-auto w-12 sm:w-[64px] lg:w-[70px]"
                       loading="lazy"
                       decoding="async"
                     />
                   </a>
-                  <p class="shrink-0 whitespace-nowrap text-base font-semibold text-navy sm:text-lg lg:text-[20px]">
+                  <p class="shrink-0 text-sm font-semibold text-navy sm:text-base lg:text-[20px]">
                     1500+&nbsp;celků
                   </p>
                 </div>
@@ -137,10 +137,10 @@ import SeoLabel from '../components/SeoLabel.astro';
       <div class="absolute inset-0 bg-black/25"></div>
       <div class="absolute inset-0 z-10 flex items-center justify-center px-6 lg:px-10">
         <h2
-          class="max-w-4xl text-center text-3xl font-semibold leading-snug tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-[58px] lg:leading-[1.25]"
+          class="max-w-4xl text-center text-2xl font-semibold leading-snug tracking-tight text-white drop-shadow-sm sm:text-3xl md:text-4xl lg:text-[58px] lg:leading-[1.25]"
         >
-          Nejnovější technologie.<br />
-          Prověřeno v <span class="text-gold">praxi.</span><br />
+          Nejnovější technologie.<br class="hidden sm:block" />
+          <span class="sm:hidden"> </span>Prověřeno v <span class="text-gold">praxi.</span><br />
           Provozně hospodárné systémy řízeny pomocí AI.
         </h2>
       </div>
@@ -291,26 +291,26 @@ import SeoLabel from '../components/SeoLabel.astro';
           </div>
 
           <!-- Tablet / menší desktop: trojúhelník (2 nahoře, 1 dole) -->
-          <div class="relative mx-auto hidden h-[560px] w-full max-w-[700px] lg:block xl:hidden">
+          <div class="relative mx-auto hidden aspect-square w-full max-w-[640px] lg:block xl:hidden">
             <div
-              class="absolute left-0 top-0 z-30 flex h-[300px] w-[300px] flex-col items-center justify-center rounded-full bg-white px-8 shadow-2xl"
+              class="absolute left-0 top-0 z-30 flex h-[min(42%,270px)] w-[min(42%,270px)] flex-col items-center justify-center rounded-full bg-white px-5 shadow-2xl"
             >
-              <img src="/images/logo.png" alt="" class="mb-3 h-8 opacity-80" aria-hidden="true" />
-              <p class="text-[56px] font-semibold leading-none text-stat">
+              <img src="/images/logo.png" alt="" class="mb-2 h-7 opacity-80" aria-hidden="true" />
+              <p class="text-4xl font-semibold leading-none text-stat lg:text-[48px]">
                 1500<span class="text-navy">+</span>
               </p>
-              <p class="mt-3 max-w-[230px] text-center text-[18px] font-medium leading-snug text-navy">
+              <p class="mt-2 max-w-[200px] text-center text-sm font-medium leading-snug text-navy">
                 Realizovaných<br />technologických celků.
               </p>
-              <div class="mt-3 flex items-center gap-1">
-                <span class="text-[24px] font-semibold text-navy">4.9</span>
-                <span class="text-[20px] font-medium text-navy">/5.0</span>
-                <img src="/icons/stars.svg" alt="Hodnocení 4.9 z 5" class="ml-2 h-3.5" />
+              <div class="mt-2 flex items-center gap-1">
+                <span class="text-lg font-semibold text-navy">4.9</span>
+                <span class="text-sm font-medium text-navy">/5.0</span>
+                <img src="/icons/stars.svg" alt="Hodnocení 4.9 z 5" class="ml-1.5 h-3" />
               </div>
             </div>
 
             <div
-              class="absolute right-0 top-0 z-20 h-[300px] w-[300px] overflow-hidden rounded-full border-4 border-white/20 shadow-2xl"
+              class="absolute right-0 top-0 z-20 h-[min(42%,270px)] w-[min(42%,270px)] overflow-hidden rounded-full border-4 border-white/20 shadow-2xl"
             >
               <img
                 src="/images/about-industrial.jpg"
@@ -320,17 +320,17 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
 
             <div
-              class="stats-years-circle absolute left-1/2 top-[250px] z-20 flex h-[280px] w-[280px] -translate-x-1/2 flex-col items-center justify-center rounded-full border border-black/30 px-7 shadow-2xl"
+              class="stats-years-circle absolute bottom-0 left-1/2 z-20 flex h-[min(40%,250px)] w-[min(40%,250px)] -translate-x-1/2 flex-col items-center justify-center rounded-full border border-black/30 px-5 shadow-2xl"
             >
-              <p class="text-base font-medium text-white/80">// 1999-2026 //</p>
-              <p class="mt-1 text-[52px] font-semibold leading-none text-gold">25+</p>
-              <p class="mt-2 max-w-[220px] text-center text-sm leading-relaxed text-white/90">
+              <p class="text-sm font-medium text-white/80">// 1999-2026 //</p>
+              <p class="mt-1 text-4xl font-semibold leading-none text-gold">25+</p>
+              <p class="mt-2 max-w-[190px] text-center text-xs leading-relaxed text-white/90">
                 Garantujeme špičkovou kvalitu realizací již od samého začátku.
               </p>
               <img
                 src="/images/kotel.png"
                 alt=""
-                class="mt-2 h-14 w-auto shrink-0"
+                class="mt-2 h-12 w-auto shrink-0"
                 width="422"
                 height="482"
                 aria-hidden="true"
@@ -397,7 +397,7 @@ import SeoLabel from '../components/SeoLabel.astro';
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div class="space-y-4 max-w-3xl">
             <SeoLabel>Co děláme</SeoLabel>
-            <h2 class="text-3xl sm:text-4xl lg:text-[58px] lg:leading-[1.25] font-semibold text-navy tracking-tight leading-snug">
+            <h2 class="text-2xl font-semibold leading-snug tracking-tight text-navy sm:text-3xl md:text-4xl lg:text-[58px] lg:leading-[1.25]">
               Flexibilní řešení pro <span class="text-gold">široký</span> rozsah použití TZB systémů
             </h2>
           </div>

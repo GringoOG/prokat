@@ -6,7 +6,7 @@ import { serviceHref, services } from '../data/services';
   {
     services.map((service, index) => (
       <article
-        class="service-stack-item grid grid-cols-1 items-center gap-4 border border-gray-100 bg-white p-4 shadow-sm sm:grid-cols-[260px_1fr] sm:gap-6 sm:p-6 lg:grid-cols-[auto_280px_minmax(0,1fr)_auto] lg:gap-8 lg:p-8"
+        class="service-stack-item grid grid-cols-1 items-center gap-4 border border-gray-100 bg-white p-4 shadow-sm sm:grid-cols-[minmax(160px,200px)_1fr] sm:gap-5 sm:p-5 md:grid-cols-[minmax(200px,240px)_1fr] md:gap-6 md:p-6 lg:grid-cols-[auto_280px_minmax(0,1fr)_auto] lg:gap-8 lg:p-8"
         style={`z-index: ${index + 1};`}
       >
         <img
@@ -23,11 +23,11 @@ import { serviceHref, services } from '../data/services';
           <img
             src={service.image}
             alt={service.title}
-            class="h-[200px] w-full object-cover sm:h-full sm:min-h-[180px] sm:w-[260px] lg:h-[200px] lg:w-[280px]"
+            class="h-[180px] w-full object-cover sm:h-full sm:min-h-[160px] sm:w-full md:min-h-[180px] lg:h-[200px] lg:w-[280px]"
           />
         </a>
-        <div class="space-y-3 text-base font-medium lg:max-w-[52ch] lg:text-[23px]">
-          <h3 class="text-xl font-semibold text-navy lg:text-[28px]">
+        <div class="min-w-0 space-y-3 text-sm font-medium sm:text-base lg:max-w-[52ch] lg:text-[23px]">
+          <h3 class="text-lg font-semibold text-navy sm:text-xl lg:text-[28px]">
             <a href={serviceHref(service.slug)} class="hover:text-gold transition-colors">
               {service.title}
             </a>
