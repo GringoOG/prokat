@@ -38,14 +38,14 @@ const isActive = (href: string) =>
               {isActive(item.href) ? (
                 <a
                   href={item.href}
-                  class="inline-flex items-center gap-2 text-navy hover:text-gold transition-colors"
+                  class="inline-flex items-center gap-2 text-navy transition-colors hover:text-gold"
                   aria-current="page"
                 >
                   <span class="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href} class="text-navy/80 hover:text-gold transition-colors">
+                <a href={item.href} class="text-navy/80 transition-colors hover:text-gold">
                   {item.label}
                 </a>
               )}
@@ -54,47 +54,92 @@ const isActive = (href: string) =>
         }
       </ul>
 
-      <div class="relative hidden shrink-0 lg:block">
-        <FlipButton
-          href="/kontakt"
-          label="Získejte CN"
-          class="inline-flex text-base min-h-[56px]"
-          labelClass="btn-flip-label pl-5 pr-1 py-2"
-          iconClass="btn-gradient-icon btn-shape-icon flex h-11 w-11 shrink-0 items-center justify-center"
-        />
-        <a
-          href="/o-nas"
-          class="absolute right-0 top-full z-10 mt-3 inline-flex opacity-95 transition-opacity hover:opacity-100"
-          aria-label="CRIF Business Elite 2026 — více na stránce O nás"
-        >
-          <img
-            src="/images/crif-elite-badge.png"
-            alt="CRIF Business Elite 2026 — Czech Republic"
-            width="140"
-            height="102"
-            class="h-auto w-[120px] xl:w-[140px]"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-      </div>
+      <div class="ml-auto flex items-center gap-3 lg:ml-0 lg:gap-5">
+        <!-- Sídlo: icon only, between Kontakt and Získejte CN -->
+        <div class="seat-reveal relative">
+          <button
+            type="button"
+            id="seat-toggle"
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-navy transition-opacity hover:opacity-90 sm:h-11 sm:w-11"
+            aria-expanded="false"
+            aria-controls="seat-panel"
+            aria-label="Sídlo společnosti"
+          >
+            <svg class="h-4 w-4 text-gold" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path
+                d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.2 4.5 8.5 4.5 8.5s4.5-5.3 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"
+              ></path>
+            </svg>
+          </button>
 
-      <button
-        type="button"
-        id="menu-toggle"
-        class="ml-auto flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg bg-navy/95 p-2 lg:hidden"
-        aria-label="Otevřít menu"
-        aria-expanded="false"
-      >
-        <span class="block h-[2px] w-5 rounded-full bg-white"></span>
-        <span class="block h-[2px] w-5 rounded-full bg-white"></span>
-      </button>
+          <address
+            id="seat-panel"
+            class="seat-panel pointer-events-none invisible absolute right-0 top-full z-40 mt-3 w-[min(100vw-3rem,340px)] not-italic overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 opacity-0 shadow-lg transition-all duration-200 sm:p-6"
+          >
+            <span
+              class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-navy via-gold to-[#8e6b33]"
+              aria-hidden="true"
+            ></span>
+
+            <p class="mb-3 text-sm font-medium text-gold">Sídlo společnosti</p>
+
+            <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
+              <p class="font-semibold">PROKAT invest s.r.o.</p>
+              <p>Plzeňská 1348/95</p>
+              <p>Praha 5</p>
+              <p class="pt-2">IČ: 25238876</p>
+              <p>DIČ: CZ25238876</p>
+            </div>
+
+            <div class="my-4 h-px bg-gray-200"></div>
+
+            <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
+              <p>Datová schránka: ns3u7ke</p>
+              <p>Společnost je zapsaná v obchodním rejstříku:</p>
+              <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
+            </div>
+          </address>
+        </div>
+
+        <div class="relative hidden shrink-0 lg:block">
+          <FlipButton
+            href="/kontakt"
+            label="Získejte CN"
+            class="inline-flex min-h-[56px] text-base"
+            labelClass="btn-flip-label py-2 pl-5 pr-1"
+            iconClass="btn-gradient-icon btn-shape-icon flex h-11 w-11 shrink-0 items-center justify-center"
+          />
+          <a
+            href="/o-nas"
+            class="absolute right-0 top-full z-10 mt-3 inline-flex opacity-95 transition-opacity hover:opacity-100"
+            aria-label="CRIF Business Elite 2026 — více na stránce O nás"
+          >
+            <img
+              src="/images/crif-elite-badge.png"
+              alt="CRIF Business Elite 2026 — Czech Republic"
+              width="140"
+              height="102"
+              class="h-auto w-[120px] xl:w-[140px]"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </div>
+
+        <button
+          type="button"
+          id="menu-toggle"
+          class="flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg bg-navy/95 p-2 lg:hidden"
+          aria-label="Otevřít menu"
+          aria-expanded="false"
+        >
+          <span class="block h-[2px] w-5 rounded-full bg-white"></span>
+          <span class="block h-[2px] w-5 rounded-full bg-white"></span>
+        </button>
+      </div>
     </nav>
 
-    <div
-      id="mobile-menu"
-      class="hidden border-t border-white/15 pb-6 lg:hidden"
-    >
+    <div id="mobile-menu" class="hidden border-t border-white/15 pb-6 lg:hidden">
       <ul class="flex flex-col gap-4 pt-4 text-lg font-medium text-white/90">
         {
           navItems.map((item) => (
@@ -109,7 +154,7 @@ const isActive = (href: string) =>
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href} class="hover:text-gold transition-colors">
+                <a href={item.href} class="transition-colors hover:text-gold">
                   {item.label}
                 </a>
               )}
@@ -140,6 +185,27 @@ const isActive = (href: string) =>
       background: transparent;
     }
   }
+
+  .seat-panel {
+    transform: translateY(6px);
+  }
+
+  .seat-reveal.is-open .seat-panel,
+  .seat-reveal:focus-within .seat-panel {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .seat-reveal:hover .seat-panel {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
 <script>
@@ -150,4 +216,28 @@ const isActive = (href: string) =>
     const isHidden = menu?.classList.toggle('hidden');
     toggle.setAttribute('aria-expanded', String(!isHidden));
   });
+
+  const seatReveal = document.querySelector('.seat-reveal');
+  const seatToggle = document.getElementById('seat-toggle');
+  const seatPanel = document.getElementById('seat-panel');
+
+  if (seatReveal instanceof HTMLElement && seatToggle instanceof HTMLButtonElement && seatPanel) {
+    const setOpen = (open) => {
+      seatReveal.classList.toggle('is-open', open);
+      seatToggle.setAttribute('aria-expanded', String(open));
+    };
+
+    seatToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setOpen(!seatReveal.classList.contains('is-open'));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!seatReveal.contains(event.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  }
 </script>

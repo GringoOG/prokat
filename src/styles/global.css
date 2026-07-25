@@ -347,7 +347,7 @@
 .since-marquee-text {
   margin: 0;
   padding: 0.75rem 0;
-  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-size: clamp(1.5rem, 4.5vw, 3.75rem);
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.04em;

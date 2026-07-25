@@ -51,7 +51,7 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Right: Od roku 1999 + Sídlo button (MANUFACT-style) -->
+          <!-- Right: Od roku 1999 -->
           <div class="flex w-full flex-col gap-8 text-left lg:col-span-5 lg:pt-14 xl:pt-16">
             <div class="space-y-3">
               <p class="text-base font-medium text-gold md:text-lg">Od roku 1999</p>
@@ -60,120 +60,13 @@ import SeoLabel from '../components/SeoLabel.astro';
                 měření a regulace a využitím AI.
               </p>
             </div>
-
-            <div class="seat-reveal group relative w-fit">
-              <button
-                type="button"
-                id="seat-toggle"
-                class="inline-flex items-center gap-3 text-left transition-opacity hover:opacity-90"
-                aria-expanded="false"
-                aria-controls="seat-panel"
-              >
-                <span
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy sm:h-11 sm:w-11"
-                  aria-hidden="true"
-                >
-                  <svg class="h-4 w-4 text-gold" viewBox="0 0 16 16" fill="currentColor">
-                    <path
-                      d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.2 4.5 8.5 4.5 8.5s4.5-5.3 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="text-base font-medium text-gold md:text-lg">Sídlo společnosti</span>
-              </button>
-
-              <address
-                id="seat-panel"
-                class="seat-panel pointer-events-none invisible absolute left-0 top-full z-30 mt-4 w-[min(100vw-3rem,340px)] not-italic overflow-hidden rounded-2xl border border-white/40 bg-white/95 p-5 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-200 sm:p-6 lg:bg-white/90"
-                hidden
-              >
-                <span
-                  class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-navy via-gold to-[#8e6b33]"
-                  aria-hidden="true"
-                ></span>
-
-                <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
-                  <p class="font-semibold">PROKAT invest s.r.o.</p>
-                  <p>Plzeňská 1348/95</p>
-                  <p>Praha 5</p>
-                  <p class="pt-2">IČ: 25238876</p>
-                  <p>DIČ: CZ25238876</p>
-                </div>
-
-                <div class="my-4 h-px bg-gray-200"></div>
-
-                <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
-                  <p>Datová schránka: ns3u7ke</p>
-                  <p>Společnost je zapsaná v obchodním rejstříku:</p>
-                  <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
-                </div>
-              </address>
-            </div>
-          </div>
-        </div>
-
-        <!-- Features — full width under hero split -->
-        <div
-          class="relative z-10 mt-10 grid grid-cols-1 divide-y divide-gray-200 border-y border-gray-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:mt-14"
-        >
-          <div class="px-0 py-5 text-left sm:px-4 sm:py-5 sm:first:pl-0 sm:last:pr-0 lg:px-5 lg:py-6">
-            <svg class="mb-3 h-8 w-8 text-navy" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.5"></circle>
-              <circle cx="16" cy="16" r="2" fill="#d49d39"></circle>
-              <path
-                d="M16 4v4M16 24v4M4 16h4M24 16h4"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"></path>
-              <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"></circle>
-            </svg>
-            <h2 class="mb-2 text-base font-semibold text-navy">Řešení na míru</h2>
-            <p class="text-sm font-medium leading-relaxed text-navy/65">
-              Navrhujeme efektivní a spolehlivá technická řešení.
-            </p>
-          </div>
-          <div class="px-0 py-5 text-left sm:px-4 sm:py-5 lg:px-5 lg:py-6">
-            <svg class="mb-3 h-8 w-8 text-navy" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5"></circle>
-              <circle cx="16" cy="16" r="1.8" fill="#d49d39"></circle>
-              <path
-                d="M16 6v2.5M16 23.5V26M6 16h2.5M23.5 16H26M8.8 8.8l1.8 1.8M21.4 21.4l1.8 1.8M8.8 23.2l1.8-1.8M21.4 10.6l1.8-1.8"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"></path>
-            </svg>
-            <h2 class="mb-2 text-base font-semibold text-navy">Komplexní služby</h2>
-            <p class="text-sm font-medium leading-relaxed text-navy/65">
-              Od projektu a realizace až po uvedení do provozu.
-            </p>
-          </div>
-          <div class="px-0 py-5 text-left sm:px-4 sm:py-5 sm:last:pr-0 lg:px-5 lg:py-6">
-            <svg class="mb-3 h-8 w-8 text-navy" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <path d="M7 24V16M13 24V12M19 24V14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-              ></path>
-              <path
-                d="M6 22h4v2H6v-2ZM12 10h4v14h-4V10ZM18 12h4v12h-4V12Z"
-                stroke="currentColor"
-                stroke-width="1.4"
-                stroke-linejoin="round"></path>
-              <path
-                d="M8 14c4-1 7-6 11-7l2 1"
-                stroke="#d49d39"
-                stroke-width="1.6"
-                stroke-linecap="round"></path>
-              <path d="m19 7 3 1-1 3" stroke="#d49d39" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-              ></path>
-            </svg>
-            <h2 class="mb-2 text-base font-semibold text-navy">Úspory a efektivita</h2>
-            <p class="text-sm font-medium leading-relaxed text-navy/65">
-              Optimalizace provozu a snížení provozních nákladů.
-            </p>
           </div>
         </div>
 
         <div class="pb-3 pt-10 text-center lg:pb-4 lg:pt-12">
           <a
             href="#technologie"
+            id="scroll-to-tech"
             class="text-lg font-medium text-navy/80 transition-colors hover:text-gold lg:text-[22px]"
           >
             Zjistit více
@@ -186,7 +79,7 @@ import SeoLabel from '../components/SeoLabel.astro';
   <main>
     <section
       id="technologie"
-      class="relative min-h-[380px] overflow-hidden bg-[#1a1a1a] sm:min-h-[460px] lg:min-h-[560px]"
+      class="relative min-h-[380px] scroll-mt-8 overflow-hidden bg-[#1a1a1a] sm:min-h-[460px] sm:scroll-mt-10 lg:min-h-[560px] lg:scroll-mt-12"
       style="background-image: url('/images/vzt-poster.jpg'); background-size: cover; background-position: center;"
     >
       <video
@@ -227,6 +120,15 @@ import SeoLabel from '../components/SeoLabel.astro';
           else video.addEventListener('loadeddata', tryPlay, { once: true });
           document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
         }
+
+        const scrollToTech = document.getElementById('scroll-to-tech');
+        const techSection = document.getElementById('technologie');
+        scrollToTech?.addEventListener('click', (event) => {
+          if (!(techSection instanceof HTMLElement)) return;
+          event.preventDefault();
+          techSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          history.replaceState(null, '', '#technologie');
+        });
       </script>
     </section>
 
@@ -244,14 +146,14 @@ import SeoLabel from '../components/SeoLabel.astro';
           class="mb-8 w-full justify-center sm:w-auto sm:justify-start lg:mb-10"
         />
 
-        <div class="relative mx-auto w-full max-w-[760px] xl:max-w-[820px]">
-          <!-- Mobil: přehledný stack -->
+        <div class="relative mx-auto w-full max-w-[760px] xl:max-w-[920px]">
+          <!-- Mobil: úplně pod sebou -->
           <div class="flex flex-col items-center gap-6 lg:hidden">
             <div
-              class="bg-white rounded-full w-[min(100%,320px)] aspect-square flex flex-col items-center justify-center shadow-2xl px-8 py-6"
+              class="flex aspect-square w-[min(100%,320px)] flex-col items-center justify-center rounded-full bg-white px-8 py-6 shadow-2xl"
             >
-              <img src="/images/logo.png" alt="" class="h-8 mb-3 opacity-80" aria-hidden="true" />
-              <p class="text-5xl font-semibold text-stat leading-none">
+              <img src="/images/logo.png" alt="" class="mb-3 h-8 opacity-80" aria-hidden="true" />
+              <p class="text-5xl font-semibold leading-none text-stat">
                 1500<span class="text-navy">+</span>
               </p>
               <p class="mt-3 text-center text-base font-medium leading-snug text-navy">
@@ -291,27 +193,27 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
           </div>
 
-          <!-- Desktop: trojúhelníková kompozice (2 nahoře, 1 dole uprostřed) -->
-          <div class="relative mx-auto hidden h-[560px] w-full max-w-[700px] lg:block xl:h-[580px] xl:max-w-[760px]">
+          <!-- Tablet / menší desktop: trojúhelník (2 nahoře, 1 dole) -->
+          <div class="relative mx-auto hidden h-[560px] w-full max-w-[700px] lg:block xl:hidden">
             <div
-              class="absolute left-0 top-0 z-30 flex h-[300px] w-[300px] flex-col items-center justify-center rounded-full bg-white px-8 shadow-2xl xl:h-[320px] xl:w-[320px]"
+              class="absolute left-0 top-0 z-30 flex h-[300px] w-[300px] flex-col items-center justify-center rounded-full bg-white px-8 shadow-2xl"
             >
               <img src="/images/logo.png" alt="" class="mb-3 h-8 opacity-80" aria-hidden="true" />
-              <p class="text-[56px] font-semibold leading-none text-stat xl:text-[64px]">
+              <p class="text-[56px] font-semibold leading-none text-stat">
                 1500<span class="text-navy">+</span>
               </p>
-              <p class="mt-3 max-w-[230px] text-center text-[18px] font-medium leading-snug text-navy xl:text-[20px]">
+              <p class="mt-3 max-w-[230px] text-center text-[18px] font-medium leading-snug text-navy">
                 Realizovaných<br />technologických celků.
               </p>
               <div class="mt-3 flex items-center gap-1">
-                <span class="text-[24px] font-semibold text-navy xl:text-[26px]">4.9</span>
-                <span class="text-[20px] font-medium text-navy xl:text-[22px]">/5.0</span>
+                <span class="text-[24px] font-semibold text-navy">4.9</span>
+                <span class="text-[20px] font-medium text-navy">/5.0</span>
                 <img src="/icons/stars.svg" alt="Hodnocení 4.9 z 5" class="ml-2 h-3.5" />
               </div>
             </div>
 
             <div
-              class="absolute right-0 top-0 z-20 h-[300px] w-[300px] overflow-hidden rounded-full border-4 border-white/20 shadow-2xl xl:h-[320px] xl:w-[320px]"
+              class="absolute right-0 top-0 z-20 h-[300px] w-[300px] overflow-hidden rounded-full border-4 border-white/20 shadow-2xl"
             >
               <img
                 src="/images/about-industrial.jpg"
@@ -321,17 +223,67 @@ import SeoLabel from '../components/SeoLabel.astro';
             </div>
 
             <div
-              class="stats-years-circle absolute left-1/2 top-[250px] z-20 flex h-[280px] w-[280px] -translate-x-1/2 flex-col items-center justify-center rounded-full border border-black/30 px-7 shadow-2xl xl:top-[260px] xl:h-[300px] xl:w-[300px]"
+              class="stats-years-circle absolute left-1/2 top-[250px] z-20 flex h-[280px] w-[280px] -translate-x-1/2 flex-col items-center justify-center rounded-full border border-black/30 px-7 shadow-2xl"
             >
-              <p class="text-base font-medium text-white/80 xl:text-lg">// 1999-2026 //</p>
-              <p class="mt-1 text-[52px] font-semibold leading-none text-gold xl:text-[60px]">25+</p>
+              <p class="text-base font-medium text-white/80">// 1999-2026 //</p>
+              <p class="mt-1 text-[52px] font-semibold leading-none text-gold">25+</p>
               <p class="mt-2 max-w-[220px] text-center text-sm leading-relaxed text-white/90">
                 Garantujeme špičkovou kvalitu realizací již od samého začátku.
               </p>
               <img
                 src="/images/kotel.png"
                 alt=""
-                class="mt-2 h-14 w-auto shrink-0 xl:h-16"
+                class="mt-2 h-14 w-auto shrink-0"
+                width="422"
+                height="482"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+
+          <!-- Široký desktop: v řadě, za sebou, dotýkají se -->
+          <div class="mx-auto hidden items-center justify-center xl:flex">
+            <div
+              class="relative z-30 -mr-12 flex h-[300px] w-[300px] shrink-0 flex-col items-center justify-center rounded-full bg-white px-8 shadow-2xl 2xl:-mr-14 2xl:h-[320px] 2xl:w-[320px]"
+            >
+              <img src="/images/logo.png" alt="" class="mb-3 h-8 opacity-80" aria-hidden="true" />
+              <p class="text-[56px] font-semibold leading-none text-stat 2xl:text-[64px]">
+                1500<span class="text-navy">+</span>
+              </p>
+              <p
+                class="mt-3 max-w-[230px] text-center text-[18px] font-medium leading-snug text-navy 2xl:text-[20px]"
+              >
+                Realizovaných<br />technologických celků.
+              </p>
+              <div class="mt-3 flex items-center gap-1">
+                <span class="text-[24px] font-semibold text-navy 2xl:text-[26px]">4.9</span>
+                <span class="text-[20px] font-medium text-navy 2xl:text-[22px]">/5.0</span>
+                <img src="/icons/stars.svg" alt="Hodnocení 4.9 z 5" class="ml-2 h-3.5" />
+              </div>
+            </div>
+
+            <div
+              class="relative z-20 -mr-12 h-[300px] w-[300px] shrink-0 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl 2xl:-mr-14 2xl:h-[320px] 2xl:w-[320px]"
+            >
+              <img
+                src="/images/about-industrial.jpg"
+                alt="Průmyslové technologie"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div
+              class="stats-years-circle relative z-10 flex h-[300px] w-[300px] shrink-0 flex-col items-center justify-center rounded-full border border-black/30 px-7 shadow-2xl 2xl:h-[320px] 2xl:w-[320px]"
+            >
+              <p class="text-base font-medium text-white/80 2xl:text-lg">// 1999-2026 //</p>
+              <p class="mt-1 text-[52px] font-semibold leading-none text-gold 2xl:text-[60px]">25+</p>
+              <p class="mt-2 max-w-[220px] text-center text-sm leading-relaxed text-white/90">
+                Garantujeme špičkovou kvalitu realizací již od samého začátku.
+              </p>
+              <img
+                src="/images/kotel.png"
+                alt=""
+                class="mt-2 h-14 w-auto shrink-0 2xl:h-16"
                 width="422"
                 height="482"
                 aria-hidden="true"
@@ -389,53 +341,4 @@ import SeoLabel from '../components/SeoLabel.astro';
     background-size: 100% 100%;
     background-clip: padding-box;
   }
-
-  .seat-panel {
-    transform: translateY(6px);
-  }
-
-  .seat-reveal.is-open .seat-panel,
-  .seat-reveal:focus-within .seat-panel {
-    pointer-events: auto;
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .seat-reveal:hover .seat-panel {
-      pointer-events: auto;
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 </style>
-
-<script>
-  const seatReveal = document.querySelector('.seat-reveal');
-  const seatToggle = document.getElementById('seat-toggle');
-  const seatPanel = document.getElementById('seat-panel');
-
-  if (seatReveal instanceof HTMLElement && seatToggle instanceof HTMLButtonElement && seatPanel) {
-    seatPanel.removeAttribute('hidden');
-
-    const setOpen = (open) => {
-      seatReveal.classList.toggle('is-open', open);
-      seatToggle.setAttribute('aria-expanded', String(open));
-    };
-
-    seatToggle.addEventListener('click', (event) => {
-      event.stopPropagation();
-      setOpen(!seatReveal.classList.contains('is-open'));
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!seatReveal.contains(event.target)) setOpen(false);
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setOpen(false);
-    });
-  }
-</script>
