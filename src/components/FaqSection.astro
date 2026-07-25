@@ -31,46 +31,43 @@ const faqs = [
 ];
 ---
 
-<section class="pb-16 pt-6 lg:pb-20 lg:pt-8">
-  <div class="mx-auto max-w-site px-6 lg:px-[28px]">
-    <div class="mb-12 text-center">
-      <SeoLabel class="mx-auto mb-4">FAQ</SeoLabel>
-      <h2 class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.25]">
+<section class="services-watermark relative pb-16 pt-6 lg:pb-20 lg:pt-8">
+  <div class="relative mx-auto max-w-site px-6 lg:px-[28px]">
+    <div class="mb-10 text-center lg:mb-14">
+      <SeoLabel class="mx-auto mb-5">Časté dotazy</SeoLabel>
+      <h2
+        class="text-3xl font-semibold leading-snug tracking-tight text-navy sm:text-4xl lg:text-[58px] lg:leading-[1.2]"
+      >
         Často kladené dotazy
       </h2>
     </div>
 
-    <div class="mx-auto w-full max-w-2xl space-y-3">
-      {
-        faqs.map((faq) => (
-          <details
-            class="faq-item group w-full overflow-hidden rounded-2xl border border-gray-100 bg-white"
-            open={faq.open}
-          >
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 sm:gap-5 sm:p-5 [&::-webkit-details-marker]:hidden">
-              <span class="text-left text-sm font-semibold text-navy sm:text-base lg:text-lg">{faq.question}</span>
-              <span
-                class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-xl font-light leading-none text-gold"
-                aria-hidden="true"
-              >
-                +
-              </span>
-            </summary>
-            <div class="-mt-2 px-4 pb-4 sm:px-5 sm:pb-5">
-              <p class="text-base font-medium leading-relaxed text-navy/70">{faq.answer}</p>
-            </div>
-          </details>
-        ))
-      }
+    <div class="faq-frame mx-auto w-full max-w-2xl rounded-2xl p-3 sm:p-4">
+      <div class="space-y-3">
+        {
+          faqs.map((faq) => (
+            <details
+              class="faq-item group w-full overflow-hidden rounded-[14px] bg-white shadow-[0_8px_30px_rgba(16,16,41,0.08)]"
+              open={faq.open}
+            >
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 sm:gap-5 sm:p-5 lg:gap-6 lg:p-5 [&::-webkit-details-marker]:hidden">
+                <span class="text-left text-sm font-semibold text-navy sm:text-base lg:text-lg">
+                  {faq.question}
+                </span>
+                <span
+                  class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-xl font-light leading-none text-white"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </summary>
+              <div class="-mt-1 px-4 pb-4 sm:px-5 sm:pb-5 lg:px-5 lg:pb-5">
+                <p class="text-base font-medium leading-relaxed text-navy/70">{faq.answer}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .faq-item[open] .faq-icon {
-    transform: rotate(45deg);
-  }
-  .faq-icon {
-    transition: transform 0.2s ease;
-  }
-</style>
