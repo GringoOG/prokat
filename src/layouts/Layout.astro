@@ -37,7 +37,16 @@ const {
     <slot />
     <script>
       function initScrollReveal() {
-        const targets = document.querySelectorAll('main section, footer, [data-reveal]');
+        const targets = document.querySelectorAll(
+          [
+            '.section-watermark > section',
+            '.services-watermark > section',
+            '.contact-page > main > section',
+            'main > section',
+            'footer',
+            '[data-reveal]',
+          ].join(', '),
+        );
 
         targets.forEach((el) => {
           if (el.classList.contains('reveal')) return;
@@ -52,15 +61,31 @@ const {
           return;
         }
 
+        const initiallyVisible = [];
+        reveals.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+            initiallyVisible.push(el);
+          }
+        });
+
+        initiallyVisible.forEach((el, i) => {
+          el.style.setProperty('--reveal-delay', `${220 + i * 180}ms`);
+        });
+
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
+              const el = entry.target;
+              if (!initiallyVisible.includes(el) && !el.style.getPropertyValue('--reveal-delay')) {
+                el.style.setProperty('--reveal-delay', '80ms');
+              }
+              el.classList.add('is-visible');
+              observer.unobserve(el);
             });
           },
-          { rootMargin: '0px 0px -10% 0px', threshold: 0.12 },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
         );
 
         reveals.forEach((el) => observer.observe(el));
