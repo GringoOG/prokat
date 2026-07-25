@@ -70,8 +70,9 @@ const competencies = [
                 záručního a pozáručního servisu včetně vzdáleného monitoringu.
               </p>
               <p>
-                Společnost je držitelem certifikátu <strong>CRIF Business Elite</strong> — skvěle řízená společnost
-                a záruka finanční stability a spolehlivého partnerství.
+                Společnost je držitelem certifikátu <strong>CRIF Business Elite 2026</strong> — skvěle řízená společnost,
+                záruka finanční stability a spolehlivého partnerství na jehož základě se řadíme mezi nejstabilnější
+                firmy v České republice v rámci hodnocení CZECH TOP 100.
               </p>
             </div>
 
@@ -112,93 +113,93 @@ const competencies = [
           zkušeností.
         </h2>
 
-        <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(340px,440px)] lg:gap-14 xl:gap-20">
-          <div class="order-2 space-y-10 lg:order-1">
-            <div class="grid grid-cols-1 items-start gap-10 sm:grid-cols-[minmax(0,240px)_1fr] sm:gap-8 lg:gap-10">
-              <div class="relative mx-auto w-full max-w-[240px] overflow-hidden rounded-2xl sm:mx-0 sm:max-w-none">
-                <img
-                  src="/images/about-director.png"
-                  alt="Ing. Vladimír Škrlant"
-                  class="aspect-[305/420] w-full object-cover"
-                  width="305"
-                  height="420"
-                />
-                <div
-                  class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 via-navy/45 to-transparent px-5 pb-5 pt-14"
-                >
-                  <p class="text-sm font-medium text-white/90">Ing. Vladimír Škrlant</p>
-                  <p class="mt-1 text-lg font-semibold leading-snug text-white sm:text-xl">
-                    Majitel &amp; ředitel
-                  </p>
-                </div>
-              </div>
+        <!-- Band 1: people + story -->
+        <div
+          class="mb-14 grid grid-cols-1 items-start gap-10 lg:mb-20 lg:grid-cols-[minmax(220px,280px)_minmax(0,1fr)] lg:gap-14 xl:gap-16"
+        >
+          <figure class="relative mx-auto w-full max-w-[280px] overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none">
+            <img
+              src="/images/about-director.png"
+              alt="Ing. Vladimír Škrlant"
+              class="aspect-[305/420] w-full object-cover"
+              width="305"
+              height="420"
+            />
+            <figcaption
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/85 via-navy/50 to-transparent px-5 pb-5 pt-16"
+            >
+              <p class="text-sm font-medium text-white/90">Ing. Vladimír Škrlant</p>
+              <p class="mt-1 text-lg font-semibold leading-snug text-white sm:text-xl">
+                Majitel &amp; ředitel
+              </p>
+            </figcaption>
+          </figure>
 
-              <div>
-                <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
-                <div class="space-y-4 text-base leading-relaxed text-navy/80 lg:text-lg">
-                  <p>
-                    Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
-                    řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
-                    komplexní služby včetně měření, regulace a fotovoltaiky.
-                  </p>
-                  <p>
-                    Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
-                    cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex w-full max-w-md flex-col">
-              <h3 class="mb-4 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
-              <ul class="mb-8 divide-y divide-gray-200 border-t border-gray-200">
-                {
-                  competencies.map((item) => (
-                    <li>
-                      <a
-                        href={item.href}
-                        class="group flex items-center justify-between gap-4 py-4 text-base font-medium text-navy transition-colors hover:text-gold lg:text-lg"
-                      >
-                        <span>{item.title}</span>
-                        <svg
-                          class="h-3 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-0.5"
-                          viewBox="0 0 16 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="m14.425 6-5-5m5 5-5 5m5-5H1.575"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-
-              <FlipButton
-                href="/projekty"
-                label="Zobrazit naše realizace."
-                class="mt-auto w-fit self-start"
-              />
+          <div class="max-w-2xl lg:pt-2">
+            <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
+            <div class="space-y-5 text-base leading-relaxed text-navy/80 lg:text-lg">
+              <p>
+                Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
+                řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
+                komplexní služby včetně měření, regulace a fotovoltaiky.
+              </p>
+              <p>
+                Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
+                cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
+              </p>
             </div>
           </div>
+        </div>
 
-          <figure class="order-1 mx-auto w-full max-w-[440px] lg:order-2 lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
+        <!-- Band 2: competencies + certificate proof -->
+        <div
+          class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(260px,340px)] lg:gap-14 xl:gap-20"
+        >
+          <div>
+            <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
+            <ul class="mb-8 divide-y divide-gray-200 border-y border-gray-200 sm:max-w-xl">
+              {
+                competencies.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="group flex items-center justify-between gap-4 py-4 text-base font-medium text-navy transition-colors hover:text-gold lg:text-lg"
+                    >
+                      <span>{item.title}</span>
+                      <svg
+                        class="h-3 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-0.5"
+                        viewBox="0 0 16 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="m14.425 6-5-5m5 5-5 5m5-5H1.575"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+
+            <FlipButton href="/projekty" label="Zobrazit naše realizace." class="w-fit" />
+          </div>
+
+          <figure class="mx-auto w-full max-w-[320px] lg:mx-0 lg:max-w-none">
             <img
               src="/images/crif-business-elite-cz.png"
               alt="CRIF Business Elite 2026 — Certifikát PROKAT invest s.r.o."
-              class="h-auto w-full bg-white object-contain shadow-lg"
+              class="h-auto w-full bg-transparent object-contain"
               width="849"
               height="1200"
               loading="lazy"
             />
-            <figcaption class="mt-4 text-center text-sm font-medium text-navy/60 lg:text-left">
+            <figcaption class="mt-3 text-center text-sm font-medium text-navy/55 lg:text-left">
               CRIF Business Elite 2026
             </figcaption>
           </figure>
