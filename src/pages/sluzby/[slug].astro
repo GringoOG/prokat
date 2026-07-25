@@ -31,8 +31,8 @@ if (!service) {
         >
           {service.title}
         </h1>
-        <div class="mt-6 mb-8 flex justify-center px-1 sm:mt-8 sm:mb-10 lg:mb-14">
-          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." class="w-full max-w-sm sm:w-auto" />
+        <div class="mt-6 mb-8 flex justify-center sm:mt-8 sm:mb-10 lg:mb-14">
+          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." class="w-auto" />
         </div>
       </div>
     </section>
@@ -53,7 +53,7 @@ if (!service) {
       </div>
     </section>
 
-    <section class="services-watermark py-16 lg:py-24">
+    <section class="services-watermark pt-8 pb-6 lg:pt-24 lg:pb-10">
       <div class="mx-auto max-w-3xl px-6 lg:px-10">
         <SeoLabel class="mb-6">Přehled služby</SeoLabel>
         <h2
@@ -67,12 +67,12 @@ if (!service) {
       </div>
     </section>
 
-    <section class="py-16 lg:py-24">
+    <section class="pt-6 pb-12 lg:pt-10 lg:pb-24">
       <div class="mx-auto max-w-site px-6 lg:px-[28px]">
         <img
           src={service.heroImage}
           alt={`Schéma — ${service.title}`}
-          class="mx-auto mb-12 h-auto w-full object-contain lg:mb-16"
+          class="mx-auto mb-8 h-auto w-full object-contain sm:mb-10 lg:mb-16"
           width="2400"
           height="1000"
           loading="lazy"
