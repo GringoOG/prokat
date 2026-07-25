@@ -9,23 +9,27 @@ const clients = [
   { src: '/images/client-mobelix.png', alt: 'Möbelix' },
 ];
 
-/** 3× set → seamless loop even on very wide screens */
-const loop = [...clients, ...clients, ...clients];
+/** Stejně široké skupiny → bez mezery na spoji i na začátku */
+const sets = 4;
 ---
 
 <section class="w-full overflow-hidden bg-white py-[25px]" aria-label="Reference klientů">
-  <div class="client-marquee relative">
-    <div class="marquee-track flex w-max items-center">
+  <div class="client-marquee relative overflow-hidden">
+    <div class="marquee-track">
       {
-        loop.map((client, index) => (
-          <div class="client-logo-slot" aria-hidden={index >= clients.length ? true : undefined}>
-            <img
-              src={client.src}
-              alt={index < clients.length ? client.alt : ''}
-              class="client-logo-img"
-              loading="lazy"
-              decoding="async"
-            />
+        Array.from({ length: sets }).map((_, setIndex) => (
+          <div class="marquee-group" aria-hidden={setIndex > 0 ? true : undefined}>
+            {clients.map((client) => (
+              <div class="client-logo-slot">
+                <img
+                  src={client.src}
+                  alt={setIndex === 0 ? client.alt : ''}
+                  class="client-logo-img"
+                  loading={setIndex === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </div>
+            ))}
           </div>
         ))
       }

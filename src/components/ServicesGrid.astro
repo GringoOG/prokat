@@ -2,30 +2,38 @@
 import { serviceHref, services } from '../data/services';
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+<div class="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
   {
     services.map((service) => (
       <a
         id={service.slug}
         href={serviceHref(service.slug)}
-        class="service-card group scroll-mt-28 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all hover:border-gold/30 hover:shadow-md"
+        class="service-card group scroll-mt-28 overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all hover:border-gold/30 hover:shadow-md"
       >
-        <div class="service-media">
+        <div class="service-media relative">
           <img
             src={service.image}
             alt={service.title}
-            class="h-48 w-full object-cover sm:h-56 lg:h-64"
+            class="h-40 w-full object-cover sm:h-44 lg:h-48"
             loading="lazy"
           />
+          <span
+            class="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-md bg-white/95 text-gold opacity-0 shadow-sm transition-opacity group-hover:opacity-100"
+            aria-hidden="true"
+          >
+            <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 13 13 3M5 3h8v8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
         </div>
-        <div class="p-6 lg:p-8">
-          <h2 class="text-xl lg:text-[28px] font-semibold text-navy group-hover:text-gold transition-colors">
+        <div class="p-5 lg:p-6">
+          <h2 class="text-lg font-semibold text-navy transition-colors group-hover:text-gold lg:text-2xl">
             {service.title}
           </h2>
-          <ul class="mt-4 space-y-2 text-base lg:text-lg font-medium text-navy/80">
+          <ul class="mt-3 space-y-1.5 text-sm font-medium text-navy/80 lg:text-base">
             {service.listPoints.map((point) => (
               <li class="flex items-start gap-2">
-                <img src="/icons/check.svg" alt="" class="mt-1.5 shrink-0" width="15" height="10" />
+                <img src="/icons/check.svg" alt="" class="mt-1.5 shrink-0" width="13" height="9" />
                 {point}
               </li>
             ))}

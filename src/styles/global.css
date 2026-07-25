@@ -261,19 +261,30 @@
     transform: translateX(0);
   }
   100% {
-    /* 3 identical sets → move by one set (33.333%) */
-    transform: translateX(-33.333%);
+    /* 4 stejné skupiny → posun o jednu (25 %) */
+    transform: translateX(-25%);
   }
 }
 
 .marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
   animation: marquee 40s linear infinite;
   will-change: transform;
-  gap: 3rem;
 }
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 3rem;
+  /* Stejná mezera i za posledním logem skupiny → uzavřená smyčka bez díry */
+  padding-inline-end: 3rem;
 }
 
 .client-logo-slot {
@@ -297,8 +308,9 @@
 }
 
 @media (min-width: 640px) {
-  .marquee-track {
+  .marquee-group {
     gap: 3.5rem;
+    padding-inline-end: 3.5rem;
   }
 
   .client-logo-slot {
@@ -311,8 +323,9 @@
 }
 
 @media (min-width: 1024px) {
-  .marquee-track {
+  .marquee-group {
     gap: 4rem;
+    padding-inline-end: 4rem;
   }
 
   .client-logo-slot {
