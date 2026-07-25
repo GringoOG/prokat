@@ -72,33 +72,39 @@ const isActive = (href: string) =>
             </svg>
           </button>
 
-          <address
+          <div
             id="seat-panel"
-            class="seat-panel pointer-events-none invisible absolute right-0 top-full z-40 mt-3 w-[min(100vw-3rem,340px)] not-italic overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 opacity-0 shadow-lg transition-all duration-200 sm:p-6"
+            class="seat-panel pointer-events-none invisible absolute right-0 top-full z-40 w-[min(100vw-3rem,340px)] pt-3 opacity-0 transition-all duration-150"
+            role="region"
+            aria-label="Sídlo společnosti"
           >
-            <span
-              class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-navy via-gold to-[#8e6b33]"
-              aria-hidden="true"
-            ></span>
+            <address
+              class="seat-panel-inner relative block select-text not-italic overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 shadow-lg sm:p-6"
+            >
+              <span
+                class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-navy via-gold to-[#8e6b33]"
+                aria-hidden="true"
+              ></span>
 
-            <p class="mb-3 text-sm font-medium text-gold">Sídlo společnosti</p>
+              <p class="mb-3 text-sm font-medium text-gold">Sídlo společnosti</p>
 
-            <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
-              <p class="font-semibold">PROKAT invest s.r.o.</p>
-              <p>Plzeňská 1348/95</p>
-              <p>Praha 5</p>
-              <p class="pt-2">IČ: 25238876</p>
-              <p>DIČ: CZ25238876</p>
-            </div>
+              <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
+                <p class="font-semibold">PROKAT invest s.r.o.</p>
+                <p>Plzeňská 1348/95</p>
+                <p>Praha 5</p>
+                <p class="pt-2">IČ: 25238876</p>
+                <p>DIČ: CZ25238876</p>
+              </div>
 
-            <div class="my-4 h-px bg-gray-200"></div>
+              <div class="my-4 h-px bg-gray-200"></div>
 
-            <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
-              <p>Datová schránka: ns3u7ke</p>
-              <p>Společnost je zapsaná v obchodním rejstříku:</p>
-              <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
-            </div>
-          </address>
+              <div class="space-y-0.5 text-[15px] font-medium leading-relaxed text-navy">
+                <p>Datová schránka: ns3u7ke</p>
+                <p>Společnost je zapsaná v obchodním rejstříku:</p>
+                <p class="font-semibold">Městský soud v Praze, oddíl C, vložka 350481.</p>
+              </div>
+            </address>
+          </div>
         </div>
 
         <div class="relative hidden shrink-0 lg:block">
@@ -187,7 +193,7 @@ const isActive = (href: string) =>
   }
 
   .seat-panel {
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
 
   .seat-reveal.is-open .seat-panel,
@@ -222,15 +228,28 @@ const isActive = (href: string) =>
   const seatPanel = document.getElementById('seat-panel');
 
   if (seatReveal instanceof HTMLElement && seatToggle instanceof HTMLButtonElement && seatPanel) {
+    let closeTimer = 0;
+
     const setOpen = (open) => {
+      window.clearTimeout(closeTimer);
       seatReveal.classList.toggle('is-open', open);
       seatToggle.setAttribute('aria-expanded', String(open));
     };
+
+    const scheduleClose = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(() => setOpen(false), 280);
+    };
+
+    seatReveal.addEventListener('mouseenter', () => setOpen(true));
+    seatReveal.addEventListener('mouseleave', scheduleClose);
 
     seatToggle.addEventListener('click', (event) => {
       event.stopPropagation();
       setOpen(!seatReveal.classList.contains('is-open'));
     });
+
+    seatPanel.addEventListener('mousedown', () => setOpen(true));
 
     document.addEventListener('click', (event) => {
       if (!seatReveal.contains(event.target)) setOpen(false);
