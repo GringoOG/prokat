@@ -142,10 +142,42 @@ import SeoLabel from '../components/SeoLabel.astro';
 
         const scrollToStats = document.getElementById('scroll-to-stats');
         const statsSection = document.getElementById('statistiky');
+
+        const easeInOutCubic = (t) =>
+          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+        const smoothScrollTo = (target) => {
+          const rect = target.getBoundingClientRect();
+          const scrollMargin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+          const endY = window.scrollY + rect.top - scrollMargin;
+          const startY = window.scrollY;
+          const distance = endY - startY;
+
+          if (
+            Math.abs(distance) < 2 ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ) {
+            window.scrollTo(0, endY);
+            return;
+          }
+
+          // Slower than native smooth scroll — scales with distance
+          const duration = Math.min(2400, Math.max(1400, Math.abs(distance) * 1.15));
+          const started = performance.now();
+
+          const step = (now) => {
+            const progress = Math.min(1, (now - started) / duration);
+            window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+
+          requestAnimationFrame(step);
+        };
+
         scrollToStats?.addEventListener('click', (event) => {
           if (!(statsSection instanceof HTMLElement)) return;
           event.preventDefault();
-          statsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          smoothScrollTo(statsSection);
           history.replaceState(null, '', '#statistiky');
         });
       </script>

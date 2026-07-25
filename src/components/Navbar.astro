@@ -38,10 +38,10 @@ const isActive = (href: string) =>
               {isActive(item.href) ? (
                 <a
                   href={item.href}
-                  class="inline-flex items-center gap-2 text-navy transition-colors hover:text-gold"
+                  class="inline-flex items-center gap-2 text-gold transition-colors"
                   aria-current="page"
                 >
-                  <span class="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />
+                  <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
