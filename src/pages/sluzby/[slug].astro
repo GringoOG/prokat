@@ -268,32 +268,15 @@ if (!service) {
 
   .faq-frame {
     position: relative;
-    background: transparent;
-  }
-
-  .faq-frame::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    border-radius: inherit;
-    padding: 1px;
     background: linear-gradient(
-      165deg,
-      rgba(16, 16, 41, 0.35) 0%,
-      rgba(61, 46, 26, 0.45) 40%,
-      rgba(212, 157, 57, 0.55) 70%,
-      rgba(142, 107, 51, 0.4) 100%
+      105deg,
+      #101029 0%,
+      #101029 28%,
+      #15102a 48%,
+      #3d2e1a 68%,
+      #8e6b33 86%,
+      #d49d39 100%
     );
-    pointer-events: none;
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask-composite: exclude;
   }
 
   .faq-frame > * {
