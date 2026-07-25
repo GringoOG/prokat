@@ -271,8 +271,7 @@
     transform: translateX(0);
   }
   100% {
-    /* 4 stejné skupiny → posun o jednu (25 %) */
-    transform: translateX(-25%);
+    transform: translateX(var(--marquee-shift, -50%));
   }
 }
 
@@ -280,11 +279,16 @@
   display: flex;
   width: max-content;
   align-items: center;
-  animation: marquee 40s linear infinite;
   will-change: transform;
+  /* Než JS změří šířku: bez animace, loga od levého kraje — žádná prázdná mezera */
+  transform: translateX(0);
 }
 
-.marquee-track:hover {
+.marquee-track.is-ready {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee-track.is-ready:hover {
   animation-play-state: paused;
 }
 
@@ -293,7 +297,7 @@
   flex-shrink: 0;
   align-items: center;
   gap: 3rem;
-  /* Stejná mezera i za posledním logem skupiny → uzavřená smyčka bez díry */
+  /* Stejná mezera za posledním logem = bezešvý spoj skupin */
   padding-inline-end: 3rem;
 }
 
@@ -349,6 +353,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
+  .marquee-track.is-ready,
   .since-marquee-track {
     animation: none;
   }

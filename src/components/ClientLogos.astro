@@ -8,31 +8,123 @@ const clients = [
   { src: '/images/client-xxxlutz.png', alt: 'XXXLutz' },
   { src: '/images/client-mobelix.png', alt: 'Möbelix' },
 ];
-
-/** Stejně široké skupiny → bez mezery na spoji i na začátku */
-const sets = 4;
 ---
 
-<section class="w-full overflow-hidden bg-white py-[25px]" aria-label="Reference klientů">
-  <div class="client-marquee relative overflow-hidden">
-    <div class="marquee-track">
-      {
-        Array.from({ length: sets }).map((_, setIndex) => (
-          <div class="marquee-group" aria-hidden={setIndex > 0 ? true : undefined}>
-            {clients.map((client) => (
-              <div class="client-logo-slot">
-                <img
-                  src={client.src}
-                  alt={setIndex === 0 ? client.alt : ''}
-                  class="client-logo-img"
-                  loading={setIndex === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                />
-              </div>
-            ))}
-          </div>
-        ))
-      }
+<section class="client-logos w-full overflow-hidden bg-white py-[25px]" aria-label="Reference klientů">
+  <div class="client-marquee relative overflow-hidden" data-client-marquee>
+    <div class="marquee-track" data-marquee-track>
+      <div class="marquee-group" data-marquee-group>
+        {
+          clients.map((client) => (
+            <div class="client-logo-slot">
+              <img
+                src={client.src}
+                alt={client.alt}
+                class="client-logo-img"
+                loading="eager"
+                decoding="async"
+                width="176"
+                height="60"
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function initClientMarquee(root) {
+    const track = root.querySelector('[data-marquee-track]');
+    const group = root.querySelector('[data-marquee-group]');
+    if (!(track instanceof HTMLElement) || !(group instanceof HTMLElement)) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const section = root.closest('section') || root;
+
+    const fillTrack = () => {
+      track.querySelectorAll('[data-marquee-clone]').forEach((node) => node.remove());
+      track.classList.remove('is-ready');
+
+      const minWidth = Math.max(window.innerWidth * 2, group.offsetWidth * 2);
+      while (track.scrollWidth < minWidth + 32) {
+        const clone = group.cloneNode(true);
+        if (!(clone instanceof HTMLElement)) break;
+        clone.setAttribute('data-marquee-clone', 'true');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('img').forEach((img) => {
+          img.setAttribute('alt', '');
+        });
+        track.appendChild(clone);
+      }
+
+      const shift = group.getBoundingClientRect().width;
+      track.style.setProperty('--marquee-shift', `-${Math.round(shift)}px`);
+    };
+
+    const startAnimation = () => {
+      if (reduceMotion) return;
+      fillTrack();
+      track.style.animation = 'none';
+      void track.offsetWidth;
+      track.style.animation = '';
+      track.classList.add('is-ready');
+    };
+
+    const prepare = () => {
+      fillTrack();
+      // Animaci spusť až je sekce vidět — jinak běží „naslepo“ během revealu a vzniká mezera
+      if (section.classList.contains('is-visible') || reduceMotion) {
+        startAnimation();
+        return;
+      }
+
+      const visibility = new MutationObserver(() => {
+        if (section.classList.contains('is-visible')) {
+          visibility.disconnect();
+          startAnimation();
+        }
+      });
+      visibility.observe(section, { attributes: true, attributeFilter: ['class'] });
+
+      // Fallback: když reveal není, spusť po krátké chvíli
+      window.setTimeout(() => {
+        if (!track.classList.contains('is-ready')) startAnimation();
+      }, 1800);
+    };
+
+    const images = Array.from(group.querySelectorAll('img'));
+    let pending = images.length;
+
+    const onReady = () => {
+      pending -= 1;
+      if (pending === 0) prepare();
+    };
+
+    if (!pending) {
+      prepare();
+    } else {
+      images.forEach((img) => {
+        if (img.complete) onReady();
+        else {
+          img.addEventListener('load', onReady, { once: true });
+          img.addEventListener('error', onReady, { once: true });
+        }
+      });
+    }
+
+    let resizeTimer = 0;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        if (track.classList.contains('is-ready') || reduceMotion) startAnimation();
+        else fillTrack();
+      }, 150);
+    });
+  }
+
+  document.querySelectorAll('[data-client-marquee]').forEach((root) => {
+    if (root instanceof HTMLElement) initClientMarquee(root);
+  });
+</script>
