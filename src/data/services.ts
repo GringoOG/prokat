@@ -247,7 +247,7 @@ export const services: ServiceDetail[] = [
     title: 'Chlazení',
     description:
       'Návrh, montáž a servis chladicích celků — chillery, VRV/VRF i přírodní chladiva.',
-    image: '/images/service-cooling.png',
+    image: '/images/service-cooling.jpg',
     heroImage: '/images/service-schema-cooling.jpg',
     overviewTitle: 'Montáž chladicích celků',
     overview: [
@@ -345,7 +345,7 @@ export const services: ServiceDetail[] = [
     title: 'Fotovoltaika',
     description:
       'Instalace FVE od střešních řešení po systémy s bateriovým úložištěm a AI monitoringem.',
-    image: '/images/service-solar.png',
+    image: '/images/service-solar.jpg',
     heroImage: '/images/service-schema-solar.jpg',
     overviewTitle: 'Instalace FVE',
     overview: [
