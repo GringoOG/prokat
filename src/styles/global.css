@@ -20,19 +20,22 @@
 }
 
 .btn-gradient {
-  /* Brand scale: mostly navy, short tip into gold */
+  /* Classic brand shading: navy body → visible gold tip (not flat black) */
   background: linear-gradient(
     90deg,
     #101029 0%,
-    #101029 52%,
-    #15102a 70%,
-    #8e6b33 88%,
+    #15102a 38%,
+    #3d2e1a 62%,
+    #8e6b33 82%,
     #d49d39 100%
   );
 }
 
 .btn-gradient-icon {
   background: linear-gradient(135deg, #ffb412 0%, #d49d39 45%, #8e6b33 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(16, 16, 41, 0.25);
 }
 
 /* Same outer shape as „Získejte CN“ — keep colors separate */
