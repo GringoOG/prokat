@@ -54,7 +54,7 @@ const isActive = (href: string) =>
         }
       </ul>
 
-      <div class="hidden shrink-0 flex-col items-end gap-2 lg:flex">
+      <div class="relative hidden shrink-0 lg:block">
         <FlipButton
           href="/kontakt"
           label="Získejte CN"
@@ -64,7 +64,7 @@ const isActive = (href: string) =>
         />
         <a
           href="/o-nas"
-          class="inline-flex opacity-95 transition-opacity hover:opacity-100"
+          class="absolute right-0 top-full z-10 mt-3 inline-flex opacity-95 transition-opacity hover:opacity-100"
           aria-label="CRIF Business Elite 2026 — více na stránce O nás"
         >
           <img
