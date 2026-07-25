@@ -166,12 +166,10 @@ const competencies = [
         </div>
 
         <!-- Band 2: competencies + certificate proof -->
-        <div
-          class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(260px,340px)] lg:gap-14 xl:gap-20"
-        >
-          <div>
+        <div class="flex flex-col items-start gap-8 lg:flex-row lg:gap-10 xl:gap-12">
+          <div class="w-full sm:max-w-xl">
             <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
-            <ul class="mb-8 divide-y divide-gray-200 border-y border-gray-200 sm:max-w-xl">
+            <ul class="mb-8 divide-y divide-gray-200 border-y border-gray-200">
               {
                 competencies.map((item) => (
                   <li>
@@ -204,7 +202,7 @@ const competencies = [
             <FlipButton href="/projekty" label="Zobrazit naše realizace." class="w-fit" />
           </div>
 
-          <figure class="mx-auto w-full max-w-[320px] lg:mx-0 lg:max-w-none">
+          <figure class="mx-auto w-full max-w-[280px] shrink-0 lg:mx-0 lg:max-w-[300px]">
             <img
               src="/images/crif-business-elite-cz.png"
               alt="CRIF Business Elite 2026 — Certifikát PROKAT invest s.r.o."
