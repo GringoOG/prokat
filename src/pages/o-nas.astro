@@ -117,45 +117,46 @@ const competencies = [
 
     <section class="services-watermark py-16 lg:py-24">
       <div class="mx-auto max-w-site px-6 lg:px-[28px]">
-        <SeoLabel class="mx-auto mb-8 lg:mx-0">Naše cesta</SeoLabel>
+        <SeoLabel class="mx-auto mb-8">Naše cesta</SeoLabel>
 
         <h2
-          class="mb-10 max-w-4xl text-center text-2xl font-semibold leading-snug tracking-tight text-navy sm:mb-12 sm:text-3xl md:text-4xl lg:mb-16 lg:text-left lg:text-[58px] lg:leading-[1.25]"
+          class="mx-auto mb-10 max-w-4xl text-center text-2xl font-semibold leading-snug tracking-tight text-navy sm:mb-12 sm:text-3xl md:text-4xl lg:mb-16 lg:text-[58px] lg:leading-[1.25]"
         >
           Budujeme důvěru a kvalitu na základech <span class="text-gold">dlouholetých</span> inženýrských
           zkušeností.
         </h2>
 
-        <!-- Příběh + kompetence (bez portrétu) -->
-        <div
-          class="mb-14 grid grid-cols-1 items-start gap-10 lg:mb-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(240px,360px)] lg:gap-12 xl:gap-16"
-        >
-          <div class="lg:pt-2">
-            <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
-            <div class="space-y-5 text-base leading-relaxed text-navy/80 lg:text-lg">
-              <p>
-                Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
-                řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
-                komplexní služby včetně měření, regulace a fotovoltaiky.
-              </p>
-              <p>
-                Od roku 1999 rosteme spolu s požadavky zákazníků: od dílčích dodávek až po kompletní technologické
-                celky — od studie a projektové dokumentace přes realizaci a montáž až po záruční i pozáruční
-                servis a vzdálený dohled.
-              </p>
-              <p>
-                Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
-                cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
-              </p>
-              <p>
-                Stavíme na zkušenostech inženýrského týmu, pečlivé přípravě a odpovědnosti za výsledek. Díky tomu
-                dokážeme navrhovat a provozovat systémy, které jsou hospodárné, spolehlivé a připravené na další
-                rozvoj objektu.
-              </p>
-            </div>
+        <!-- Příběh na střed -->
+        <div class="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
+          <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
+          <div class="space-y-5 text-base leading-relaxed text-navy/80 lg:text-lg">
+            <p>
+              Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
+              řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
+              komplexní služby včetně měření, regulace a fotovoltaiky.
+            </p>
+            <p>
+              Od roku 1999 rosteme spolu s požadavky zákazníků: od dílčích dodávek až po kompletní technologické
+              celky — od studie a projektové dokumentace přes realizaci a montáž až po záruční i pozáruční
+              servis a vzdálený dohled.
+            </p>
+            <p>
+              Dnes jsme stabilním partnerem pro průmyslové i komerční projekty po celé České republice. Naším
+              cílem zůstává kvalita realizace, dlouhodobá spolupráce a provozní úspory pro každého zákazníka.
+            </p>
+            <p>
+              Stavíme na zkušenostech inženýrského týmu, pečlivé přípravě a odpovědnosti za výsledek. Díky tomu
+              dokážeme navrhovat a provozovat systémy, které jsou hospodárné, spolehlivé a připravené na další
+              rozvoj objektu.
+            </p>
           </div>
+        </div>
 
-          <div class="lg:pt-2">
+        <!-- Kompetence vlevo + certifikáty vpravo -->
+        <div
+          class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 xl:gap-16"
+        >
+          <div class="w-full max-w-md lg:max-w-lg">
             <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
             <ul class="mb-8 divide-y divide-gray-200 border-y border-gray-200">
               {
@@ -189,25 +190,25 @@ const competencies = [
 
             <FlipButton href="/projekty" label="Zobrazit naše realizace." class="w-fit" />
           </div>
-        </div>
 
-        <div class="flex flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12">
-          <img
-            src="/images/czech-stability-award-color.png"
-            alt="Czech Stability Award AAA Excellent"
-            class="h-[140px] w-auto max-w-[45%] bg-transparent object-contain sm:h-[200px] md:h-[260px] lg:h-[300px] lg:max-w-none"
-            width="262"
-            height="361"
-            loading="lazy"
-          />
-          <img
-            src="/images/crif-business-elite-cz.png"
-            alt="CRIF Business Elite 2026 — Certifikát PROKAT invest s.r.o."
-            class="h-[140px] w-auto max-w-[45%] bg-transparent object-contain sm:h-[200px] md:h-[260px] lg:h-[300px] lg:max-w-none"
-            width="849"
-            height="1200"
-            loading="lazy"
-          />
+          <div class="flex flex-row items-center justify-center gap-4 sm:gap-6 lg:justify-end lg:gap-8">
+            <img
+              src="/images/czech-stability-award-color.png"
+              alt="Czech Stability Award AAA Excellent"
+              class="h-[140px] w-auto max-w-[45%] bg-transparent object-contain sm:h-[180px] lg:h-[240px] lg:max-w-none"
+              width="262"
+              height="361"
+              loading="lazy"
+            />
+            <img
+              src="/images/crif-business-elite-cz.png"
+              alt="CRIF Business Elite 2026 — Certifikát PROKAT invest s.r.o."
+              class="h-[140px] w-auto max-w-[45%] bg-transparent object-contain sm:h-[180px] lg:h-[240px] lg:max-w-none"
+              width="849"
+              height="1200"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
