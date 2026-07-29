@@ -126,13 +126,13 @@ const competencies = [
           zkušeností.
         </h2>
 
-        <!-- Příběh vlevo + kompetence vpravo -->
+        <!-- Příběh vlevo + kompetence vpravo (stejná výška na lg+) -->
         <div
-          class="mb-14 grid grid-cols-1 items-start gap-10 lg:mb-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(240px,360px)] lg:gap-12 xl:gap-16"
+          class="mb-14 grid grid-cols-1 items-start gap-10 lg:mb-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(240px,360px)] lg:items-stretch lg:gap-12 xl:gap-16"
         >
-          <div>
+          <div class="flex h-full flex-col">
             <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Náš příběh</h3>
-            <div class="space-y-5 text-base leading-relaxed text-navy/80 lg:text-lg">
+            <div class="flex flex-1 flex-col justify-between gap-5 text-base leading-relaxed text-navy/80 lg:gap-0 lg:text-lg">
               <p>
                 Začínali jsme jako tým technických specialistů s jasným cílem — dodávat spolehlivá a efektivní
                 řešení v oblasti vzduchotechniky, vytápění a chlazení. Postupně jsme rozšířili portfolio o
@@ -155,9 +155,9 @@ const competencies = [
             </div>
           </div>
 
-          <div>
+          <div class="flex h-full flex-col">
             <h3 class="mb-5 text-xl font-semibold text-navy lg:text-2xl">Naše odborné kompetence</h3>
-            <ul class="mb-8 divide-y divide-gray-200 border-y border-gray-200">
+            <ul class="mb-8 flex-1 divide-y divide-gray-200 border-y border-gray-200">
               {
                 competencies.map((item) => (
                   <li>
