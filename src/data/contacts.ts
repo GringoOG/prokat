@@ -87,6 +87,12 @@ export const contactDepartments: ContactDepartment[] = [
         phone: '+420 702 016 545',
         email: 'lukas.horvath@prokat.cz',
       },
+      {
+        name: 'Tymofii Hohunskyi',
+        role: 'Projektant',
+        phone: '+420 776 663 635',
+        email: 'tymofii.hohunskyi@prokat.cz',
+      },
     ],
   },
   {
@@ -99,10 +105,10 @@ export const contactDepartments: ContactDepartment[] = [
         email: 'pavel.panyrek@prokat.cz',
       },
       {
-        name: 'Michal Čermák',
-        role: 'Realizace vzduchotechniky',
-        phone: '+420 602 486 521',
-        email: 'michal.cermak@prokat.cz',
+        name: 'Tomáš Haták',
+        role: 'Projektový manažer VZT',
+        phone: '+420 608 568 967',
+        email: 'tomas.hatak@prokat.cz',
       },
       {
         name: 'Miroslav Dražan',
