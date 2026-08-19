@@ -367,7 +367,7 @@
 
 /* Hero fills viewport below fixed header (not 100svh + header) */
 .hero-shell {
-  min-height: max(520px, calc(min(100svh, 820px) - var(--site-header-spacer)));
+  min-height: max(360px, calc(min(88svh, 680px) - var(--site-header-spacer)));
 }
 
 @media (min-width: 1024px) {
