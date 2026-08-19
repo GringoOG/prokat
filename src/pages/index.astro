@@ -17,14 +17,20 @@ import SeoLabel from '../components/SeoLabel.astro';
     <!-- HERO -->
     <section class="pb-0">
       <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-5 pt-[80px] lg:px-[28px] lg:pb-5 lg:pt-[204px]">
-        <img
-          src="/images/hero-photo1-2x.png"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-100"
-        />
+        <video
+          id="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/images/vzt-poster.jpg"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+          aria-label="Průmyslové vzduchotechnické zařízení"
+        >
+          <source src="/videos/vzt.webm" type="video/webm" />
+          <source src="/videos/vzt.mp4" type="video/mp4" />
+        </video>
         <div class="pointer-events-none absolute inset-0 bg-black/15" aria-hidden="true"></div>
         <div
           class="pointer-events-none absolute left-0 top-0 h-full w-[55%] bg-gradient-to-r from-white/85 via-white/60 to-transparent"
