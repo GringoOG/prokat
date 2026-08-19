@@ -116,78 +116,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           </a>
         </div>
       </div>
-    </section>
-  </div>
-
-  <main>
-    <section
-      id="technologie"
-      class="relative min-h-[380px] scroll-mt-8 overflow-hidden bg-[#1a1a1a] sm:min-h-[460px] sm:scroll-mt-10 lg:min-h-[560px] lg:scroll-mt-12"
-      style="background-image: url('/images/vzt-poster.jpg'); background-size: cover; background-position: center;"
-    >
-      <video
-        id="tech-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="none"
-        poster="/images/vzt-poster.jpg"
-        class="absolute inset-0 h-full w-full object-cover object-center"
-        aria-label="Průmyslové vzduchotechnické zařízení"
-      >
-        <source src="/videos/vzt.webm" type="video/webm" />
-        <source src="/videos/vzt.mp4" type="video/mp4" />
-      </video>
-      <div class="absolute inset-0 bg-black/25"></div>
-      <div class="absolute inset-0 z-10 flex items-center justify-center px-6 lg:px-10">
-        <h2
-          class="max-w-4xl text-center text-2xl font-semibold leading-snug tracking-tight text-white drop-shadow-sm sm:text-3xl md:text-4xl lg:text-[58px] lg:leading-[1.25]"
-        >
-          Nejnovější technologie.<br class="hidden sm:block" />
-          <span class="sm:hidden"> </span>Prověřeno v <span class="text-gold">praxi.</span><br />
-          Provozně hospodárné systémy řízeny pomocí AI.
-        </h2>
-      </div>
       <script>
-        const video = document.getElementById('tech-video');
-        if (video instanceof HTMLVideoElement) {
-          const tryPlay = () => {
-            video.muted = true;
-            const playPromise = video.play();
-            if (playPromise && typeof playPromise.catch === 'function') {
-              playPromise.catch(() => {});
-            }
-          };
-
-          // Load full video only when section is near viewport
-          const loadAndPlay = () => {
-            if (video.dataset.srcLoaded === '1') {
-              tryPlay();
-              return;
-            }
-            video.dataset.srcLoaded = '1';
-            video.preload = 'auto';
-            video.load();
-            if (video.readyState >= 2) tryPlay();
-            else video.addEventListener('loadeddata', tryPlay, { once: true });
-          };
-
-          if ('IntersectionObserver' in window) {
-            const io = new IntersectionObserver(
-              (entries) => {
-                if (!entries.some((e) => e.isIntersecting)) return;
-                loadAndPlay();
-                io.disconnect();
-              },
-              { rootMargin: '200px 0px' },
-            );
-            io.observe(video);
-          } else {
-            loadAndPlay();
-          }
-        }
-
         const scrollToStats = document.getElementById('scroll-to-stats');
         const statsSection = document.getElementById('statistiky');
 
@@ -209,7 +138,6 @@ import SeoLabel from '../components/SeoLabel.astro';
             return;
           }
 
-          // Slower than native smooth scroll — scales with distance
           const duration = Math.min(2400, Math.max(1400, Math.abs(distance) * 1.15));
           const started = performance.now();
 
@@ -230,7 +158,9 @@ import SeoLabel from '../components/SeoLabel.astro';
         });
       </script>
     </section>
+  </div>
 
+  <main>
     <!-- STATISTIKY -->
     <section
       id="statistiky"
