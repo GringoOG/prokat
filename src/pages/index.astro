@@ -12,11 +12,11 @@ import SeoLabel from '../components/SeoLabel.astro';
 <Layout>
   <link slot="head" rel="preload" as="image" href="/images/vzt-poster.jpg" type="image/jpeg" fetchpriority="high" />
   <div class="section-watermark relative">
-    <Navbar />
+    <Navbar solidBackground />
 
     <!-- HERO -->
     <section class="pb-0">
-      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-5 pt-[80px] lg:px-[28px] lg:pb-5 lg:pt-[204px]">
+      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-5 pt-10 lg:px-[28px] lg:pb-5 lg:pt-16">
         <video
           id="hero-video"
           autoplay
@@ -33,7 +33,7 @@ import SeoLabel from '../components/SeoLabel.astro';
         </video>
         <div class="pointer-events-none absolute inset-0 bg-black/15" aria-hidden="true"></div>
         <div
-          class="pointer-events-none absolute left-0 top-0 h-full w-[55%] bg-gradient-to-r from-white/85 via-white/60 to-transparent"
+          class="pointer-events-none absolute left-0 top-0 h-full w-[55%] bg-gradient-to-r from-white via-white/80 to-transparent"
           aria-hidden="true"
         ></div>
         <div class="relative z-10">

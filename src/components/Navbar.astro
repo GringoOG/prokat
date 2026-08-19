@@ -1,6 +1,12 @@
 ---
 import FlipButton from './FlipButton.astro';
 
+interface Props {
+  /** Světlé pozadí místo průhledného — video/hero neprosvítá skrz navigaci */
+  solidBackground?: boolean;
+}
+
+const { solidBackground = false } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const navItems = [
@@ -15,7 +21,14 @@ const isActive = (href: string) =>
   href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 ---
 
-<header class="mobile-nav-gradient relative z-50 w-full lg:absolute lg:inset-x-0 lg:top-0 lg:bg-transparent">
+<header
+  class:list={[
+    'relative z-50 w-full',
+    solidBackground
+      ? 'nav-solid'
+      : 'mobile-nav-gradient lg:absolute lg:inset-x-0 lg:top-0 lg:bg-transparent',
+  ]}
+>
   <div class="mx-auto max-w-site px-6 lg:px-[28px]">
     <nav class="relative flex min-h-[68px] items-center lg:min-h-0 lg:justify-between lg:py-5" aria-label="Hlavní navigace">
       <a
@@ -167,6 +180,14 @@ const isActive = (href: string) =>
 </header>
 
 <style>
+  .nav-solid {
+    background-color: #f6f6f6;
+    background-image: url('/images/pozadi-prokat-v3.webp');
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
   .mobile-nav-gradient {
     background: linear-gradient(
       90deg,
