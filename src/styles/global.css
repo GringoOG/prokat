@@ -6,11 +6,13 @@
   html {
     scroll-behavior: smooth;
     background-color: #f6f6f6;
+    overscroll-behavior-y: none;
   }
 
   body {
     @apply font-sans text-black antialiased;
     background-color: #f6f6f6;
+    overscroll-behavior-y: none;
     /* v3 = skutečně zrcadlené L↔R (v2 byl omylem stejný jako originál) */
     background-image: url('/images/pozadi-prokat-v3.webp');
     background-size: 100% auto;
@@ -105,6 +107,13 @@
   padding-right: 0.375rem;
 }
 
+.btn-flip.btn-shape {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  isolation: isolate;
+}
+
 .btn-flip-label-mask {
   display: grid;
   overflow: hidden;
@@ -115,7 +124,6 @@
 .btn-flip-label-track {
   display: grid;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
 }
 
 .btn-flip-label-line {
@@ -151,11 +159,19 @@
 
 .btn-flip-label-line:last-child {
   transform: translateY(110%);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .btn-flip:hover .btn-flip-label-track,
 .btn-flip:focus-visible .btn-flip-label-track {
   transform: translateY(-110%);
+  will-change: transform;
+}
+
+.btn-flip:hover .btn-flip-label-line:last-child,
+.btn-flip:focus-visible .btn-flip-label-line:last-child {
+  visibility: visible;
 }
 
 .btn-flip-label {
@@ -181,12 +197,14 @@
 
 .btn-flip-icon {
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .btn-flip:hover .btn-flip-icon,
 .btn-flip:focus-visible .btn-flip-icon {
   transform: translateX(6px);
+  will-change: transform;
 }
 
 .btn-flip--icon-only {
@@ -365,14 +383,14 @@
   flex-shrink: 0;
 }
 
-/* Hero fills viewport below fixed header (not 100svh + header) */
+/* Hero — fixed height avoids svh/JS recalc layout jump on load */
 .hero-shell {
-  min-height: max(360px, calc(min(88svh, 680px) - var(--site-header-spacer)));
+  min-height: 520px;
 }
 
 @media (min-width: 1024px) {
   .hero-shell {
-    min-height: max(640px, calc(min(88vh, 820px) - var(--site-header-spacer)));
+    min-height: 680px;
   }
 }
 

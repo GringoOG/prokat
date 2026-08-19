@@ -201,8 +201,14 @@ const isActive = (href: string) =>
     background-repeat: no-repeat;
   }
 
+  .site-header {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
   .site-header.is-hidden {
-    transform: translateY(-100%);
+    transform: translate3d(0, -100%, 0);
   }
 
   .menu-toggle.is-open .menu-bar:first-child {
@@ -253,17 +259,20 @@ const isActive = (href: string) =>
 
   const syncHeaderSpacer = () => {
     if (!header || !spacer) return;
-    const height = `${header.offsetHeight}px`;
-    spacer.style.height = height;
-    spacer.style.minHeight = height;
-    document.documentElement.style.setProperty('--site-header-spacer', height);
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+
+    if (menuOpen) {
+      const height = `${header.offsetHeight}px`;
+      spacer.style.height = height;
+      spacer.style.minHeight = height;
+    } else {
+      spacer.style.removeProperty('height');
+      spacer.style.removeProperty('min-height');
+    }
   };
 
-  syncHeaderSpacer();
   window.addEventListener('resize', syncHeaderSpacer);
-  if (document.fonts?.ready) {
-    document.fonts.ready.then(syncHeaderSpacer);
-  }
 
   const updateHeaderOnScroll = () => {
     if (!header) return;

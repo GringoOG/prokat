@@ -33,6 +33,26 @@ const {
       href="/images/pozadi-prokat-v3.webp"
       type="image/webp"
     />
+    <style is:inline>
+      :root {
+        --site-header-spacer: calc(3.5rem + env(safe-area-inset-top, 0px));
+      }
+      .site-header-spacer {
+        height: var(--site-header-spacer);
+        min-height: var(--site-header-spacer);
+      }
+      .hero-shell {
+        min-height: 520px;
+      }
+      @media (min-width: 1024px) {
+        :root {
+          --site-header-spacer: calc(5rem + env(safe-area-inset-top, 0px));
+        }
+        .hero-shell {
+          min-height: 680px;
+        }
+      }
+    </style>
     <slot name="head" />
   </head>
   <body>
