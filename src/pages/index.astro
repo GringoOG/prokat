@@ -347,9 +347,9 @@ import SeoLabel from '../components/SeoLabel.astro';
     </section>
 
     <!-- SLUŽBY -->
-    <section class="services-watermark pt-12 pb-6 sm:pt-16 lg:pt-24 lg:pb-8">
+    <section class="services-watermark pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-24 lg:pb-10">
       <div class="mx-auto max-w-site px-4 sm:px-6 lg:px-[28px]">
-        <div class="mb-6 flex flex-col gap-6 sm:mb-8 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
+        <div class="mb-8 flex flex-col gap-6 sm:mb-10 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
           <div class="min-w-0 max-w-3xl space-y-4">
             <SeoLabel>Co děláme</SeoLabel>
             <h2 class="text-2xl font-semibold leading-snug tracking-tight text-navy sm:text-3xl md:text-4xl lg:text-[58px] lg:leading-[1.25]">
@@ -362,8 +362,12 @@ import SeoLabel from '../components/SeoLabel.astro';
             class="w-full shrink-0 self-start sm:w-auto"
           />
         </div>
+      </div>
 
-        <ServiceList />
+      <div class="services-cards-panel border-t border-gray-200/80 bg-white pt-6 pb-2 sm:pt-8 lg:pt-10 lg:pb-4">
+        <div class="mx-auto max-w-site px-4 sm:px-6 lg:px-[28px]">
+          <ServiceList />
+        </div>
       </div>
     </section>
 
