@@ -10,15 +10,14 @@ import SeoLabel from '../components/SeoLabel.astro';
 ---
 
 <Layout>
-  <link slot="head" rel="preload" as="video" href="/videos/vzt.mp4" type="video/mp4" fetchpriority="high" />
   <link slot="head" rel="preload" as="image" href="/images/vzt-poster.jpg" type="image/jpeg" fetchpriority="high" />
   <div class="section-watermark relative bg-[#f6f6f6]">
     <Navbar solidBackground />
 
     <!-- HERO -->
-    <section class="mb-8 pb-0 sm:mb-10 lg:mb-12">
+    <section class="reveal-skip pb-0">
       <div
-        class="relative mx-auto flex min-h-[min(100svh,820px)] max-w-site flex-col justify-center overflow-hidden px-4 pb-8 pt-8 sm:px-6 sm:pb-10 sm:pt-10 lg:min-h-[min(88vh,820px)] lg:px-[28px] lg:pb-12 lg:pt-16"
+        class="hero-shell relative mx-auto flex max-w-site flex-col justify-center overflow-hidden px-4 pb-0 pt-8 sm:px-6 sm:pt-10 lg:px-[28px] lg:pt-16"
       >
         <video
           id="hero-video"
@@ -26,7 +25,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           muted
           loop
           playsinline
-          preload="auto"
+          preload="metadata"
           poster="/images/vzt-poster.jpg"
           class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
           aria-label="Průmyslové vzduchotechnické zařízení"
@@ -39,8 +38,8 @@ import SeoLabel from '../components/SeoLabel.astro';
           class="pointer-events-none absolute left-0 top-0 h-full w-full bg-gradient-to-r from-white via-white/90 to-transparent sm:w-[90%] sm:via-white/85 md:w-[75%] lg:w-[55%] lg:via-white/80"
           aria-hidden="true"
         ></div>
-        <div class="relative z-10 flex w-full items-center">
-          <div class="relative z-10 flex w-full max-w-3xl flex-col items-start gap-9 text-left sm:gap-10 lg:gap-11">
+        <div class="relative z-10 w-full">
+          <div class="flex w-full max-w-3xl flex-col items-start gap-9 text-left sm:gap-10 lg:gap-11">
             <SeoLabel class="mb-0 max-w-full !justify-start !text-left !text-xs sm:!text-sm md:!text-base">
               Váš spolehlivý partner pro technologické celky
             </SeoLabel>

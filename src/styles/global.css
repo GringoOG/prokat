@@ -348,6 +348,34 @@
   background: transparent;
 }
 
+:root {
+  --site-header-spacer: calc(3.5rem + env(safe-area-inset-top, 0px));
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-spacer: calc(5rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+/* Reserve navbar height before JS runs — prevents layout jump on first paint */
+.site-header-spacer {
+  height: var(--site-header-spacer);
+  min-height: var(--site-header-spacer);
+  flex-shrink: 0;
+}
+
+/* Hero fills viewport below fixed header (not 100svh + header) */
+.hero-shell {
+  min-height: max(520px, calc(min(100svh, 820px) - var(--site-header-spacer)));
+}
+
+@media (min-width: 1024px) {
+  .hero-shell {
+    min-height: max(640px, calc(min(88vh, 820px) - var(--site-header-spacer)));
+  }
+}
+
 /* Gold–dark panel (projekty, footer) */
 .panel-gold-dark {
   background:
