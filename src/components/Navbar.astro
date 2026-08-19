@@ -22,15 +22,16 @@ const isActive = (href: string) =>
 ---
 
 <header
+  id="site-header"
   class:list={[
-    'relative z-50 w-full',
+    'site-header fixed inset-x-0 top-0 z-50 w-full transition-transform duration-300 ease-out',
     solidBackground
       ? 'nav-solid'
-      : 'mobile-nav-gradient lg:absolute lg:inset-x-0 lg:top-0 lg:bg-transparent',
+      : 'mobile-nav-gradient',
   ]}
 >
   <div class="mx-auto max-w-site px-6 lg:px-[28px]">
-    <nav class="relative flex min-h-[68px] items-center lg:min-h-0 lg:justify-between lg:py-5" aria-label="Hlavní navigace">
+    <nav class="relative flex min-h-[56px] items-center lg:min-h-0 lg:justify-between lg:py-3" aria-label="Hlavní navigace">
       <a
         href="/"
         class="group absolute left-1/2 z-10 -translate-x-1/2 lg:static lg:translate-x-0 lg:shrink-0"
@@ -38,7 +39,7 @@ const isActive = (href: string) =>
         <img
           src="/images/logo.png"
           alt="PROKAT invest"
-          class="h-11 w-auto max-w-[min(48vw,210px)] origin-center object-contain transition-transform duration-300 ease-out group-hover:scale-105 sm:h-12 sm:max-w-none lg:h-[72px] lg:origin-left"
+          class="h-10 w-auto max-w-[min(48vw,210px)] origin-center object-contain transition-transform duration-300 ease-out group-hover:scale-105 sm:h-11 sm:max-w-none lg:h-14 lg:origin-left"
           width="322"
           height="80"
         />
@@ -178,6 +179,7 @@ const isActive = (href: string) =>
     </div>
   </div>
 </header>
+<div id="site-header-spacer" class="site-header-spacer" aria-hidden="true"></div>
 
 <style>
   .nav-solid {
@@ -203,7 +205,18 @@ const isActive = (href: string) =>
 
   @media (min-width: 1024px) {
     .mobile-nav-gradient {
-      background: transparent;
+      background-color: rgba(246, 246, 246, 0.96);
+      backdrop-filter: blur(6px);
+    }
+  }
+
+  .site-header.is-hidden {
+    transform: translateY(-100%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header {
+      transition: none;
     }
   }
 
@@ -230,6 +243,50 @@ const isActive = (href: string) =>
 </style>
 
 <script>
+  const header = document.getElementById('site-header');
+  const spacer = document.getElementById('site-header-spacer');
+  let lastScrollY = window.scrollY;
+  let scrollTicking = false;
+
+  const syncHeaderSpacer = () => {
+    if (!header || !spacer) return;
+    spacer.style.height = `${header.offsetHeight}px`;
+  };
+
+  syncHeaderSpacer();
+  window.addEventListener('resize', syncHeaderSpacer);
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(syncHeaderSpacer);
+  }
+
+  const updateHeaderOnScroll = () => {
+    if (!header) return;
+
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+
+    if (currentScrollY <= 8) {
+      header.classList.remove('is-hidden');
+    } else if (delta > 6) {
+      header.classList.add('is-hidden');
+    } else if (delta < -6) {
+      header.classList.remove('is-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+    scrollTicking = false;
+  };
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(updateHeaderOnScroll);
+    },
+    { passive: true },
+  );
+
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
 
