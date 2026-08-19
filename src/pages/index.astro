@@ -10,6 +10,7 @@ import SeoLabel from '../components/SeoLabel.astro';
 ---
 
 <Layout>
+  <link slot="head" rel="preload" as="video" href="/videos/vzt.mp4" type="video/mp4" fetchpriority="high" />
   <link slot="head" rel="preload" as="image" href="/images/vzt-poster.jpg" type="image/jpeg" fetchpriority="high" />
   <div class="section-watermark relative">
     <Navbar solidBackground />
@@ -23,13 +24,13 @@ import SeoLabel from '../components/SeoLabel.astro';
           muted
           loop
           playsinline
-          preload="metadata"
+          preload="auto"
           poster="/images/vzt-poster.jpg"
           class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
           aria-label="Průmyslové vzduchotechnické zařízení"
         >
-          <source src="/videos/vzt.webm" type="video/webm" />
           <source src="/videos/vzt.mp4" type="video/mp4" />
+          <source src="/videos/vzt.webm" type="video/webm" />
         </video>
         <div class="pointer-events-none absolute inset-0 bg-black/15" aria-hidden="true"></div>
         <div
@@ -117,6 +118,19 @@ import SeoLabel from '../components/SeoLabel.astro';
         </div>
       </div>
       <script>
+        const heroVideo = document.getElementById('hero-video');
+        if (heroVideo instanceof HTMLVideoElement) {
+          const tryPlay = () => {
+            heroVideo.play().catch(() => {});
+          };
+
+          if (heroVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            tryPlay();
+          } else {
+            heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+          }
+        }
+
         const scrollToStats = document.getElementById('scroll-to-stats');
         const statsSection = document.getElementById('statistiky');
 
