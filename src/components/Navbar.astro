@@ -203,6 +203,7 @@ const isActive = (href: string) =>
     background-repeat: no-repeat;
   }
 
+  /* Mobilní podstránky — tmavý gradient (burger menu s bílým textem) */
   .mobile-nav-gradient {
     background: linear-gradient(
       90deg,
@@ -216,10 +217,14 @@ const isActive = (href: string) =>
     );
   }
 
+  /* Desktop — stejné světlé pozadí jako homepage na všech podstránkách */
   @media (min-width: 1024px) {
     .mobile-nav-gradient {
-      background-color: rgba(246, 246, 246, 0.96);
-      backdrop-filter: blur(6px);
+      background-color: #f6f6f6;
+      background-image: url('/images/pozadi-prokat-v3.webp');
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: no-repeat;
     }
   }
 
