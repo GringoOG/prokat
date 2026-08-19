@@ -11,7 +11,7 @@ const rightBlocks = [companyInfo.bank, companyInfo.technicalOffice];
   <div class="space-y-8 sm:space-y-10">
     {
       leftBlocks.map((block) => (
-        <div>
+        <div data-reveal>
           <h2 class="mb-2 font-semibold text-navy">{block.title}</h2>
           {block.lines.map((line) => (
             <p>{line}</p>
@@ -24,7 +24,7 @@ const rightBlocks = [companyInfo.bank, companyInfo.technicalOffice];
   <div class="space-y-5 sm:space-y-6">
     {
       rightBlocks.map((block) => (
-        <div>
+        <div data-reveal>
           <h2 class="mb-2 font-semibold text-navy">{block.title}</h2>
           {block.lines.map((line) => (
             <p>{line}</p>

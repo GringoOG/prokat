@@ -8,16 +8,22 @@ interface Props {
 const { class: className = 'bg-white' } = Astro.props;
 ---
 
-<section class:list={['pb-16 pt-8 lg:pb-20 lg:pt-12', className]}>
+<section class:list={['reveal-skip pb-16 pt-8 lg:pb-20 lg:pt-12', className]}>
   <div class="mx-auto max-w-site px-6 lg:px-[28px]">
-    <h2 class="mb-8 text-center text-2xl font-semibold leading-snug text-navy sm:mb-10 sm:text-3xl lg:mb-16 lg:text-[40px]">
+    <h2
+      data-reveal
+      class="mb-8 text-center text-2xl font-semibold leading-snug text-navy sm:mb-10 sm:text-3xl lg:mb-16 lg:text-[40px]"
+    >
       Kontaktní osoby
     </h2>
 
     <div class="space-y-8 lg:space-y-14">
       {
         contactDepartments.map((department) => (
-          <div class="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(12rem,16rem)_1fr] lg:gap-10 xl:grid-cols-[minmax(14rem,18rem)_1fr] xl:gap-14">
+          <div
+            data-reveal
+            class="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(12rem,16rem)_1fr] lg:gap-10 xl:grid-cols-[minmax(14rem,18rem)_1fr] xl:gap-14"
+          >
             <h3 class="text-center text-lg font-semibold leading-snug text-navy lg:pt-1 lg:text-left lg:text-xl">
               {department.title}
             </h3>

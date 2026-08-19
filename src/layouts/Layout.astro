@@ -52,6 +52,7 @@ const {
 
         targets.forEach((el) => {
           if (el.classList.contains('reveal')) return;
+          if (el.classList.contains('reveal-skip')) return;
           el.classList.add('reveal');
         });
 
@@ -87,7 +88,7 @@ const {
               observer.unobserve(el);
             });
           },
-          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+          { rootMargin: '0px 0px -6% 0px', threshold: 0.12 },
         );
 
         reveals.forEach((el) => observer.observe(el));
