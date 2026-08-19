@@ -153,33 +153,45 @@ const projects = [...visibleProjects];
     </div>
   </div>
 
-  <div class="mt-8 flex justify-center">
+  <div class="mt-8 flex flex-col items-center gap-5">
+    <p id="projects-coming-soon" class="hidden text-center text-base font-semibold leading-none text-gold lg:text-lg">
+      Již brzy více referencí …
+    </p>
     <button
       id="projects-show-more"
       type="button"
-      class="btn-flip btn-shape inline-flex w-auto min-h-[52px] items-center bg-gold text-sm font-semibold text-white transition-colors hover:bg-[#c48d2f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#15101c]"
+      class="btn-shape inline-flex h-10 items-center justify-center bg-gold px-7 text-sm font-semibold leading-none text-white transition-colors hover:bg-[#c48d2f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#15101c]"
     >
-      <span class="btn-flip-label-mask">
-        <span class="btn-flip-label-track">
-          <span class="btn-flip-label btn-flip-label-line px-8 py-3">Zobrazit více</span>
-          <span class="btn-flip-label btn-flip-label-line px-8 py-3" aria-hidden="true">Zobrazit více</span>
-        </span>
-      </span>
+      Zobrazit více
     </button>
-    <p id="projects-coming-soon" class="hidden text-base font-semibold text-gold lg:text-lg">
-      Již brzy více referencí …
-    </p>
+    <button
+      id="projects-show-less"
+      type="button"
+      class="btn-shape hidden inline-flex h-10 items-center justify-center bg-gold px-7 text-sm font-semibold leading-none text-white transition-colors hover:bg-[#c48d2f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#15101c]"
+    >
+      Zobrazit méně
+    </button>
   </div>
 </div>
 
 <script>
   const showMoreBtn = document.getElementById('projects-show-more');
+  const showLessBtn = document.getElementById('projects-show-less');
   const moreProjectsEl = document.getElementById('projects-more');
   const comingSoon = document.getElementById('projects-coming-soon');
 
   showMoreBtn?.addEventListener('click', () => {
     moreProjectsEl?.classList.remove('hidden');
     showMoreBtn.classList.add('hidden');
+    showLessBtn?.classList.remove('hidden');
     comingSoon?.classList.remove('hidden');
+  });
+
+  showLessBtn?.addEventListener('click', () => {
+    moreProjectsEl?.classList.add('hidden');
+    showLessBtn.classList.add('hidden');
+    comingSoon?.classList.add('hidden');
+    showMoreBtn?.classList.remove('hidden');
+    document.getElementById('projects-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 </script>
