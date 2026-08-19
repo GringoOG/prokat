@@ -23,15 +23,15 @@ import SeoLabel from '../components/SeoLabel.astro';
           aria-hidden="true"
           loading="lazy"
           decoding="async"
-          class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-30"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-100"
         />
-        <div class="pointer-events-none absolute inset-0 bg-black/10" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-0 bg-black/15" aria-hidden="true"></div>
         <div
           class="pointer-events-none absolute right-0 top-0 h-full w-[42%] bg-gradient-to-l from-white/85 via-white/60 to-transparent"
           aria-hidden="true"
         ></div>
         <div class="relative z-10">
-          <div class="relative z-10 flex w-full flex-col items-end gap-10 text-right lg:gap-12">
+          <div class="relative z-10 flex w-full flex-col items-start gap-10 text-left lg:gap-12">
             <img
               src="/images/prokat-mark.png"
               alt=""
@@ -42,18 +42,18 @@ import SeoLabel from '../components/SeoLabel.astro';
               class="hero-mark pointer-events-none absolute left-1/2 top-[calc(25%-30px)] z-0 w-[min(50vw,252px)] max-w-none -translate-x-1/2 -translate-y-1/2 select-none mix-blend-multiply lg:w-[294px] xl:w-[308px]"
             />
 
-            <SeoLabel class="mb-0 max-w-[22rem] !justify-end !text-right !text-sm sm:max-w-none sm:!text-base md:!text-lg">
+            <SeoLabel class="mb-0 max-w-[22rem] !justify-start !text-left !text-sm sm:max-w-none sm:!text-base md:!text-lg">
               Váš spolehlivý partner pro technologické celky
             </SeoLabel>
 
             <div class="space-y-4">
               <h1
-                class="text-5xl font-semibold leading-[1.12] tracking-tight text-navy text-right sm:text-6xl lg:text-[64px] lg:leading-[1.15]"
+                class="text-5xl font-semibold leading-[1.12] tracking-tight text-navy text-left sm:text-6xl lg:text-[64px] lg:leading-[1.15]"
               >
                 Od <span class="text-gold">návrhu</span> až po<br />
                 spuštění zdroje.
               </h1>
-              <p class="text-lg font-semibold leading-snug text-navy text-right md:text-xl lg:text-[24px]">
+              <p class="text-lg font-semibold leading-snug text-navy text-left md:text-xl lg:text-[24px]">
                 Provozní úspory 10–20&nbsp;% nákladů pomocí <span class="text-gold">AI</span> managementu.
               </p>
             </div>
@@ -61,14 +61,14 @@ import SeoLabel from '../components/SeoLabel.astro';
             <div class="w-full max-w-[calc(36rem-20px)] space-y-6">
               <div class="space-y-3">
                 <p class="text-base font-medium text-gold md:text-lg lg:text-[20px]">Od roku 1999</p>
-                <p class="text-base font-medium leading-relaxed text-navy/75 md:text-lg lg:text-[20px] text-right">
+                <p class="text-base font-medium leading-relaxed text-navy/75 md:text-lg lg:text-[20px]">
                   Spolehlivý partner pro systémová řešení vzduchotechniky, vytápění, chlazení a ZTI —
                   včetně měření a regulace s využitím AI. Kompletní služby od studie a projektu až po realizaci,
                   servis a vzdálený dohled.
                 </p>
               </div>
 
-              <div class="flex w-full max-w-md flex-wrap items-center justify-end gap-x-3 gap-y-2 sm:w-[90%] sm:max-w-none sm:flex-nowrap">
+              <div class="flex w-full max-w-md flex-wrap items-center justify-between gap-x-3 gap-y-2 sm:w-[90%] sm:max-w-none sm:flex-nowrap">
                 <p class="shrink-0 text-sm font-semibold text-navy sm:text-base lg:text-[20px]">
                   25+&nbsp;let
                 </p>
@@ -110,7 +110,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           </div>
         </div>
 
-        <div class="pb-2 pt-20 text-right lg:pb-3 lg:pt-24">
+        <div class="pb-2 pt-20 text-left lg:pb-3 lg:pt-24">
           <a
             href="#statistiky"
             id="scroll-to-stats"
