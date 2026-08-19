@@ -16,7 +16,7 @@ import SeoLabel from '../components/SeoLabel.astro';
 
     <!-- HERO -->
     <section class="pb-0">
-      <div class="relative mx-auto max-w-site overflow-hidden px-6 pb-5 pt-10 lg:px-[28px] lg:pb-5 lg:pt-16">
+      <div class="relative mx-auto flex min-h-[min(100svh,820px)] max-w-site flex-col overflow-hidden px-4 pb-5 pt-8 sm:px-6 sm:pt-10 lg:min-h-0 lg:px-[28px] lg:pb-5 lg:pt-16">
         <video
           id="hero-video"
           autoplay
@@ -33,18 +33,18 @@ import SeoLabel from '../components/SeoLabel.astro';
         </video>
         <div class="pointer-events-none absolute inset-0 bg-black/15" aria-hidden="true"></div>
         <div
-          class="pointer-events-none absolute left-0 top-0 h-full w-[55%] bg-gradient-to-r from-white via-white/80 to-transparent"
+          class="pointer-events-none absolute left-0 top-0 h-full w-full bg-gradient-to-r from-white via-white/90 to-transparent sm:w-[90%] sm:via-white/85 md:w-[75%] lg:w-[55%] lg:via-white/80"
           aria-hidden="true"
         ></div>
         <div class="relative z-10">
           <div class="relative z-10 flex w-full flex-col items-start gap-8 text-left lg:gap-10">
-            <SeoLabel class="mb-0 max-w-[22rem] !justify-start !text-left !text-xs sm:max-w-none sm:!text-sm md:!text-base">
+            <SeoLabel class="mb-0 max-w-full !justify-start !text-left !text-xs sm:!text-sm md:!text-base">
               Váš spolehlivý partner pro technologické celky
             </SeoLabel>
 
             <div class="space-y-3">
               <h1
-                class="text-4xl font-semibold leading-[1.12] tracking-tight text-navy text-left sm:text-5xl lg:text-[52px] lg:leading-[1.15]"
+                class="text-3xl font-semibold leading-[1.12] tracking-tight text-navy text-left sm:text-5xl lg:text-[52px] lg:leading-[1.15]"
               >
                 Od <span class="text-gold">návrhu</span> až po<br />
                 spuštění zdroje.
@@ -64,7 +64,7 @@ import SeoLabel from '../components/SeoLabel.astro';
                 </p>
               </div>
 
-              <div class="flex w-full max-w-md flex-wrap items-center justify-between gap-x-3 gap-y-2 sm:w-[90%] sm:max-w-none sm:flex-nowrap">
+              <div class="flex w-full flex-wrap items-center justify-start gap-x-3 gap-y-2 sm:justify-between md:flex-nowrap">
                 <p class="shrink-0 text-xs font-semibold text-navy sm:text-sm lg:text-[17px]">
                   25+&nbsp;let
                 </p>
@@ -106,7 +106,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           </div>
         </div>
 
-        <div class="pb-2 pt-20 text-center lg:pb-3 lg:pt-24">
+        <div class="mt-auto pb-2 pt-12 text-center sm:pt-16 lg:pb-3 lg:pt-24">
           <a
             href="#statistiky"
             id="scroll-to-stats"
@@ -164,10 +164,10 @@ import SeoLabel from '../components/SeoLabel.astro';
     <!-- STATISTIKY -->
     <section
       id="statistiky"
-      class="relative scroll-mt-8 overflow-hidden bg-gradient-to-b from-[#101029] via-[#1a1528] to-[#8e6b33] py-12 sm:scroll-mt-10 lg:scroll-mt-12 lg:py-14"
+      class="relative scroll-mt-8 overflow-hidden bg-gradient-to-b from-[#101029] via-[#1a1528] to-[#8e6b33] py-10 sm:scroll-mt-10 sm:py-12 lg:scroll-mt-12 lg:py-14"
     >
-      <div class="mx-auto max-w-site px-6 text-center lg:px-[28px]">
-        <p class="mx-auto mb-5 max-w-3xl text-lg font-medium text-white/90 md:text-[23px]">
+      <div class="mx-auto max-w-site px-4 text-center sm:px-6 lg:px-[28px]">
+        <p class="mx-auto mb-5 max-w-3xl text-base font-medium text-white/90 sm:text-lg md:text-[23px]">
           Realizujeme technologické celky včetně studie energetické hospodárnosti, projektu, realizace, záručního a
           pozáručních servisu
         </p>
@@ -175,7 +175,7 @@ import SeoLabel from '../components/SeoLabel.astro';
         <FlipButton
           href="/o-nas"
           label="Více o naší společnosti"
-          class="mb-8 w-auto justify-center lg:mb-10"
+          class="mb-8 w-full justify-center sm:w-auto lg:mb-10"
         />
 
         <div class="relative mx-auto w-full max-w-[760px] xl:max-w-[980px]">
@@ -198,7 +198,7 @@ import SeoLabel from '../components/SeoLabel.astro';
               </div>
             </div>
             <div
-              class="h-[220px] w-[220px] shrink-0 overflow-hidden rounded-full border-4 border-white/20 shadow-xl"
+              class="aspect-square w-[min(100%,280px)] shrink-0 overflow-hidden rounded-full border-4 border-white/20 shadow-xl sm:w-[min(100%,220px)]"
             >
               <img
                 src="/images/about-industrial.jpg"
@@ -333,10 +333,10 @@ import SeoLabel from '../components/SeoLabel.astro';
     </section>
 
     <!-- SLUŽBY -->
-    <section class="services-watermark pt-16 pb-6 lg:pt-24 lg:pb-8">
-      <div class="mx-auto max-w-site px-6 lg:px-[28px]">
-        <div class="mb-6 flex flex-col gap-6 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
-          <div class="max-w-3xl space-y-4">
+    <section class="services-watermark pt-12 pb-6 sm:pt-16 lg:pt-24 lg:pb-8">
+      <div class="mx-auto max-w-site px-4 sm:px-6 lg:px-[28px]">
+        <div class="mb-6 flex flex-col gap-6 sm:mb-8 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div class="min-w-0 max-w-3xl space-y-4">
             <SeoLabel>Co děláme</SeoLabel>
             <h2 class="text-2xl font-semibold leading-snug tracking-tight text-navy sm:text-3xl md:text-4xl lg:text-[58px] lg:leading-[1.25]">
               Flexibilní řešení pro <span class="text-gold">široký</span> rozsah použití TZB systémů
@@ -345,7 +345,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           <FlipButton
             href="/sluzby"
             label="Prozkoumejte naše služby"
-            class="w-auto shrink-0 self-start"
+            class="w-full shrink-0 self-start sm:w-auto"
           />
         </div>
 

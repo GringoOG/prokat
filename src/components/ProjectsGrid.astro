@@ -95,7 +95,7 @@ const projects = [...visibleProjects];
               decoding="async"
             />
             <div
-              class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/45 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              class="project-logo-overlay pointer-events-none absolute inset-0 flex items-center justify-center bg-black/45 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               aria-hidden="true"
             >
               <img
@@ -135,7 +135,7 @@ const projects = [...visibleProjects];
                 decoding="async"
               />
               <div
-                class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/45 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                class="project-logo-overlay pointer-events-none absolute inset-0 flex items-center justify-center bg-black/45 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 aria-hidden="true"
               >
                 <img
@@ -195,3 +195,11 @@ const projects = [...visibleProjects];
     document.getElementById('projects-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 </script>
+
+<style>
+  @media (hover: none) {
+    .project-card:active .project-logo-overlay {
+      opacity: 1;
+    }
+  }
+</style>

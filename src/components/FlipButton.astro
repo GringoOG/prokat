@@ -22,8 +22,8 @@ const {
 
 const baseClass =
   variant === 'white'
-    ? 'btn-flip btn-flip--white btn-shape inline-flex max-w-full items-center bg-white text-navy text-xs font-semibold min-h-[48px] sm:min-h-[52px] sm:text-sm hover:bg-gray-100 transition-colors'
-    : 'btn-flip btn-gradient btn-shape inline-flex max-w-full items-center text-white text-xs font-medium min-h-[48px] sm:min-h-[52px] sm:text-sm';
+    ? 'btn-flip btn-flip--white btn-shape inline-flex w-full max-w-full items-center bg-white text-navy text-sm font-semibold min-h-[48px] sm:min-h-[52px] sm:w-auto sm:text-sm hover:bg-gray-100 transition-colors'
+    : 'btn-flip btn-gradient btn-shape inline-flex w-full max-w-full items-center text-white text-sm font-medium min-h-[48px] sm:min-h-[52px] sm:w-auto sm:text-sm';
 ---
 
 <a href={href} class:list={[baseClass, className]} aria-label={ariaLabel}>

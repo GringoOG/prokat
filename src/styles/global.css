@@ -17,6 +17,11 @@
     background-position: center top;
     background-repeat: repeat-y;
   }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
 }
 
 .btn-gradient {
@@ -117,6 +122,31 @@
   grid-area: 1 / 1;
   display: inline-flex;
   align-items: center;
+}
+
+@media (max-width: 639px) {
+  .btn-flip-label-mask {
+    overflow: visible;
+  }
+
+  .btn-flip-label-track {
+    transform: none !important;
+  }
+
+  .btn-flip-label-line {
+    white-space: normal;
+    text-wrap: balance;
+    text-align: left;
+  }
+
+  .btn-flip-label-line:last-child {
+    display: none;
+  }
+
+  .btn-flip:hover .btn-flip-icon,
+  .btn-flip:focus-visible .btn-flip-icon {
+    transform: translateX(4px);
+  }
 }
 
 .btn-flip-label-line:last-child {

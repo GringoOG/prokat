@@ -24,7 +24,7 @@ const isActive = (href: string) =>
 <header
   id="site-header"
   class:list={[
-    'site-header fixed inset-x-0 top-0 z-50 w-full transition-transform duration-300 ease-out',
+    'site-header fixed inset-x-0 top-0 z-50 w-full transition-transform duration-300 ease-out pt-[env(safe-area-inset-top,0px)]',
     solidBackground
       ? 'nav-solid'
       : 'mobile-nav-gradient',
@@ -134,12 +134,12 @@ const isActive = (href: string) =>
         <button
           type="button"
           id="menu-toggle"
-          class="flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg bg-navy/95 p-2 lg:hidden"
+          class="menu-toggle flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg bg-navy/95 p-2 lg:hidden"
           aria-label="Otevřít menu"
           aria-expanded="false"
         >
-          <span class="block h-[2px] w-5 rounded-full bg-white"></span>
-          <span class="block h-[2px] w-5 rounded-full bg-white"></span>
+          <span class="menu-bar block h-[2px] w-5 rounded-full bg-white transition-transform duration-200"></span>
+          <span class="menu-bar block h-[2px] w-5 rounded-full bg-white transition-transform duration-200"></span>
         </button>
       </div>
     </nav>
@@ -152,14 +152,14 @@ const isActive = (href: string) =>
               {isActive(item.href) ? (
                 <a
                   href={item.href}
-                  class="inline-flex items-center gap-2 text-gold transition-colors"
+                  class="mobile-nav-link inline-flex items-center gap-2 text-gold transition-colors"
                   aria-current="page"
                 >
                   <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
                   {item.label}
                 </a>
               ) : (
-                <a href={item.href} class="transition-colors hover:text-gold">
+                <a href={item.href} class="mobile-nav-link transition-colors hover:text-gold">
                   {item.label}
                 </a>
               )}
@@ -167,11 +167,24 @@ const isActive = (href: string) =>
           ))
         }
       </ul>
+
+      <details class="mobile-seat mt-5 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white/90">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-gold [&::-webkit-details-marker]:hidden">
+          Sídlo společnosti
+        </summary>
+        <address class="mt-3 space-y-0.5 text-sm font-medium not-italic leading-relaxed text-white/85">
+          <p class="font-semibold text-white">PROKAT invest s.r.o.</p>
+          <p>Plzeňská 1348/95, Praha 5</p>
+          <p>IČ: 25238876 · DIČ: CZ25238876</p>
+          <p class="pt-1">Datová schránka: ns3u7ke</p>
+        </address>
+      </details>
+
       <div class="mt-6 flex justify-start">
         <FlipButton
           href="/kontakt"
           label="Získejte CN"
-          class="inline-flex w-auto !min-h-[34px] justify-center text-sm font-medium text-white"
+          class="inline-flex w-full max-w-xs !min-h-[40px] justify-center text-sm font-medium text-white sm:w-auto"
           labelClass="btn-flip-label !py-1.5 !pl-3 !pr-1"
           iconClass="btn-gradient-icon btn-shape-icon flex h-[25px] w-[25px] shrink-0 items-center justify-center"
         />
@@ -214,8 +227,20 @@ const isActive = (href: string) =>
     transform: translateY(-100%);
   }
 
+  .menu-toggle.is-open .menu-bar:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open .menu-bar:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .site-header {
+      transition: none;
+    }
+
+    .menu-bar {
       transition: none;
     }
   }
@@ -290,9 +315,28 @@ const isActive = (href: string) =>
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
 
+  const setMobileMenuOpen = (open) => {
+    if (!menu || !toggle) return;
+
+    menu.classList.toggle('hidden', !open);
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+    document.body.classList.toggle('mobile-menu-open', open);
+    requestAnimationFrame(syncHeaderSpacer);
+  };
+
   toggle?.addEventListener('click', () => {
-    const isHidden = menu?.classList.toggle('hidden');
-    toggle.setAttribute('aria-expanded', String(!isHidden));
+    const isOpen = menu?.classList.contains('hidden') ?? true;
+    setMobileMenuOpen(isOpen);
+  });
+
+  menu?.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => setMobileMenuOpen(false));
+  });
+
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+    if (event.matches) setMobileMenuOpen(false);
   });
 
   const seatReveal = document.querySelector('.seat-reveal');

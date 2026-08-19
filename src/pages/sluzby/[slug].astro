@@ -32,7 +32,7 @@ if (!service) {
           {service.title}
         </h1>
         <div class="mt-6 mb-8 flex justify-center sm:mt-8 sm:mb-10 lg:mb-14">
-          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." class="w-auto" />
+          <FlipButton href="/kontakt" label="Nezávazná nabídka zdarma." class="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -165,7 +165,7 @@ if (!service) {
           </div>
 
           <div
-            class="process-circles relative mx-auto flex w-full max-w-[720px] flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:gap-0 lg:mx-0 lg:max-w-none lg:justify-end"
+            class="process-circles relative mx-auto flex w-full max-w-[720px] flex-wrap items-center justify-center gap-3 lg:flex-nowrap lg:gap-0 lg:mx-0 lg:max-w-none lg:justify-end"
             aria-label="Postup realizace"
           >
             {
@@ -374,8 +374,18 @@ if (!service) {
 
   @media (min-width: 640px) {
     .process-circle {
-      width: min(30vw, 200px);
+      width: min(28vw, 180px);
       padding: 1rem;
+    }
+
+    .process-circle--overlap {
+      margin-left: -0.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .process-circle {
+      width: min(24vw, 200px);
     }
 
     .process-circle--overlap {
@@ -385,7 +395,7 @@ if (!service) {
 
   @media (min-width: 1024px) {
     .process-circle {
-      width: min(38vw, 240px);
+      width: min(22vw, 240px);
       padding: 1.25rem;
     }
 
