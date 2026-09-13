@@ -207,7 +207,15 @@ export const contactDepartments: ContactDepartment[] = [
     ],
   },
   {
-    title: 'RTCH/ZTI, SKLAD Kout na Šumavě',
-    people: [],
+    title: 'RTCH/ZTI, sklad Kout na Šumavě',
+    people: [
+      {
+        name: 'Pavla Zdeňková',
+        role: '',
+        phone: '+420 724 037 081',
+        email: 'pavla.zdenkova@prokat.cz',
+        location: 'KOUT NA ŠUMAVĚ',
+      },
+    ],
   },
 ];
