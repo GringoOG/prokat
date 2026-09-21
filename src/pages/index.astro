@@ -11,6 +11,7 @@ import SeoLabel from '../components/SeoLabel.astro';
 
 <Layout>
   <link slot="head" rel="preload" as="image" href="/images/vzt-poster.jpg" type="image/jpeg" fetchpriority="high" />
+  <link slot="head" rel="preload" as="video" href="/videos/vzt.mp4" type="video/mp4" fetchpriority="high" />
   <div class="section-watermark relative bg-[#f6f6f6]">
     <Navbar solidBackground />
 
@@ -25,7 +26,7 @@ import SeoLabel from '../components/SeoLabel.astro';
           muted
           loop
           playsinline
-          preload="metadata"
+          preload="auto"
           poster="/images/vzt-poster.jpg"
           class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
           aria-label="Průmyslové vzduchotechnické zařízení"
@@ -111,14 +112,22 @@ import SeoLabel from '../components/SeoLabel.astro';
         const heroVideo = document.getElementById('hero-video');
         if (heroVideo instanceof HTMLVideoElement) {
           const tryPlay = () => {
-            heroVideo.play().catch(() => {});
+            if (heroVideo.paused) {
+              heroVideo.play().catch(() => {});
+            }
           };
 
-          if (heroVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-            tryPlay();
-          } else {
-            heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-          }
+          // Start download + playback as early as the browser allows.
+          heroVideo.load();
+          tryPlay();
+          heroVideo.addEventListener('loadeddata', tryPlay);
+          heroVideo.addEventListener('canplay', tryPlay);
+          heroVideo.addEventListener('canplaythrough', tryPlay, { once: true });
+
+          // Retry after first paint / soft navigation edge cases.
+          requestAnimationFrame(tryPlay);
+          setTimeout(tryPlay, 250);
+          setTimeout(tryPlay, 1000);
         }
       </script>
     </section>
