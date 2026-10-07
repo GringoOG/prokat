@@ -75,12 +75,19 @@ const isActive = (href: string) =>
             class="flex h-10 w-10 items-center justify-center rounded-full bg-navy transition-opacity hover:opacity-90 sm:h-11 sm:w-11"
             aria-expanded="false"
             aria-controls="seat-panel"
-            aria-label="Sídlo společnosti"
+            aria-label="Informace o společnosti"
           >
-            <svg class="h-4 w-4 text-gold" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-              <path
-                d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.2 4.5 8.5 4.5 8.5s4.5-5.3 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"
-              ></path>
+            <svg
+              class="h-[18px] w-[18px] text-gold"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8" cy="8" r="6.2"></circle>
+              <path stroke-linecap="round" d="M8 7.15v4.1"></path>
+              <circle cx="8" cy="4.85" r="0.85" fill="currentColor" stroke="none"></circle>
             </svg>
           </button>
 
@@ -123,7 +130,7 @@ const isActive = (href: string) =>
           <FlipButton
             href="/kontakt"
             label="Získejte CN"
-            class="inline-flex !min-h-[34px] text-sm font-medium xl:!min-h-[40px] xl:text-lg"
+            class="inline-flex !min-h-[34px] text-sm font-medium xl:!min-h-[40px]"
             labelClass="btn-flip-label !py-1.5 !pl-3 !pr-1 xl:!pl-4"
             iconClass="btn-gradient-icon btn-shape-icon flex h-[25px] w-[25px] shrink-0 items-center justify-center xl:h-8 xl:w-8"
           />
