@@ -5,9 +5,22 @@ __pycache__/
 .venv/
 venv/
 
-# Astro
+# Astro / Vercel
 node_modules/
 dist/
 .astro/
 .vercel
 .env*
+
+# Local business archives and working copies (do not publish)
+Dokumenty/
+Dokumenty_02/
+Dokumenty_02.zip
+PRG/
+assets/videos-backup/
+*.zip
+fwprokatinvests_r_o_prestneoceneniebusinesselit.zip
+WhatsApp Unknown*.zip
+
+# Editor / agent local
+.cursor/

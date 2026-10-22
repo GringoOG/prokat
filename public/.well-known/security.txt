@@ -1,0 +1,5 @@
+Contact: mailto:info@prokat.cz
+Preferred-Languages: cs, en
+Canonical: https://www.prokat.cz/.well-known/security.txt
+Policy: https://www.prokat.cz/gdpr/
+Expires: 2027-10-22T00:00:00.000Z
